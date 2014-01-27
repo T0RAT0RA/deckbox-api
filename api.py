@@ -12,7 +12,7 @@ def index():
 def api():
     return jsonify({
         "/api/:username/": "Get user profile information and sets id.",
-        "/api/:username/:set_id": "Get cards from a set",
+        "/api/:username/set/:set_id": "Get cards from a set",
     })
 
 @app.route('/api/<username>/')
@@ -30,7 +30,7 @@ def api_get_user_profile(username):
         sets        = user_default_sets,
     )
 
-@app.route('/api/<username>/<set_id>/')
+@app.route('/api/<username>/set/<set_id>/')
 def api_get_user_set(username, set_id):
     deckbox_crawler = DeckboxCrawler(username)
     page = request.args.get('p', 1)

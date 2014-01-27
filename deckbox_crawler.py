@@ -16,30 +16,33 @@ class DeckboxCrawler:
         return fields
 
     def getUserSets(self, set_id = None):
-        sets = {}
+        sets = []
+
+        #Get all sets
         for i, a in enumerate(self._page("#section_mtg .submenu_entry a.simple").items()):
-            current_set_id   = a.attr("href").replace("/sets/", "")
+            current_set = {}
+            current_set["id"] = a.attr("href").replace("/sets/", "")
 
             if i == 0:
-                current_set_name = "inventory"
+                current_set["name"] = "inventory"
             elif i == 1:
-                current_set_name = "tradelist"
+                current_set["name"] = "tradelist"
             elif i == 2:
-                current_set_name = "wishlist"
+                current_set["name"] = "wishlist"
             else:
-                current_set_name = a.attr("data-title")
+                current_set["name"] = a.attr("data-title")
 
-            sets[current_set_name] = current_set_id
+            if set_id and set_id == current_set["id"]:
+                return current_set
 
-            if set_id and set_id == current_set_id:
-                return sets[set_id]
+            sets.append(current_set)
 
         return sets
 
     def getUserSetCards(self, set_id, page = 1):
         self.log("getUserSetCards(" + set_id + ", " + str(page) + ")")
-        set_link = self.getUserSets(set_id)
-        set_url  = self._DECKBOX_DOMAIN + set_link + "?p=" + str(page)
+        set_object = self.getUserSets(set_id)
+        set_url  = self._DECKBOX_DOMAIN + "/sets/" + set_object["id"] + "?p=" + str(page)
         return self.getCardsFromPage(set_url)
 
     #################################
