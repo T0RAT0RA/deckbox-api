@@ -10,12 +10,10 @@ def index():
 
 @app.route('/api/')
 def api():
-    return redirect(url_for('documentation'))
-
-@app.route('/documentation/')
-def documentation():
-    return redirect(url_for('index'))
-    #return render_template('documentation.html')
+    return jsonify({
+        "/api/:username/": "Get user profile information and sets id.",
+        "/api/:username/:set_id": "Get cards from a set",
+    })
 
 @app.route('/api/<username>/')
 def api_get_user_profile(username):
