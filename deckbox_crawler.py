@@ -16,13 +16,25 @@ class DeckboxCrawler:
         return fields
 
     def getUserSets(self, set_id = None):
-        sets = [a.attr("href") for a in self._page("#section_mtg > .submenu_entry a").items()]
-        sets = {"inventory": sets[0], "tradelist": sets[0], "wishlist": sets[1]}
+        sets = {}
+        for i, a in enumerate(self._page("#section_mtg .submenu_entry a.simple").items()):
+            current_set_id   = a.attr("href").replace("/sets/", "")
 
-        if set_id:
-            return sets[set_id]
-        else:
-            return sets
+            if i == 0:
+                current_set_name = "inventory"
+            elif i == 1:
+                current_set_name = "tradelist"
+            elif i == 2:
+                current_set_name = "wishlist"
+            else:
+                current_set_name = a.attr("data-title")
+
+            sets[current_set_name] = current_set_id
+
+            if set_id and set_id == current_set_id:
+                return sets[set_id]
+
+        return sets
 
     def getUserSetCards(self, set_id, page = 1):
         self.log("getUserSetCards(" + set_id + ", " + str(page) + ")")
