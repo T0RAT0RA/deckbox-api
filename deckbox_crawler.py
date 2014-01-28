@@ -23,6 +23,7 @@ class DeckboxCrawler:
             "location": fields[2],
             "feedback": fields[3],
             "will_trade": fields[4],
+            "bio": self._page(".user_bio").text(),
         }
 
     def getUserSets(self, set_id = None):
