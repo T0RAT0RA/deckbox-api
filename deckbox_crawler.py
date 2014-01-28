@@ -47,10 +47,18 @@ class DeckboxCrawler:
 
             sets.append(current_set)
 
+        # Should already have returned the specified set
+        if set_id:
+            return None
+
         return sets
 
     def getUserSetCards(self, set_id, page = 1):
         set_object = self.getUserSets(set_id)
+
+        if set_object == None:
+            return {"status": "error", "description": "The user doesn't have the specified set."}
+
         set_url  = self._DECKBOX_DOMAIN + "/sets/" + set_object["id"] + "?p=" + str(page)
         return self.getCardsFromPage(set_url)
 
