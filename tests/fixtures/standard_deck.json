@@ -1,0 +1,324 @@
+{
+  "cards": [
+    {
+      "cost": "RW",
+      "count": "1",
+      "name": "Figure of Destiny",
+      "subtype": [
+        "Kithkin"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "R",
+      "count": "1",
+      "name": "Somberwald Vigilante",
+      "subtype": [
+        "Human",
+        "Warrior"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "1W",
+      "count": "1",
+      "name": "Cavalry Pegasus",
+      "subtype": [
+        "Pegasus"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "1W",
+      "count": "1",
+      "name": "Fencing Ace",
+      "subtype": [
+        "Human",
+        "Soldier"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "RW",
+      "count": "2",
+      "name": "Stun Sniper",
+      "subtype": [
+        "Human",
+        "Archer"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "1W",
+      "count": "1",
+      "name": "Thraben Valiant",
+      "subtype": [
+        "Human",
+        "Soldier"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "RW",
+      "count": "1",
+      "name": "Truefire Paladin",
+      "subtype": [
+        "Human",
+        "Knight"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "1RW",
+      "count": "1",
+      "name": "Anax and Cymede",
+      "subtype": [
+        "Human",
+        "Soldier"
+      ],
+      "type": "Legendary Creature"
+    },
+    {
+      "cost": "2W",
+      "count": "1",
+      "name": "Auramancer",
+      "subtype": [
+        "Human",
+        "Wizard"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "2W",
+      "count": "2",
+      "name": "Freewind Equenaut",
+      "subtype": [
+        "Human",
+        "Archer"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "3W",
+      "count": "2",
+      "name": "Armory Guard",
+      "subtype": [
+        "Giant",
+        "Soldier"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "2WW",
+      "count": "1",
+      "name": "Gustcloak Sentinel",
+      "subtype": [
+        "Human",
+        "Soldier"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "3WW",
+      "count": "1",
+      "name": "Dawnstrike Paladin",
+      "subtype": [
+        "Human",
+        "Knight"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "RWRWRWRWRW",
+      "count": "1",
+      "name": "Nobilis of War",
+      "subtype": [
+        "Spirit",
+        "Avatar"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "4RR",
+      "count": "1",
+      "name": "Kamahl, Pit Fighter",
+      "subtype": [
+        "Human",
+        "Barbarian"
+      ],
+      "type": "Legendary Creature"
+    },
+    {
+      "cost": "4WW",
+      "count": "1",
+      "name": "Sun Titan",
+      "subtype": [
+        "Giant"
+      ],
+      "type": "Creature"
+    },
+    {
+      "cost": "W",
+      "count": "2",
+      "name": "Condemn",
+      "subtype": "",
+      "type": "Instant"
+    },
+    {
+      "cost": "W",
+      "count": "1",
+      "name": "Pay No Heed",
+      "subtype": "",
+      "type": "Instant"
+    },
+    {
+      "cost": "W",
+      "count": "1",
+      "name": "Righteousness",
+      "subtype": "",
+      "type": "Instant"
+    },
+    {
+      "cost": "W",
+      "count": "1",
+      "name": "Stand Firm",
+      "subtype": "",
+      "type": "Instant"
+    },
+    {
+      "cost": "1R",
+      "count": "1",
+      "name": "Magma Jet",
+      "subtype": "",
+      "type": "Instant"
+    },
+    {
+      "cost": "1W",
+      "count": "1",
+      "name": "Moment of Heroism",
+      "subtype": "",
+      "type": "Instant"
+    },
+    {
+      "cost": "3W",
+      "count": "1",
+      "name": "Smite the Monstrous",
+      "subtype": "",
+      "type": "Instant"
+    },
+    {
+      "cost": "4W",
+      "count": "1",
+      "name": "Miraculous Recovery",
+      "subtype": "",
+      "type": "Instant"
+    },
+    {
+      "cost": "4RR",
+      "count": "1",
+      "name": "Pyrokinesis",
+      "subtype": "",
+      "type": "Instant"
+    },
+    {
+      "cost": "3WW",
+      "count": "1",
+      "name": "Winds of Rath",
+      "subtype": "",
+      "type": "Sorcery"
+    },
+    {
+      "cost": "W",
+      "count": "1",
+      "name": "Daily Regimen",
+      "subtype": [
+        "Aura"
+      ],
+      "type": "Enchantment"
+    },
+    {
+      "cost": "1W",
+      "count": "1",
+      "name": "Bonds of Faith",
+      "subtype": [
+        "Aura"
+      ],
+      "type": "Enchantment"
+    },
+    {
+      "cost": "1R",
+      "count": "1",
+      "name": "Ordeal of Purphoros",
+      "subtype": [
+        "Aura"
+      ],
+      "type": "Enchantment"
+    },
+    {
+      "cost": "2W",
+      "count": "1",
+      "name": "Battle Mastery",
+      "subtype": [
+        "Aura"
+      ],
+      "type": "Enchantment"
+    },
+    {
+      "cost": "2W",
+      "count": "1",
+      "name": "Griffin Guide",
+      "subtype": [
+        "Aura"
+      ],
+      "type": "Enchantment"
+    },
+    {
+      "cost": "2R",
+      "count": "1",
+      "name": "Undying Rage",
+      "subtype": [
+        "Aura"
+      ],
+      "type": "Enchantment"
+    },
+    {
+      "cost": "",
+      "count": "2",
+      "name": "Boros Guildgate",
+      "subtype": [
+        "Gate"
+      ],
+      "type": "Land"
+    },
+    {
+      "cost": "",
+      "count": "11",
+      "name": "Mountain",
+      "subtype": [
+        "Mountain"
+      ],
+      "type": "Basic Land"
+    },
+    {
+      "cost": "",
+      "count": "2",
+      "name": "New Benalia",
+      "subtype": "",
+      "type": "Land"
+    },
+    {
+      "cost": "",
+      "count": "9",
+      "name": "Plains",
+      "subtype": [
+        "Plains"
+      ],
+      "type": "Basic Land"
+    }
+  ],
+  "cards_count": {
+    "cards": 60,
+    "distinct": 36
+  },
+  "title": "Heroes"
+}
