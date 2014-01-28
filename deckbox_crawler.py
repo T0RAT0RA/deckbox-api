@@ -1,4 +1,4 @@
-import re
+import re, datetime
 from pyquery import PyQuery
 
 class DeckboxCrawler:
@@ -13,7 +13,17 @@ class DeckboxCrawler:
     def getUserProfile(self):
         fields = [h.text() for h in self._page("#section_profile dd").items()]
         fields[0] = re.search(', ([0-9]+), ', fields[0]).group(1)
-        return fields
+
+        return {
+            "last_seen_online": {
+                "timestamp": fields[0],
+                "date": datetime.datetime.fromtimestamp(int(fields[0])).strftime('%Y-%m-%d %H:%M:%S')
+            },
+            "username": fields[1],
+            "location": fields[2],
+            "feedback": fields[3],
+            "will_trade": fields[4],
+        }
 
     def getUserSets(self, set_id = None):
         sets = []
@@ -40,27 +50,139 @@ class DeckboxCrawler:
         return sets
 
     def getUserSetCards(self, set_id, page = 1):
-        self.log("getUserSetCards(" + set_id + ", " + str(page) + ")")
         set_object = self.getUserSets(set_id)
         set_url  = self._DECKBOX_DOMAIN + "/sets/" + set_object["id"] + "?p=" + str(page)
         return self.getCardsFromPage(set_url)
 
-    #################################
-    #  HELPERS                      #
-    #################################
+
+    #-------------------------
+    #  HELPERS
+    #-------------------------
     def log(self, message):
-        print "LOG - " + message
+        print "[" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "] LOG - " + message
 
     def getCardsFromPage(self, page_url):
         self.log("Get cards from url: " + page_url)
 
-        page = PyQuery(url=page_url)
+        self._page      = PyQuery(url=page_url)
+        is_deck_page    = True if self._page(".main.deck") else False
+        cards           = self.getCardsFromTable(is_deck_page)
 
-        pagination  = page("#set_cards_table .pagination_controls:first span").text()
-        m = re.search('([0-9]+)[^0-9]*([0-9]+)', pagination)
-        current_page    = m.group(1)
-        number_of_pages = m.group(2)
-        cards = [tr.text() for tr in page("#set_cards_table_details tr:gt(1) a").items()]
-        cards_per_page = len(cards)
+        #-------------------------
+        # DECK PAGES
+        #-------------------------
+        if is_deck_page:
+            cards_count     = self._page(".section_title span:last").text()
+            title           = self._page(".section_title span:first").text()
 
-        return {"cards": cards, "cards_per_page": cards_per_page, "page": current_page, "number_of_page": number_of_pages}
+            return {"title": title, "cards": cards, "cards_count": cards_count}
+
+        #-------------------------
+        # DEFAULT SETS PAGES
+        #-------------------------
+        else:
+            pagination      = self._page("#set_cards_table .pagination_controls:first span").text()
+            m = re.search('([0-9]+)[^0-9]*([0-9]+)', pagination)
+            card_table_id   = "#set_cards_table_details"
+            current_page    = m.group(1)
+            number_of_pages = m.group(2)
+            title           = self._page(".section_title span:first").text()
+
+            return {"title": title, "cards": cards, "page": current_page, "number_of_page": number_of_pages}
+
+    #-------------------------
+    # Cards Parser
+    #-------------------------
+    def getCardsFromTable(self, isDeckTable = False):
+        cards = []
+
+        # Parse cards on deck page
+        if isDeckTable:
+            for tr in self._page(".main.deck tr").items():
+                if tr.attr("id") == None:
+                    continue
+
+                '''
+                Deck card HTML example:
+                <tr id="13392">
+                    <td id="card_count_13392" class="card_count">4</td>
+                    <td class="card_name">
+                      <div class="relative">
+                        <a class="simple" target="_blank" href="http://deckbox.org/mtg/Armed // Dangerous">
+                            Armed // Dangerous
+                        </a>
+                      </div>
+                    </td>
+                    <td><span>Sorcery</span></td>
+                    <td class="card_cost">
+                        <img class="mtg_mana mtg_mana_1" src="/images/icon_spacer.gif">
+                        <img class="mtg_mana mtg_mana_R" src="/images/icon_spacer.gif">
+                    </td>
+                    <td class="center price">
+                        <span data-title="$0.04 / $0.19 / $0.95 / $0.95">$0.19</span>
+                    </td>
+                </tr>
+                '''
+
+                card = {}
+                card["count"]   = tr.find("td.card_count").text()
+                card["name"]    = tr.find("a").text()
+                card_types = re.split(r'\s+-\s+', tr.find("td").eq(2).find("span").text())
+                card["type"]    = card_types[0]
+                card["subtype"] = re.split(r'\s', card_types[1]) if len(card_types) > 1 else ""
+                card_cost = []
+                for img in tr.find("td.card_cost img").items():
+                    card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
+                card["cost"]    = "".join(card_cost)
+
+                cards.append(card)
+
+        # Parse cards on default set (inventory, wishlist, tradelist) page
+        else:
+            for tr in self._page("#set_cards_table_details tr").items():
+                if tr.attr("id") == None:
+                    continue
+
+                '''
+                Default set card HTML example:
+                <tr id="734306" class="even">
+                    <td id="card_count_734306" class="card_count">1</td>
+                    <td>
+                      <a class="simple" target="_blank" href="http://deckbox.org/mtg/Abhorrent Overlord" data-tt="http://deckbox.org//system/images/mtg/cards/373661.jpg">
+                        Abhorrent Overlord
+                      </a>
+                    </td>
+                    <td class="details_col">
+                        <span class="mtg_edition_price">
+                            <span data-title="$0.10 / $0.28 / $1.45 / $0.94">$0.28</span>
+                        </span>
+                        <div class="mtg_edition_container">
+                            <img src="/images/mtg/editions/THS_R.jpg" data-title="Theros" class="">
+                        </div>
+                        <img src="/images/icon_spacer.gif" class="sprite s_star2 " data-title="Near Mint">
+                        <img src="/images/icon_spacer_16_11.gif" class="flag flag-us" data-title="English">
+                    </td>
+                    <td class="type_line minimum_width">Creature  - Demon</td>
+                    <td class="mana_cost minimum_width">
+                        <img class="mtg_mana mtg_mana_5" src="/images/icon_spacer.gif">
+                        <img class="mtg_mana mtg_mana_B" src="/images/icon_spacer.gif">
+                        <img class="mtg_mana mtg_mana_B" src="/images/icon_spacer.gif">
+                    </td>
+                </tr>
+                '''
+
+                card = {}
+                card["count"]   = tr.find("td.card_count").text()
+                card["name"]    = tr.find("a").text()
+                card_types = re.split(r'\s+-\s+', tr.find("td").eq(3).text())
+                card["type"]    = card_types[0]
+                card["subtype"] = re.split(r'\s', card_types[1]) if len(card_types) > 1 else ""
+                card_cost = []
+                for img in tr.find("td.mana_cost img").items():
+                    card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
+                card["cost"]    = "".join(card_cost)
+
+                cards.append(card)
+
+        return cards
+

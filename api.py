@@ -22,12 +22,8 @@ def api_get_user_profile(username):
     user_default_sets   = deckbox_crawler.getUserSets()
 
     return jsonify(
-        last_seen_online = user_profile[0],
-        username    = user_profile[1],
-        location    = user_profile[2],
-        feedback    = user_profile[3],
-        will_trade  = user_profile[4],
-        sets        = user_default_sets,
+        user_profile,
+        sets = user_default_sets,
     )
 
 @app.route('/api/<username>/set/<set_id>/')
