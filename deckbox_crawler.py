@@ -169,6 +169,7 @@ class DeckboxCrawler:
                         </div>
                         <img src="/images/icon_spacer.gif" class="sprite s_star2 " data-title="Near Mint">
                         <img src="/images/icon_spacer_16_11.gif" class="flag flag-us" data-title="English">
+                        <img src="/images/icon_spacer.gif" class="sprite s_colors " data-title="Foil">
                     </td>
                     <td class="type_line minimum_width">Creature  - Demon</td>
                     <td class="mana_cost minimum_width">
@@ -182,9 +183,28 @@ class DeckboxCrawler:
                 card = {}
                 card["count"]   = tr.find("td.card_count").text()
                 card["name"]    = tr.find("a").text()
+
+                edition_container = tr.find(".mtg_edition_container img")
+                card["edition"] = {
+                    "code": re.search(".*/(.*)_.\.jpg$", edition_container.attr("src")).group(1),
+                    "name": edition_container.attr("data-title")
+                }
+                card["rarity"]  = re.search(".*_(.)\.jpg$", edition_container.attr("src")).group(1)
+                condition = {}
+                card["condition"] = {
+                    "code": re.sub("(sprite |\s)", "", tr.find(".sprite:first").attr("class")),
+                    "name": tr.find(".sprite:first").attr("data-title")
+                } if tr.find(".sprite:first") else {}
+                card["is_foil"] = True if tr.find(".sprite.s_colors") else False
+                card["lang"] = {
+                    "code": re.sub("(flag |\s)", "", tr.find(".flag").attr("class")),
+                    "name": tr.find(".flag").attr("data-title")
+                } if tr.find(".flag") else {}
+
                 card_types = re.split(r'\s+-\s+', tr.find("td").eq(3).text())
                 card["type"]    = card_types[0]
                 card["subtype"] = re.split(r'\s', card_types[1]) if len(card_types) > 1 else ""
+
                 card_cost = []
                 for img in tr.find("td.mana_cost img").items():
                     card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
