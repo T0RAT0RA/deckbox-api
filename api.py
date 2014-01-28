@@ -12,7 +12,7 @@ def index():
 def api():
     return jsonify({
         "/api/:username/": "Get user profile information and sets id.",
-        "/api/:username/set/:set_id": "Get cards from a set",
+        "/api/:username/set/:set_id": "Get cards from a set. Use the p parameter for the pagination.",
     })
 
 @app.route('/api/<username>/')
