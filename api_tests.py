@@ -69,10 +69,22 @@ class FlaskrTestCase(unittest.TestCase):
 
         self.assertEqual(len(user_sets_expected), len(user_sets_actual))
 
-        # Compare fixture json file with actual response, field by field
-        for i, user_set_expected in enumerate(user_sets_expected["sets"]):
-            self.assertEqual(user_set_expected["id"], user_sets_actual["sets"][i]["id"])
-            self.assertEqual(user_set_expected["name"], user_sets_actual["sets"][i]["name"])
+        self.assertListEqual(user_sets_expected["sets"], user_sets_actual["sets"])
+
+    def test_user_inventory(self):
+        rv = self.app.get('/api/users/' + self.test_username + "/sets/590740/")
+        user_inventory_actual = json.loads(rv.data)
+
+        json_data = open(self.fixture_path + 'inventory.json')
+        user_inventory_expected = json.load(json_data)
+        json_data.close()
+
+        self.assertEqual(len(user_inventory_expected["cards"]), len(user_inventory_actual["cards"]))
+        self.assertEqual(user_inventory_expected["number_of_page"], user_inventory_actual["number_of_page"])
+        self.assertEqual(user_inventory_expected["page"], user_inventory_actual["page"])
+        self.assertEqual(user_inventory_expected["title"], user_inventory_actual["title"])
+
+        self.assertListEqual(user_inventory_expected["cards"], user_inventory_actual["cards"])
 
     def test_empty_deck(self):
         rv = self.app.get('/api/users/' + self.test_username + "/sets/" + self.empty_deck_id + "/")

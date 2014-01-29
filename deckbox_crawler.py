@@ -200,12 +200,15 @@ class DeckboxCrawler:
                 card["condition"] = {
                     "code": re.sub("(sprite |\s)", "", tr.find(".sprite:first").attr("class")),
                     "name": tr.find(".sprite:first").attr("data-title")
-                } if tr.find(".sprite:first") else {}
-                card["is_foil"] = True if tr.find(".sprite.s_colors") else False
+                } if tr.find(".sprite:first") else {"code": None, "name": None}
+                card["is_foil"]     = True if tr.find(".sprite.s_colors") else False
+                card["is_promo"]    = True if tr.find(".sprite.s_rosette") else False
+                card["is_textless"] = True if tr.find(".sprite.s_square") else False
+                card["is_signed"]   = True if tr.find(".sprite.s_letter") else False
                 card["lang"] = {
                     "code": re.sub("(flag |\s)", "", tr.find(".flag").attr("class")),
                     "name": tr.find(".flag").attr("data-title")
-                } if tr.find(".flag") else {}
+                } if tr.find(".flag") else {"code": None, "name": None}
 
                 card_types = re.split(r'\s+-\s+', tr.find("td").eq(3).text())
                 card["type"]    = card_types[0]

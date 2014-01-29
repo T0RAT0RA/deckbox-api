@@ -1,0 +1,783 @@
+{
+  "cards": [
+    {
+      "condition": {
+        "code": "s_star1",
+        "name": "Mint"
+      },
+      "cost": "6B",
+      "count": "1",
+      "edition": {
+        "code": "DDK",
+        "name": "Duel Decks: Sorin vs. Tibalt"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Absorb Vis",
+      "rarity": "C",
+      "subtype": "",
+      "type": "Sorcery"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1RW",
+      "count": "1",
+      "edition": {
+        "code": "THS",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Anax and Cymede",
+      "rarity": "R",
+      "subtype": [
+        "Human",
+        "Soldier"
+      ],
+      "type": "Legendary Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star3",
+        "name": "Good (Lightly Played)"
+      },
+      "cost": "3B",
+      "count": "1",
+      "edition": {
+        "code": "P2",
+        "name": "Portal Second Age"
+      },
+      "is_foil": true,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Ancient Craving",
+      "rarity": "R",
+      "subtype": "",
+      "type": "Sorcery"
+    },
+    {
+      "condition": {
+        "code": "s_star4",
+        "name": "Played"
+      },
+      "cost": "3W",
+      "count": "2",
+      "edition": {
+        "code": "RTR",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": null,
+        "name": null
+      },
+      "name": "Armory Guard",
+      "rarity": "C",
+      "subtype": [
+        "Giant",
+        "Soldier"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star5",
+        "name": "Heavily Played"
+      },
+      "cost": "2W",
+      "count": "1",
+      "edition": {
+        "code": "M14",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": null,
+        "name": null
+      },
+      "name": "Auramancer",
+      "rarity": "C",
+      "subtype": [
+        "Human",
+        "Wizard"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star6",
+        "name": "Poor"
+      },
+      "cost": "2W",
+      "count": "1",
+      "edition": {
+        "code": "LRW",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-fr",
+        "name": "French"
+      },
+      "name": "Battle Mastery",
+      "rarity": "U",
+      "subtype": [
+        "Aura"
+      ],
+      "type": "Enchantment"
+    },
+    {
+      "condition": {
+        "code": null,
+        "name": null
+      },
+      "cost": "2B",
+      "count": "1",
+      "edition": {
+        "code": "M12",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": null,
+        "name": null
+      },
+      "name": "Bloodrage Vampire",
+      "rarity": "C",
+      "subtype": [
+        "Vampire"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1W",
+      "count": "1",
+      "edition": {
+        "code": "ISD",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Bonds of Faith",
+      "rarity": "C",
+      "subtype": [
+        "Aura"
+      ],
+      "type": "Enchantment"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "",
+      "count": "2",
+      "edition": {
+        "code": "DGM",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Boros Guildgate",
+      "rarity": "C",
+      "subtype": [
+        "Gate"
+      ],
+      "type": "Land"
+    },
+    {
+      "condition": {
+        "code": "s_star3",
+        "name": "Good (Lightly Played)"
+      },
+      "cost": "5BB",
+      "count": "1",
+      "edition": {
+        "code": "WWK",
+        "name": "Worldwake"
+      },
+      "is_foil": true,
+      "is_textless": true,
+      "is_promo": true,
+      "is_signed": true,
+      "lang": {
+        "code": "flag-pt",
+        "name": "Portuguese"
+      },
+      "name": "Butcher of Malakir",
+      "rarity": "R",
+      "subtype": [
+        "Vampire",
+        "Warrior"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1W",
+      "count": "1",
+      "edition": {
+        "code": "THS",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Cavalry Pegasus",
+      "rarity": "C",
+      "subtype": [
+        "Pegasus"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1B",
+      "count": "1",
+      "edition": {
+        "code": "M14",
+        "name": "Magic 2014 Core Set"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Child of Night",
+      "rarity": "C",
+      "subtype": [
+        "Vampire"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "W",
+      "count": "2",
+      "edition": {
+        "code": "M11",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Condemn",
+      "rarity": "U",
+      "subtype": "",
+      "type": "Instant"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "W",
+      "count": "1",
+      "edition": {
+        "code": "MOR",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Daily Regimen",
+      "rarity": "U",
+      "subtype": [
+        "Aura"
+      ],
+      "type": "Enchantment"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "3WW",
+      "count": "1",
+      "edition": {
+        "code": "M14",
+        "name": "Magic 2014 Core Set"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Dawnstrike Paladin",
+      "rarity": "C",
+      "subtype": [
+        "Human",
+        "Knight"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "XWB",
+      "count": "1",
+      "edition": {
+        "code": "AP",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Death Grasp",
+      "rarity": "R",
+      "subtype": "",
+      "type": "Sorcery"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1B",
+      "count": "1",
+      "edition": {
+        "code": "OD",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Decompose",
+      "rarity": "U",
+      "subtype": "",
+      "type": "Sorcery"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "W",
+      "count": "2",
+      "edition": {
+        "code": "ISD",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Doomed Traveler",
+      "rarity": "C",
+      "subtype": [
+        "Human",
+        "Soldier"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1B",
+      "count": "2",
+      "edition": {
+        "code": "M12",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Duskhunter Bat",
+      "rarity": "C",
+      "subtype": [
+        "Bat"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "",
+      "count": "1",
+      "edition": {
+        "code": "M13",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Evolving Wilds",
+      "rarity": "C",
+      "subtype": "",
+      "type": "Land"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1W",
+      "count": "1",
+      "edition": {
+        "code": "RTR",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Fencing Ace",
+      "rarity": "U",
+      "subtype": [
+        "Human",
+        "Soldier"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "2WW",
+      "count": "1",
+      "edition": {
+        "code": "TE",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Field of Souls",
+      "rarity": "R",
+      "subtype": "",
+      "type": "Enchantment"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1WW",
+      "count": "1",
+      "edition": {
+        "code": "ISD",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Fiend Hunter",
+      "rarity": "U",
+      "subtype": [
+        "Human",
+        "Cleric"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "RW",
+      "count": "1",
+      "edition": {
+        "code": "EVE",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Figure of Destiny",
+      "rarity": "R",
+      "subtype": [
+        "Kithkin"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "2W",
+      "count": "2",
+      "edition": {
+        "code": "DIS",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Freewind Equenaut",
+      "rarity": "C",
+      "subtype": [
+        "Human",
+        "Archer"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "BB",
+      "count": "1",
+      "edition": {
+        "code": "ZEN",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Gatekeeper of Malakir",
+      "rarity": "U",
+      "subtype": [
+        "Vampire",
+        "Warrior"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "2W",
+      "count": "1",
+      "edition": {
+        "code": "TSP",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Griffin Guide",
+      "rarity": "U",
+      "subtype": [
+        "Aura"
+      ],
+      "type": "Enchantment"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "2WW",
+      "count": "1",
+      "edition": {
+        "code": "ONS",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Gustcloak Sentinel",
+      "rarity": "U",
+      "subtype": [
+        "Human",
+        "Soldier"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "4RR",
+      "count": "1",
+      "edition": {
+        "code": "10E",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Kamahl, Pit Fighter",
+      "rarity": "R",
+      "subtype": [
+        "Human",
+        "Barbarian"
+      ],
+      "type": "Legendary Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "2W",
+      "count": "1",
+      "edition": {
+        "code": "DKA",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_textless": false,
+      "is_promo": false,
+      "is_signed": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Lingering Souls",
+      "rarity": "U",
+      "subtype": "",
+      "type": "Sorcery"
+    }
+  ],
+  "number_of_page": "3",
+  "page": "1",
+  "title": "Inventory"
+}
