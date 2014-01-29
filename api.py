@@ -1,24 +1,18 @@
 import os
-from flask import Flask, render_template, jsonify, redirect, url_for, request
+from flask import Flask, render_template, jsonify, redirect, url_for, request, json
 from flask.ext import restful
 from deckbox_crawler import DeckboxCrawler
-
 
 app = Flask(__name__)
 restapi = restful.Api(app, '/api')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-
+    return render_template('index.html', api_doc_list = getApiDocList())
 
 class ApiDoc(restful.Resource):
     def get(self):
-        return jsonify({
-            '/api/users/:username/': 'Get user profile information and sets id.',
-            '/api/users/:username/sets/': 'Get user\'s sets.',
-            '/api/users/:username/sets/:set_id': 'Get cards from a set. Use the p parameter for the pagination.',
-        })
+        return getApiDocList()
 
 class User(restful.Resource):
     def get(self, username):
@@ -58,6 +52,14 @@ restapi.add_resource(User, '/users/<username>/')
 restapi.add_resource(UserSetList, '/users/<string:username>/sets/')
 restapi.add_resource(UserSet, '/users/<string:username>/sets/<set_id>/')
 restapi.add_resource(Card, '/cards/<string:cardname>/')
+
+
+def getApiDocList():
+    json_data = open('api_doc_list.json')
+    api_doc_list = json.load(json_data)
+    json_data.close()
+    return api_doc_list;
+
 
 if __name__ == '__main__':
     app.run(debug=True)

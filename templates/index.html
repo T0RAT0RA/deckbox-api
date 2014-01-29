@@ -44,47 +44,37 @@
 
       <h3>Documentation</h3>
 
-      <div class="panel panel-default">
-        <span class="http-method label label-primary pull-left">GET</span>
-        <div class="panel-heading">
-          <span>/api/users/&lt;username&gt;/</span>
-          <span class="pull-right text-info">Returns user's profile and sets id</span>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <span class="http-method label label-primary pull-left">GET</span>
-        <div class="panel-heading">
-          <span>/api/users/&lt;username&gt;/sets/</span>
-          <span class="pull-right text-info">Returns user's card sets</span>
-        </div>
-      </div>
-
-      <div class="panel panel-default">
-        <span class="http-method label label-primary pull-left">GET</span>
-        <div class="panel-heading">
-          <span>/api/users/&lt;username&gt;/sets/&lt;set_id&gt;/</span>
-          <span class="pull-right text-info">Returns user's set cards</span>
-        </div>
-        <div class="panel-body">
-            <table class="table table-condensed">
-                <thead>
-                  <tr>
-                    <th style="width: 100px;">Parameter</th>
-                    <th style="width: 70px;">Type</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>?page</td>
-                    <td>int</td>
-                    <td>Page number to return</td>
-                  </tr>
-                </tbody>
-            </table>
-        </div>
-      </div>
+      {% for resource in api_doc_list %}
+        <div class="panel panel-default">
+            <span class="http-method label label-primary pull-left">{{ resource.method }}</span>
+            <div class="panel-heading">
+              <span>{{ resource.uri }}</span>
+              <span class="pull-right text-info">{{ resource.description }}</span>
+            </div>
+            {% if resource.parameters %}
+                <div class="panel-body">
+                    <table class="table table-condensed">
+                        <thead>
+                          <tr>
+                            <th style="width: 100px;">Parameter</th>
+                            <th style="width: 70px;">Type</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for parameter in resource.parameters %}
+                          <tr>
+                            <td>?{{ parameter.name }}</td>
+                            <td>{{ parameter.type }}</td>
+                            <td>{{ parameter.description }}</td>
+                          </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+          </div>
+      {% endfor %}
 
     </div>
 
