@@ -8,6 +8,7 @@ class FlaskrTestCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.test_username       = "deckbox_api"
+        cls.test_cardname       = "Ajani, Caller of the Pride"
         cls.empty_deck_id       = "590775"
         cls.standard_deck_id    = "590776"
 
@@ -111,6 +112,17 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertEqual(standard_deck_expected["cards_count"]["cards"], standard_deck_actual["cards_count"]["cards"])
         self.assertEqual(standard_deck_expected["cards_count"]["distinct"], standard_deck_actual["cards_count"]["distinct"])
         self.assertEqual(standard_deck_expected["title"], standard_deck_actual["title"])
+
+    def test_card(self):
+        rv = self.app.get('/api/cards/' + self.test_cardname + "/")
+        card_actual = json.loads(rv.data)
+
+        json_data = open(self.fixture_path + 'card.json')
+        card_expected = json.load(json_data)
+        json_data.close()
+
+        self.assertDictEqual(card_expected["card"], card_actual["card"])
+
 
 if __name__ == '__main__':
     unittest.main()

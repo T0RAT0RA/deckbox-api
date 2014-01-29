@@ -1,0 +1,20 @@
+{
+  "card": {
+    "cost": "1WW",
+    "editions": [
+      {
+        "code": "M14",
+        "name": "Magic 2014 Core Set (MythicRare)"
+      },
+      {
+        "code": "M13",
+        "name": "Magic 2013 (MythicRare)"
+      }
+    ],
+    "name": "Ajani, Caller of the Pride",
+    "subtype": [
+      "Ajani"
+    ],
+    "type": "Planeswalker"
+  }
+}

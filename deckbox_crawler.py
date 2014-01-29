@@ -1,13 +1,22 @@
-import re, datetime
+import re, datetime, urllib
 from pyquery import PyQuery
 
 class DeckboxCrawler:
-    _DECKBOX_DOMAIN = "http://deckbox.org"
+    _HTTP           = "http://"
+    _DECKBOX_DOMAIN = "deckbox.org"
 
-    def __init__(self, username):
-        url = self._DECKBOX_DOMAIN + "/users/" + username
+    def __init__(self, query_type = None, query_value = None):
 
-        self.log("Get user profile page: " + url)
+        if query_type == "profile":
+            query_url = "/users/"
+        elif query_type == "card":
+            query_url = "/mtg/"
+        else:
+            query_url = ""
+
+        url = self._HTTP + urllib.quote(self._DECKBOX_DOMAIN + query_url + query_value)
+
+        self.log("Get page: " + url)
         self._page = PyQuery(url=url)
 
     def getUserProfile(self):
@@ -60,9 +69,28 @@ class DeckboxCrawler:
         if set_object == None:
             return {"status": "error", "description": "The user doesn't have the specified set."}
 
-        set_url  = self._DECKBOX_DOMAIN + "/sets/" + set_object["id"] + "?p=" + str(page)
+        set_url  = self._HTTP + urllib.quote(self._DECKBOX_DOMAIN + "/sets/" + set_object["id"] + "?p=" + str(page))
         return self.getCardsFromPage(set_url)
 
+
+    def getCard(self):
+        card = {}
+        card["name"]    = self._page(".section_title:first").text(),
+        card_types = re.split(r'\s+-\s+', self._page(".card_properties tr:eq(3) td:last").text())
+        card["type"]    = card_types[0]
+        card["subtype"] = re.split(r'\s', card_types[1]) if len(card_types) > 1 else ""
+        card_cost = []
+        for img in self._page(".card_properties tr:eq(2) td:last img").items():
+            card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
+        card["cost"]    = "".join(card_cost)
+        card["editions"] = []
+        for edition in self._page(".card_properties tr:eq(1) td:last img").items():
+            card["editions"].append({
+                "code": re.search(".*/(.*)_.\.jpg$", edition.attr("src")).group(1),
+                "name": edition.attr("data-title")
+            })
+
+        return card
 
     #-------------------------
     #  HELPERS

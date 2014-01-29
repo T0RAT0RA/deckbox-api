@@ -22,7 +22,7 @@ class ApiDoc(restful.Resource):
 
 class User(restful.Resource):
     def get(self, username):
-        deckbox_crawler = DeckboxCrawler(username)
+        deckbox_crawler = DeckboxCrawler("profile", username)
         user_profile    = deckbox_crawler.getUserProfile()
         user_sets       = deckbox_crawler.getUserSets()
 
@@ -33,23 +33,31 @@ class User(restful.Resource):
 
 class UserSetList(restful.Resource):
     def get(self, username):
-        deckbox_crawler = DeckboxCrawler(username)
+        deckbox_crawler = DeckboxCrawler("profile", username)
         user_sets       = deckbox_crawler.getUserSets()
 
         return jsonify(sets = user_sets)
 
 class UserSet(restful.Resource):
     def get(self, username, set_id):
-        deckbox_crawler = DeckboxCrawler(username)
+        deckbox_crawler = DeckboxCrawler("profile", username)
         page = request.args.get('p', 1)
         user_inventory = deckbox_crawler.getUserSetCards(set_id, page)
 
         return jsonify(user_inventory)
 
+class Card(restful.Resource):
+    def get(self, cardname):
+        deckbox_crawler = DeckboxCrawler("card", cardname)
+        card = deckbox_crawler.getCard()
+
+        return jsonify(card = card)
+
 restapi.add_resource(ApiDoc, '/')
 restapi.add_resource(User, '/users/<username>/')
 restapi.add_resource(UserSetList, '/users/<string:username>/sets/')
 restapi.add_resource(UserSet, '/users/<string:username>/sets/<set_id>/')
+restapi.add_resource(Card, '/cards/<string:cardname>/')
 
 if __name__ == '__main__':
     app.run(debug=True)
