@@ -24,17 +24,10 @@ class FlaskrTestCase(unittest.TestCase):
 
     def test_api_profile_infos(self):
         user_profile_actual    = self.profile_data
-        user_profile_expected  = {
-          "bio": "This profile is used to test the Deckbox non-official API: http://deckbox-api.herokuapp.com/",
-          "feedback": "0 (100% positive)",
-          "last_seen_online": {
-            "date": "2014-01-28 00:00:19",
-            "timestamp": "1390885219"
-          },
-          "location": "Canada - Montreal",
-          "username": "John Doe",
-          "will_trade": "My Continent"
-        }
+
+        json_data = open(self.fixture_path + 'user_profile.json')
+        user_profile_expected = json.load(json_data)
+        json_data.close()
 
         self.assertTrue("username" in user_profile_actual)
         self.assertEqual(user_profile_expected["username"], user_profile_actual["username"])
