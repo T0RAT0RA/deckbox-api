@@ -75,10 +75,14 @@ body {
 }
 
 /* Custom section */
-.http-method {
+.documentation .http-method {
     padding: 15px;
     margin-right: 10px;
 }
-.text-info:hover {
+.documentation .try-it {
+    padding: 5px;
+    margin-left: 10px;
+}
+.documentation .text-info:hover {
     color: #31708f;
 }

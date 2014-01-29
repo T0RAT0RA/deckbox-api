@@ -8,7 +8,13 @@ restapi = restful.Api(app, '/api')
 
 @app.route('/')
 def index():
-    return render_template('index.html', api_doc_list = getApiDocList())
+    test_data  = {
+        "username": "deckbox_api",
+        "set_id": "590740",
+        "cardname": "Nicol Bolas, Planeswalker"
+    }
+
+    return render_template('index.html', api_doc_list = getApiDocList(), test_data = test_data)
 
 class ApiDoc(restful.Resource):
     def get(self):

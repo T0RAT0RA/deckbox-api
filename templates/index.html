@@ -47,37 +47,44 @@
 
       <h3>Documentation</h3>
 
-      {% for resource in api_doc_list %}
-        <div class="panel panel-default">
-            <span class="http-method label label-primary pull-left">{{ resource.method }}</span>
-            <div class="panel-heading">
-              <span>{{ resource.uri }}</span>
-              <span class="pull-right text-info">{{ resource.description }}</span>
+      <div class="documentation">
+        {% for resource in api_doc_list %}
+          <div class="panel panel-default">
+              <span class="http-method label label-primary pull-left">{{ resource.method }}</span>
+              <span class="try-it pull-right">
+                <a class="btn btn-sm btn-default" href="{{ resource.uri|replace(":username", test_data["username"])|replace(":set_id", test_data["set_id"])|replace(":cardname", test_data["cardname"]) }}" role="button">
+                  Try it
+                </a>
+              </span>
+              <div class="panel-heading">
+                <span>{{ resource.uri }}</span>
+                <span class="pull-right text-info">{{ resource.description }}</span>
+              </div>
+              {% if resource.parameters %}
+                  <div class="panel-body">
+                      <table class="table table-condensed">
+                          <thead>
+                            <tr>
+                              <th style="width: 100px;">Parameter</th>
+                              <th style="width: 70px;">Type</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for parameter in resource.parameters %}
+                            <tr>
+                              <td>?{{ parameter.name }}</td>
+                              <td>{{ parameter.type }}</td>
+                              <td>{{ parameter.description }}</td>
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                      </table>
+                  </div>
+              {% endif %}
             </div>
-            {% if resource.parameters %}
-                <div class="panel-body">
-                    <table class="table table-condensed">
-                        <thead>
-                          <tr>
-                            <th style="width: 100px;">Parameter</th>
-                            <th style="width: 70px;">Type</th>
-                            <th>Description</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        {% for parameter in resource.parameters %}
-                          <tr>
-                            <td>?{{ parameter.name }}</td>
-                            <td>{{ parameter.type }}</td>
-                            <td>{{ parameter.description }}</td>
-                          </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            {% endif %}
-          </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
 
     </div>
 

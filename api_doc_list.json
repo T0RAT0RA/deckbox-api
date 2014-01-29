@@ -25,7 +25,7 @@
     },
     {
         "method": "GET",
-        "uri": "/cards/:cardname/",
+        "uri": "/api/cards/:cardname/",
         "description": "Returns card information",
         "parameters": []
     }
