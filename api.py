@@ -12,11 +12,12 @@ def index():
     return render_template('index.html')
 
 
-class Api(restful.Resource):
+class ApiDoc(restful.Resource):
     def get(self):
         return jsonify({
-            '/api/:username/': 'Get user profile information and sets id.',
-            '/api/:username/set/:set_id': 'Get cards from a set. Use the p parameter for the pagination.',
+            '/api/users/:username/': 'Get user profile information and sets id.',
+            '/api/users/:username/sets/': 'Get user\'s sets.',
+            '/api/users/:username/sets/:set_id': 'Get cards from a set. Use the p parameter for the pagination.',
         })
 
 class User(restful.Resource):
@@ -30,6 +31,12 @@ class User(restful.Resource):
             sets = user_sets,
         )
 
+class UserSetList(restful.Resource):
+    def get(self, username):
+        deckbox_crawler = DeckboxCrawler(username)
+        user_sets       = deckbox_crawler.getUserSets()
+
+        return jsonify(sets = user_sets)
 
 class UserSet(restful.Resource):
     def get(self, username, set_id):
@@ -39,9 +46,10 @@ class UserSet(restful.Resource):
 
         return jsonify(user_inventory)
 
-restapi.add_resource(Api, '/')
-restapi.add_resource(User, '/<username>/')
-restapi.add_resource(UserSet, '/<username>/set/<set_id>/')
+restapi.add_resource(ApiDoc, '/')
+restapi.add_resource(User, '/users/<username>/')
+restapi.add_resource(UserSetList, '/users/<string:username>/sets/')
+restapi.add_resource(UserSet, '/users/<string:username>/sets/<set_id>/')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,28 @@
+{
+  "sets": [
+    {
+      "id": "590740",
+      "name": "inventory"
+    },
+    {
+      "id": "590741",
+      "name": "tradelist"
+    },
+    {
+      "id": "590742",
+      "name": "wishlist"
+    },
+    {
+      "id": "590776",
+      "name": "Heroes"
+    },
+    {
+      "id": "590777",
+      "name": "Sorin - Hunt and Feed"
+    },
+    {
+      "id": "590775",
+      "name": "Empty deck"
+    }
+  ]
+}

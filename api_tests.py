@@ -12,7 +12,7 @@ class FlaskrTestCase(unittest.TestCase):
         cls.standard_deck_id    = "590776"
 
         cls.app = api.app.test_client()
-        rv = cls.app.get('/api/' + cls.test_username + "/")
+        rv = cls.app.get('/api/users/' + cls.test_username + "/")
         cls.profile_data = json.loads(rv.data)
         cls.fixture_path = "tests/fixtures/"
 
@@ -23,7 +23,7 @@ class FlaskrTestCase(unittest.TestCase):
         pass
 
     def test_api_profile_infos(self):
-        user_profile_actual    = self.profile_data
+        user_profile_actual = self.profile_data
 
         json_data = open(self.fixture_path + 'user_profile.json')
         user_profile_expected = json.load(json_data)
@@ -39,6 +39,21 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertEqual(user_profile_expected["location"], user_profile_actual["location"])
         self.assertTrue("will_trade" in user_profile_actual)
         self.assertEqual(user_profile_expected["will_trade"], user_profile_actual["will_trade"])
+
+    def test_api_user_sets(self):
+        rv = self.app.get('/api/users/' + self.test_username + "/sets/")
+        user_sets_actual = json.loads(rv.data)
+
+        json_data = open(self.fixture_path + 'user_sets.json')
+        user_sets_expected = json.load(json_data)
+        json_data.close()
+
+        self.assertEqual(len(user_sets_expected), len(user_sets_actual))
+
+        # Compare fixture json file with actual response, field by field
+        for i, user_set_expected in enumerate(user_sets_expected["sets"]):
+            self.assertEqual(user_set_expected["id"], user_sets_actual["sets"][i]["id"])
+            self.assertEqual(user_set_expected["name"], user_sets_actual["sets"][i]["name"])
 
     def test_api_profile_default_sets(self):
         user_profile_actual    = self.profile_data
@@ -59,7 +74,7 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertEqual(user_profile_expected["sets"][2]["name"], user_profile_actual["sets"][2]["name"])
 
     def test_api_empty_deck(self):
-        rv = self.app.get('/api/' + self.test_username + "/set/" + self.empty_deck_id + "/")
+        rv = self.app.get('/api/users/' + self.test_username + "/sets/" + self.empty_deck_id + "/")
         empty_deck_actual = json.loads(rv.data)
 
         json_data = open(self.fixture_path + 'empty_deck.json')
@@ -72,7 +87,7 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertEqual(empty_deck_expected["title"], empty_deck_actual["title"])
 
     def test_api_standard_deck(self):
-        rv = self.app.get('/api/' + self.test_username + "/set/" + self.standard_deck_id + "/")
+        rv = self.app.get('/api/users/' + self.test_username + "/sets/" + self.standard_deck_id + "/")
         standard_deck_actual = json.loads(rv.data)
 
         json_data = open(self.fixture_path + 'standard_deck.json')
