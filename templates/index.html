@@ -33,22 +33,57 @@
 
       <div class="jumbotron">
         <p class="lead">
-          Deckbox is a card collection manager. <br />
-          With a smart and responsive user interface for adding cards, you can quickly create an Inventory, Tradelist and Wishlist.<br />
+          This application emulates a deckbox API.<br />
+          It's based on a HTML parser that will get user public information from deckbox and transform in json objects.<br />
+          This is not the official deckbox API.<br />
         </p>
 
         <p><a class="btn btn-primary" href="http://deckbox.org/" role="button">Visit Deckbox</a></p>
 
       </div>
 
-      <div>
-        <p class="lead">
-          This application is an attempt to emulate a deckbox API.<br />
-          It's based on a HTML parser that will retreive all public information from deckbox.<br />
-          This is not the official deckbox API.<br />
-        </p>
+      <h3>Documentation</h3>
 
-        <p><a class="btn btn-default" href="/api" role="button">Try it</a></p>
+      <div class="panel panel-default">
+        <span class="http-method label label-primary pull-left">GET</span>
+        <div class="panel-heading">
+          <span>/api/&lt;username&gt;/</span>
+          <span class="pull-right text-info">Returns user's profile and sets id</span>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <span class="http-method label label-primary pull-left">GET</span>
+        <div class="panel-heading">
+          <span>/api/&lt;username&gt;/sets/</span>
+          <span class="pull-right text-info">Returns user's card sets</span>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <span class="http-method label label-primary pull-left">GET</span>
+        <div class="panel-heading">
+          <span>/api/&lt;username&gt;/sets/&lt;set_id&gt;/</span>
+          <span class="pull-right text-info">Returns user's set cards</span>
+        </div>
+        <div class="panel-body">
+            <table class="table table-condensed">
+                <thead>
+                  <tr>
+                    <th style="width: 100px;">Parameter</th>
+                    <th style="width: 70px;">Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>?page</td>
+                    <td>int</td>
+                    <td>Page number to return</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
       </div>
 
     </div>

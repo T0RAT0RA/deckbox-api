@@ -73,3 +73,12 @@ body {
     border-bottom: 0;
   }
 }
+
+/* Custom section */
+.http-method {
+    padding: 15px;
+    margin-right: 10px;
+}
+.text-info:hover {
+    color: #31708f;
+}
