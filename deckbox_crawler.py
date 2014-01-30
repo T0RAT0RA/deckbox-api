@@ -75,7 +75,7 @@ class DeckboxCrawler:
 
     def getCard(self):
         card = {}
-        card["name"]    = self._page(".section_title:first").text(),
+        card["name"]    = self._page(".section_title:first").text()
         card_types = re.split(r'\s+-\s+', self._page(".card_properties tr:eq(3) td:last").text())
         card["type"]    = card_types[0]
         card["subtype"] = re.split(r'\s', card_types[1]) if len(card_types) > 1 else ""
