@@ -96,7 +96,7 @@ class DeckboxCrawler:
     #  HELPERS
     #-------------------------
     def log(self, message):
-        print "[" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "] LOG - " + message
+        print "LOG - " + message
 
     def getCardsFromPage(self, page_url):
         self.log("Get cards from url: " + page_url)
