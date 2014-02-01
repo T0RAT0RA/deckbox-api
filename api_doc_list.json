@@ -19,19 +19,19 @@
     },
     {
         "method": "GET",
-        "uri": "/api/users/:username/sets/inventory/",
+        "uri": "/api/users/:username/inventory/",
         "description": "Returns user's inventory",
         "parameters": []
     },
     {
         "method": "GET",
-        "uri": "/api/users/:username/sets/tradelist/",
+        "uri": "/api/users/:username/tradelist/",
         "description": "Returns user's tradelist",
         "parameters": []
     },
     {
         "method": "GET",
-        "uri": "/api/users/:username/sets/wishlist/",
+        "uri": "/api/users/:username/wishlist/",
         "description": "Returns user's wishlist",
         "parameters": []
     },
