@@ -21,8 +21,8 @@
       },
       "name": "Absorb Vis",
       "rarity": "C",
-      "subtype": "",
-      "type": "Sorcery"
+      "subtypes": [],
+      "types": []
     },
     {
       "condition": {
@@ -45,11 +45,14 @@
       },
       "name": "Anax and Cymede",
       "rarity": "R",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Soldier"
       ],
-      "type": "Legendary Creature"
+      "types": [
+        "Legendary",
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -72,8 +75,8 @@
       },
       "name": "Ancient Craving",
       "rarity": "R",
-      "subtype": "",
-      "type": "Sorcery"
+      "subtypes": [],
+      "types": []
     },
     {
       "condition": {
@@ -96,11 +99,14 @@
       },
       "name": "Archetype of Aggression",
       "rarity": "U",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Warrior"
       ],
-      "type": "Enchantment Creature"
+      "types": [
+        "Enchantment",
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -123,11 +129,13 @@
       },
       "name": "Armory Guard",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Giant",
         "Soldier"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -150,11 +158,13 @@
       },
       "name": "Auramancer",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Wizard"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -177,10 +187,12 @@
       },
       "name": "Battle Mastery",
       "rarity": "U",
-      "subtype": [
+      "subtypes": [
         "Aura"
       ],
-      "type": "Enchantment"
+      "types": [
+        "Enchantment"
+      ]
     },
     {
       "condition": {
@@ -203,10 +215,12 @@
       },
       "name": "Bloodrage Vampire",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Vampire"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -229,10 +243,12 @@
       },
       "name": "Bonds of Faith",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Aura"
       ],
-      "type": "Enchantment"
+      "types": [
+        "Enchantment"
+      ]
     },
     {
       "condition": {
@@ -255,10 +271,12 @@
       },
       "name": "Boros Guildgate",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Gate"
       ],
-      "type": "Land"
+      "types": [
+        "Land"
+      ]
     },
     {
       "condition": {
@@ -281,11 +299,13 @@
       },
       "name": "Butcher of Malakir",
       "rarity": "R",
-      "subtype": [
+      "subtypes": [
         "Vampire",
         "Warrior"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -308,10 +328,12 @@
       },
       "name": "Cavalry Pegasus",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Pegasus"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -334,10 +356,12 @@
       },
       "name": "Child of Night",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Vampire"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -360,8 +384,8 @@
       },
       "name": "Condemn",
       "rarity": "U",
-      "subtype": "",
-      "type": "Instant"
+      "subtypes": [],
+      "types": []
     },
     {
       "condition": {
@@ -384,10 +408,12 @@
       },
       "name": "Daily Regimen",
       "rarity": "U",
-      "subtype": [
+      "subtypes": [
         "Aura"
       ],
-      "type": "Enchantment"
+      "types": [
+        "Enchantment"
+      ]
     },
     {
       "condition": {
@@ -410,11 +436,13 @@
       },
       "name": "Dawnstrike Paladin",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Knight"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -437,8 +465,8 @@
       },
       "name": "Death Grasp",
       "rarity": "R",
-      "subtype": "",
-      "type": "Sorcery"
+      "subtypes": [],
+      "types": []
     },
     {
       "condition": {
@@ -461,8 +489,8 @@
       },
       "name": "Decompose",
       "rarity": "U",
-      "subtype": "",
-      "type": "Sorcery"
+      "subtypes": [],
+      "types": []
     },
     {
       "condition": {
@@ -485,11 +513,13 @@
       },
       "name": "Doomed Traveler",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Soldier"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -512,10 +542,12 @@
       },
       "name": "Duskhunter Bat",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Bat"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -538,8 +570,8 @@
       },
       "name": "Evolving Wilds",
       "rarity": "C",
-      "subtype": "",
-      "type": "Land"
+      "subtypes": [],
+      "types": []
     },
     {
       "condition": {
@@ -562,11 +594,13 @@
       },
       "name": "Fencing Ace",
       "rarity": "U",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Soldier"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -589,8 +623,8 @@
       },
       "name": "Field of Souls",
       "rarity": "R",
-      "subtype": "",
-      "type": "Enchantment"
+      "subtypes": [],
+      "types": []
     },
     {
       "condition": {
@@ -613,11 +647,13 @@
       },
       "name": "Fiend Hunter",
       "rarity": "U",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Cleric"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -640,10 +676,12 @@
       },
       "name": "Figure of Destiny",
       "rarity": "R",
-      "subtype": [
+      "subtypes": [
         "Kithkin"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -666,11 +704,13 @@
       },
       "name": "Freewind Equenaut",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Archer"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -693,11 +733,13 @@
       },
       "name": "Gatekeeper of Malakir",
       "rarity": "U",
-      "subtype": [
+      "subtypes": [
         "Vampire",
         "Warrior"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -720,10 +762,12 @@
       },
       "name": "Griffin Guide",
       "rarity": "U",
-      "subtype": [
+      "subtypes": [
         "Aura"
       ],
-      "type": "Enchantment"
+      "types": [
+        "Enchantment"
+      ]
     },
     {
       "condition": {
@@ -746,11 +790,13 @@
       },
       "name": "Gustcloak Sentinel",
       "rarity": "U",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Soldier"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -773,11 +819,14 @@
       },
       "name": "Kamahl, Pit Fighter",
       "rarity": "R",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Barbarian"
       ],
-      "type": "Legendary Creature"
+      "types": [
+        "Legendary",
+        "Creature"
+      ]
     }
   ],
   "number_of_page": "3",

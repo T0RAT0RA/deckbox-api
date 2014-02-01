@@ -21,8 +21,8 @@
       },
       "name": "Absorb Vis",
       "rarity": "C",
-      "subtype": "",
-      "type": "Sorcery"
+      "subtypes": [],
+      "types": []
     },
     {
       "condition": {
@@ -45,8 +45,8 @@
       },
       "name": "Ancient Craving",
       "rarity": "R",
-      "subtype": "",
-      "type": "Sorcery"
+      "subtypes": [],
+      "types": []
     },
     {
       "condition": {
@@ -69,10 +69,12 @@
       },
       "name": "Bloodrage Vampire",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Vampire"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -95,11 +97,13 @@
       },
       "name": "Butcher of Malakir",
       "rarity": "R",
-      "subtype": [
+      "subtypes": [
         "Vampire",
         "Warrior"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -122,8 +126,8 @@
       },
       "name": "Condemn",
       "rarity": "U",
-      "subtype": "",
-      "type": "Instant"
+      "subtypes": [],
+      "types": []
     }
   ],
   "number_of_page": "1",

@@ -21,8 +21,8 @@
       },
       "name": "Acolyte's Reward",
       "rarity": "U",
-      "subtype": "",
-      "type": "Instant"
+      "subtypes": [],
+      "types": []
     },
     {
       "condition": {
@@ -45,11 +45,13 @@
       },
       "name": "Akroan Skyguard",
       "rarity": "C",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Soldier"
       ],
-      "type": "Creature"
+      "types": [
+        "Creature"
+      ]
     },
     {
       "condition": {
@@ -72,11 +74,14 @@
       },
       "name": "Archetype of Aggression",
       "rarity": "U",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Warrior"
       ],
-      "type": "Enchantment Creature"
+      "types": [
+        "Enchantment",
+        "Creature"
+      ]
     }
   ],
   "number_of_page": "1",
