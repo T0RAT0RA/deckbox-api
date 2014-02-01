@@ -1,0 +1,85 @@
+{
+  "cards": [
+    {
+      "condition": {
+        "code": "s_star1",
+        "name": "Mint"
+      },
+      "cost": "1W",
+      "count": "4",
+      "edition": {
+        "code": "BNG",
+        "name": "Born of the Gods"
+      },
+      "is_foil": true,
+      "is_promo": true,
+      "is_signed": true,
+      "is_textless": true,
+      "lang": {
+        "code": "flag-de",
+        "name": "German"
+      },
+      "name": "Acolyte's Reward",
+      "rarity": "U",
+      "subtype": "",
+      "type": "Instant"
+    },
+    {
+      "condition": {
+        "code": null,
+        "name": null
+      },
+      "cost": "1W",
+      "count": "1",
+      "edition": {
+        "code": "BNG",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": null,
+        "name": null
+      },
+      "name": "Akroan Skyguard",
+      "rarity": "C",
+      "subtype": [
+        "Human",
+        "Soldier"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star6",
+        "name": "Poor"
+      },
+      "cost": "1RR",
+      "count": "2",
+      "edition": {
+        "code": "BNG",
+        "name": "Born of the Gods"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": true,
+      "lang": {
+        "code": null,
+        "name": null
+      },
+      "name": "Archetype of Aggression",
+      "rarity": "U",
+      "subtype": [
+        "Human",
+        "Warrior"
+      ],
+      "type": "Enchantment Creature"
+    }
+  ],
+  "number_of_page": "1",
+  "page": "1",
+  "title": "Wishlist"
+}

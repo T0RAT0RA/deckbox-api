@@ -76,6 +76,13 @@ class FlaskrTestCase(unittest.TestCase):
 
         self.assertDictEqual(user_inventory_expected, user_inventory_actual)
 
+    def test_user_wishlist(self):
+        url = '/api/users/' + self.test_username + '/wishlist/'
+        user_wishlist_actual   = self.getJsonFromApi(url)
+        user_wishlist_expected = self.getJsonFromFixture('wishlist.json')
+
+        self.assertDictEqual(user_wishlist_expected, user_wishlist_actual)
+
     def test_empty_deck(self):
         rv = self.app.get('/api/users/' + self.test_username + "/sets/" + self.empty_deck_id + "/")
         empty_deck_actual   = json.loads(rv.data)
