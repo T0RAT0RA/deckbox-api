@@ -1,0 +1,132 @@
+{
+  "cards": [
+    {
+      "condition": {
+        "code": "s_star1",
+        "name": "Mint"
+      },
+      "cost": "6B",
+      "count": "1",
+      "edition": {
+        "code": "DDK",
+        "name": "Duel Decks: Sorin vs. Tibalt"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Absorb Vis",
+      "rarity": "C",
+      "subtype": "",
+      "type": "Sorcery"
+    },
+    {
+      "condition": {
+        "code": "s_star3",
+        "name": "Good (Lightly Played)"
+      },
+      "cost": "3B",
+      "count": "1",
+      "edition": {
+        "code": "P2",
+        "name": "Portal Second Age"
+      },
+      "is_foil": true,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Ancient Craving",
+      "rarity": "R",
+      "subtype": "",
+      "type": "Sorcery"
+    },
+    {
+      "condition": {
+        "code": null,
+        "name": null
+      },
+      "cost": "2B",
+      "count": "1",
+      "edition": {
+        "code": "M12",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": null,
+        "name": null
+      },
+      "name": "Bloodrage Vampire",
+      "rarity": "C",
+      "subtype": [
+        "Vampire"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star3",
+        "name": "Good (Lightly Played)"
+      },
+      "cost": "5BB",
+      "count": "1",
+      "edition": {
+        "code": "WWK",
+        "name": "Worldwake"
+      },
+      "is_foil": true,
+      "is_promo": true,
+      "is_signed": true,
+      "is_textless": true,
+      "lang": {
+        "code": "flag-pt",
+        "name": "Portuguese"
+      },
+      "name": "Butcher of Malakir",
+      "rarity": "R",
+      "subtype": [
+        "Vampire",
+        "Warrior"
+      ],
+      "type": "Creature"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "W",
+      "count": "1",
+      "edition": {
+        "code": "M11",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Condemn",
+      "rarity": "U",
+      "subtype": "",
+      "type": "Instant"
+    }
+  ],
+  "number_of_page": "1",
+  "page": "1",
+  "title": "Tradelist"
+}

@@ -25,6 +25,12 @@
     },
     {
         "method": "GET",
+        "uri": "/api/users/:username/sets/tradelist/",
+        "description": "Returns user's tradelist",
+        "parameters": []
+    },
+    {
+        "method": "GET",
         "uri": "/api/users/:username/sets/wishlist/",
         "description": "Returns user's wishlist",
         "parameters": []
