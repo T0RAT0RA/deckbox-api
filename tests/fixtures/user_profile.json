@@ -2,10 +2,11 @@
   "bio": "This profile is used to test the Deckbox non-official API: http://deckbox-api.herokuapp.com/",
   "feedback": "0 (100% positive)",
   "last_seen_online": {
-    "date": "2014-01-28 08:01:03",
-    "timestamp": "1390914063"
+    "date": "2014-01-31 20:28:59",
+    "timestamp": "1391218139"
   },
   "location": "Canada - Montreal",
+  "picture": "http://deckbox.org/system/avatars/55107.png?1391218194",
   "sets": [
     {
       "id": "590740",

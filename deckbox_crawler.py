@@ -30,6 +30,7 @@ class DeckboxCrawler:
             },
             "username": fields[1],
             "location": fields[2],
+            "picture": self._HTTP + self._DECKBOX_DOMAIN + self._page("#profile_page_wrapper .friend_img").attr("src"),
             "feedback": fields[3],
             "will_trade": fields[4],
             "bio": self._page(".user_bio").text(),

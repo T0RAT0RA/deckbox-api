@@ -5,6 +5,7 @@ from flask import json, jsonify
 
 class FlaskrTestCase(unittest.TestCase):
 
+    maxDiff = None
     @classmethod
     def setUpClass(cls):
         cls.test_username       = "deckbox_api"
@@ -30,16 +31,7 @@ class FlaskrTestCase(unittest.TestCase):
         user_profile_expected = json.load(json_data)
         json_data.close()
 
-        self.assertTrue("username" in user_profile_actual)
-        self.assertEqual(user_profile_expected["username"], user_profile_actual["username"])
-        self.assertTrue("bio" in user_profile_actual)
-        self.assertEqual(user_profile_expected["bio"], user_profile_actual["bio"])
-        self.assertTrue("feedback" in user_profile_actual)
-        self.assertEqual(user_profile_expected["feedback"], user_profile_actual["feedback"])
-        self.assertTrue("location" in user_profile_actual)
-        self.assertEqual(user_profile_expected["location"], user_profile_actual["location"])
-        self.assertTrue("will_trade" in user_profile_actual)
-        self.assertEqual(user_profile_expected["will_trade"], user_profile_actual["will_trade"])
+        self.assertDictEqual(user_profile_expected, user_profile_actual)
 
     def test_user_profile_default_sets(self):
         user_profile_actual    = self.profile_data
