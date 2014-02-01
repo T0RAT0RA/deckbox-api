@@ -6,26 +6,22 @@ from flask import json, jsonify
 class FlaskrTestCase(unittest.TestCase):
 
     maxDiff = None
-    @classmethod
-    def setUpClass(cls):
-        cls.test_username       = "deckbox_api"
-        cls.test_cardname       = "Ajani, Caller of the Pride"
-        cls.empty_deck_id       = "590775"
-        cls.standard_deck_id    = "590776"
-
-        cls.app = api.app.test_client()
-        rv = cls.app.get('/api/users/' + cls.test_username + "/")
-        cls.profile_data = json.loads(rv.data)
-        cls.fixture_path = "tests/fixtures/"
 
     def setUp(self):
-        pass
+        self.test_username      = "deckbox_api"
+        self.test_cardname      = "Ajani, Caller of the Pride"
+        self.empty_deck_id      = "590775"
+        self.standard_deck_id   = "590776"
+        self.fixture_path       = "tests/fixtures/"
+
+        self.app = api.app.test_client()
 
     def tearDown(self):
         pass
 
     def test_user_profile(self):
-        user_profile_actual = self.profile_data
+        url = '/api/users/' + self.test_username + '/'
+        user_profile_actual = self.getJsonFromApi(url)
 
         json_data = open(self.fixture_path + 'user_profile.json')
         user_profile_expected = json.load(json_data)
@@ -40,8 +36,8 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertDictEqual(user_profile_expected, user_profile_actual)
 
     def test_user_friends(self):
-        rv = self.app.get('/api/users/' + self.test_username + "/friends/")
-        user_friends_actual = json.loads(rv.data)
+        url = '/api/users/' + self.test_username + '/friends/'
+        user_friends_actual = self.getJsonFromApi(url)
 
         json_data = open(self.fixture_path + 'user_friends.json')
         user_friends_expected = json.load(json_data)
@@ -50,7 +46,9 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertDictEqual(user_friends_expected, user_friends_actual)
 
     def test_user_profile_default_sets(self):
-        user_profile_actual    = self.profile_data
+        url = '/api/users/' + self.test_username + '/'
+        user_profile_actual = self.getJsonFromApi(url)
+
         user_profile_expected  = {
           "sets": [
             {"id": "590740", "name": "inventory"},
@@ -69,8 +67,8 @@ class FlaskrTestCase(unittest.TestCase):
 
 
     def test_user_sets(self):
-        rv = self.app.get('/api/users/' + self.test_username + "/sets/")
-        user_sets_actual = json.loads(rv.data)
+        url = '/api/users/' + self.test_username + '/sets/'
+        user_sets_actual = self.getJsonFromApi(url)
 
         json_data = open(self.fixture_path + 'user_sets.json')
         user_sets_expected = json.load(json_data)
@@ -81,8 +79,8 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertListEqual(user_sets_expected["sets"], user_sets_actual["sets"])
 
     def test_user_inventory(self):
-        rv = self.app.get('/api/users/' + self.test_username + "/sets/590740/")
-        user_inventory_actual = json.loads(rv.data)
+        url = '/api/users/' + self.test_username + '/sets/590740/'
+        user_inventory_actual = self.getJsonFromApi(url)
 
         json_data = open(self.fixture_path + 'inventory.json')
         user_inventory_expected = json.load(json_data)
@@ -109,8 +107,8 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertEqual(empty_deck_expected["title"], empty_deck_actual["title"])
 
     def test_standard_deck(self):
-        rv = self.app.get('/api/users/' + self.test_username + "/sets/" + self.standard_deck_id + "/")
-        standard_deck_actual = json.loads(rv.data)
+        url = '/api/users/' + self.test_username + '/sets/' + self.standard_deck_id + '/'
+        standard_deck_actual = self.getJsonFromApi(url)
 
         json_data = open(self.fixture_path + 'standard_deck.json')
         standard_deck_expected = json.load(json_data)
@@ -122,8 +120,8 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertEqual(standard_deck_expected["title"], standard_deck_actual["title"])
 
     def test_card(self):
-        rv = self.app.get('/api/cards/' + self.test_cardname + "/")
-        card_actual = json.loads(rv.data)
+        url = '/api/cards/' + self.test_cardname + '/'
+        card_actual = self.getJsonFromApi(url)
 
         json_data = open(self.fixture_path + 'card.json')
         card_expected = json.load(json_data)
@@ -131,6 +129,18 @@ class FlaskrTestCase(unittest.TestCase):
 
         self.assertDictEqual(card_expected["card"], card_actual["card"])
 
+
+    #-------------------------
+    #  HELPERS
+    #-------------------------
+    def getJsonFromApi(self, url):
+        page = self.app.get(url)
+        try:
+            json_data = json.loads(page.data)
+        except ValueError:
+            self.fail('No JSON found from URL: ' + url + "\n" + page.data)
+
+        return json_data
 
 if __name__ == '__main__':
     unittest.main()
