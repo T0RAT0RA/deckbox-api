@@ -86,3 +86,9 @@ body {
 .documentation .text-info:hover {
     color: #31708f;
 }
+.documentation .open-panel:hover {
+    cursor: pointer;
+}
+.documentation .panel-heading .glyphicon {
+    margin-left: 20px;
+}

@@ -9,8 +9,8 @@
 
     <title>Deckbox API - non-official</title>
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/static/css/jumbotron-narrow.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -50,14 +50,17 @@
       <div class="documentation">
         {% for resource in api_doc_list %}
           <div class="panel panel-default">
-              <span class="http-method label label-primary pull-left">{{ resource.method }}</span>
+              <span class="http-method {{ 'open-panel' if resource.parameters }} label label-primary pull-left">{{ resource.method }}</span>
               <span class="try-it pull-right">
                 <a class="btn btn-sm btn-default" href="{{ resource.uri|replace(":username", test_data["username"])|replace(":set_id", test_data["set_id"])|replace(":cardname", test_data["cardname"]) }}" role="button">
                   Try it
                 </a>
               </span>
-              <div class="panel-heading">
+              <div class="panel-heading {{ 'open-panel' if resource.parameters }}">
                 <span>{{ resource.uri }}</span>
+                {% if resource.parameters %}
+                  <span class="glyphicon glyphicon-chevron-up"></span>
+                {% endif %}
                 <span class="pull-right text-info">{{ resource.description }}</span>
               </div>
               {% if resource.parameters %}
@@ -88,5 +91,15 @@
 
     </div>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $(".documentation .panel-body").hide();
+          $(".documentation").on("click", ".open-panel", function(){
+            $(this).parents(".panel:first").find(".panel-body").slideToggle();
+            $(this).parents(".panel:first").find(".panel-heading .glyphicon").toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
+          });
+        });
+    </script>
   </body>
 </html>
