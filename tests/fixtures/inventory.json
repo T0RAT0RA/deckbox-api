@@ -12,9 +12,9 @@
         "name": "Duel Decks: Sorin vs. Tibalt"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -36,9 +36,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -63,9 +63,9 @@
         "name": "Portal Second Age"
       },
       "is_foil": true,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -74,6 +74,33 @@
       "rarity": "R",
       "subtype": "",
       "type": "Sorcery"
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1RR",
+      "count": "1",
+      "edition": {
+        "code": "BNG",
+        "name": "Born of the Gods"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Archetype of Aggression",
+      "rarity": "U",
+      "subtype": [
+        "Human",
+        "Warrior"
+      ],
+      "type": "Enchantment Creature"
     },
     {
       "condition": {
@@ -87,9 +114,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": null,
         "name": null
@@ -114,9 +141,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": null,
         "name": null
@@ -141,9 +168,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-fr",
         "name": "French"
@@ -167,9 +194,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": null,
         "name": null
@@ -193,9 +220,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -219,9 +246,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -245,9 +272,9 @@
         "name": "Worldwake"
       },
       "is_foil": true,
-      "is_textless": true,
       "is_promo": true,
       "is_signed": true,
+      "is_textless": true,
       "lang": {
         "code": "flag-pt",
         "name": "Portuguese"
@@ -272,9 +299,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -298,9 +325,9 @@
         "name": "Magic 2014 Core Set"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -324,9 +351,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -348,9 +375,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -374,9 +401,9 @@
         "name": "Magic 2014 Core Set"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -401,9 +428,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -425,9 +452,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -449,9 +476,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -476,9 +503,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -502,9 +529,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -526,9 +553,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -553,9 +580,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -577,9 +604,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -604,9 +631,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -630,9 +657,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -657,9 +684,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -684,9 +711,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -710,9 +737,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -737,9 +764,9 @@
         "name": "[unknown edition]"
       },
       "is_foil": false,
-      "is_textless": false,
       "is_promo": false,
       "is_signed": false,
+      "is_textless": false,
       "lang": {
         "code": "flag-us",
         "name": "English"
@@ -751,30 +778,6 @@
         "Barbarian"
       ],
       "type": "Legendary Creature"
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "2W",
-      "count": "1",
-      "edition": {
-        "code": "DKA",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_textless": false,
-      "is_promo": false,
-      "is_signed": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Lingering Souls",
-      "rarity": "U",
-      "subtype": "",
-      "type": "Sorcery"
     }
   ],
   "number_of_page": "3",
