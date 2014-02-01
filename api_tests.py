@@ -31,6 +31,12 @@ class FlaskrTestCase(unittest.TestCase):
         user_profile_expected = json.load(json_data)
         json_data.close()
 
+        #Check if the last_seen_online value exist, not the value
+        self.assertTrue("last_seen_online" in user_profile_actual)
+        self.assertTrue("timestamp" in user_profile_actual["last_seen_online"])
+        self.assertTrue("date" in user_profile_actual["last_seen_online"])
+
+        user_profile_actual.pop("last_seen_online", None)
         self.assertDictEqual(user_profile_expected, user_profile_actual)
 
     def test_user_profile_default_sets(self):
