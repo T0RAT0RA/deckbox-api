@@ -49,7 +49,14 @@ class UserSet(restful.Resource):
     def get(self, username, set_id):
         deckbox_crawler = DeckboxCrawler("profile", username)
         page = request.args.get('p', 1)
-        user_inventory = deckbox_crawler.getUserSetCards(set_id, page)
+        user_set = deckbox_crawler.getUserSetCards(set_id, page)
+
+        return jsonify(user_set)
+
+class UserInventory(restful.Resource):
+    def get(self, username):
+        deckbox_crawler = DeckboxCrawler("profile", username)
+        user_inventory = deckbox_crawler.getUserSetCards("inventory")
 
         return jsonify(user_inventory)
 
@@ -64,6 +71,7 @@ restapi.add_resource(ApiDoc, '/')
 restapi.add_resource(User, '/users/<username>/')
 restapi.add_resource(UserFriend, '/users/<username>/friends/')
 restapi.add_resource(UserSetList, '/users/<string:username>/sets/')
+restapi.add_resource(UserInventory, '/users/<string:username>/inventory/')
 restapi.add_resource(UserSet, '/users/<string:username>/sets/<set_id>/')
 restapi.add_resource(Card, '/cards/<string:cardname>/')
 

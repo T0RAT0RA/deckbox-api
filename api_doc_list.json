@@ -19,6 +19,12 @@
     },
     {
         "method": "GET",
+        "uri": "/api/users/:username/sets/inventory/",
+        "description": "Returns user's inventory",
+        "parameters": []
+    },
+    {
+        "method": "GET",
         "uri": "/api/users/:username/sets/:set_id",
         "description": "Returns user's set cards",
         "parameters": [

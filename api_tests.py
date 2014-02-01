@@ -79,7 +79,7 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertListEqual(user_sets_expected["sets"], user_sets_actual["sets"])
 
     def test_user_inventory(self):
-        url = '/api/users/' + self.test_username + '/sets/590740/'
+        url = '/api/users/' + self.test_username + '/inventory/'
         user_inventory_actual = self.getJsonFromApi(url)
 
         json_data = open(self.fixture_path + 'inventory.json')

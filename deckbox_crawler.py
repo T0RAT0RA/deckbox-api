@@ -66,7 +66,7 @@ class DeckboxCrawler:
             else:
                 current_set["name"] = a.attr("data-title")
 
-            if set_id and set_id == current_set["id"]:
+            if set_id and (set_id == current_set["id"] or set_id == current_set["name"]):
                 return current_set
 
             sets.append(current_set)
