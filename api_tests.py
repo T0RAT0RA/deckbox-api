@@ -21,11 +21,8 @@ class FlaskrTestCase(unittest.TestCase):
 
     def test_user_profile(self):
         url = '/api/users/' + self.test_username + '/'
-        user_profile_actual = self.getJsonFromApi(url)
-
-        json_data = open(self.fixture_path + 'user_profile.json')
-        user_profile_expected = json.load(json_data)
-        json_data.close()
+        user_profile_actual     = self.getJsonFromApi(url)
+        user_profile_expected   = self.getJsonFromFixture('user_profile.json')
 
         #Check if the last_seen_online value exist, not the value
         self.assertTrue("last_seen_online" in user_profile_actual)
@@ -37,11 +34,8 @@ class FlaskrTestCase(unittest.TestCase):
 
     def test_user_friends(self):
         url = '/api/users/' + self.test_username + '/friends/'
-        user_friends_actual = self.getJsonFromApi(url)
-
-        json_data = open(self.fixture_path + 'user_friends.json')
-        user_friends_expected = json.load(json_data)
-        json_data.close()
+        user_friends_actual     = self.getJsonFromApi(url)
+        user_friends_expected   = self.getJsonFromFixture('user_friends.json')
 
         self.assertDictEqual(user_friends_expected, user_friends_actual)
 
@@ -68,11 +62,8 @@ class FlaskrTestCase(unittest.TestCase):
 
     def test_user_sets(self):
         url = '/api/users/' + self.test_username + '/sets/'
-        user_sets_actual = self.getJsonFromApi(url)
-
-        json_data = open(self.fixture_path + 'user_sets.json')
-        user_sets_expected = json.load(json_data)
-        json_data.close()
+        user_sets_actual    = self.getJsonFromApi(url)
+        user_sets_expected  = self.getJsonFromFixture('user_sets.json')
 
         self.assertEqual(len(user_sets_expected), len(user_sets_actual))
 
@@ -80,26 +71,15 @@ class FlaskrTestCase(unittest.TestCase):
 
     def test_user_inventory(self):
         url = '/api/users/' + self.test_username + '/inventory/'
-        user_inventory_actual = self.getJsonFromApi(url)
+        user_inventory_actual   = self.getJsonFromApi(url)
+        user_inventory_expected = self.getJsonFromFixture('inventory.json')
 
-        json_data = open(self.fixture_path + 'inventory.json')
-        user_inventory_expected = json.load(json_data)
-        json_data.close()
-
-        self.assertEqual(len(user_inventory_expected["cards"]), len(user_inventory_actual["cards"]))
-        self.assertEqual(user_inventory_expected["number_of_page"], user_inventory_actual["number_of_page"])
-        self.assertEqual(user_inventory_expected["page"], user_inventory_actual["page"])
-        self.assertEqual(user_inventory_expected["title"], user_inventory_actual["title"])
-
-        self.assertListEqual(user_inventory_expected["cards"], user_inventory_actual["cards"])
+        self.assertDictEqual(user_inventory_expected, user_inventory_actual)
 
     def test_empty_deck(self):
         rv = self.app.get('/api/users/' + self.test_username + "/sets/" + self.empty_deck_id + "/")
-        empty_deck_actual = json.loads(rv.data)
-
-        json_data = open(self.fixture_path + 'empty_deck.json')
-        empty_deck_expected = json.load(json_data)
-        json_data.close()
+        empty_deck_actual   = json.loads(rv.data)
+        empty_deck_expected = self.getJsonFromFixture('empty_deck.json')
 
         self.assertEqual(len(empty_deck_expected["cards"]), 0)
         self.assertEqual(empty_deck_expected["cards_count"]["cards"], empty_deck_actual["cards_count"]["cards"])
@@ -108,11 +88,8 @@ class FlaskrTestCase(unittest.TestCase):
 
     def test_standard_deck(self):
         url = '/api/users/' + self.test_username + '/sets/' + self.standard_deck_id + '/'
-        standard_deck_actual = self.getJsonFromApi(url)
-
-        json_data = open(self.fixture_path + 'standard_deck.json')
-        standard_deck_expected = json.load(json_data)
-        json_data.close()
+        standard_deck_actual    = self.getJsonFromApi(url)
+        standard_deck_expected  = self.getJsonFromFixture('standard_deck.json')
 
         self.assertEqual(len(standard_deck_expected["cards"]), len(standard_deck_actual["cards"]))
         self.assertEqual(standard_deck_expected["cards_count"]["cards"], standard_deck_actual["cards_count"]["cards"])
@@ -121,11 +98,8 @@ class FlaskrTestCase(unittest.TestCase):
 
     def test_card(self):
         url = '/api/cards/' + self.test_cardname + '/'
-        card_actual = self.getJsonFromApi(url)
-
-        json_data = open(self.fixture_path + 'card.json')
-        card_expected = json.load(json_data)
-        json_data.close()
+        card_actual     = self.getJsonFromApi(url)
+        card_expected   = self.getJsonFromFixture('card.json')
 
         self.assertDictEqual(card_expected["card"], card_actual["card"])
 
@@ -141,6 +115,13 @@ class FlaskrTestCase(unittest.TestCase):
             self.fail('No JSON found from URL: ' + url + "\n" + page.data)
 
         return json_data
+
+    def getJsonFromFixture(self, fixture_file):
+        json_data = open(self.fixture_path + fixture_file)
+        fixture_data = json.load(json_data)
+        json_data.close()
+
+        return fixture_data
 
 if __name__ == '__main__':
     unittest.main()
