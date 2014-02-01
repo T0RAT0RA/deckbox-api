@@ -7,6 +7,12 @@
     },
     {
         "method": "GET",
+        "uri": "/api/users/:username/friends/",
+        "description": "Returns user's friends list",
+        "parameters": []
+    },
+    {
+        "method": "GET",
         "uri": "/api/users/:username/sets/",
         "description": "Returns user's card sets",
         "parameters": []

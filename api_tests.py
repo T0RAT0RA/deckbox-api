@@ -39,6 +39,16 @@ class FlaskrTestCase(unittest.TestCase):
         user_profile_actual.pop("last_seen_online", None)
         self.assertDictEqual(user_profile_expected, user_profile_actual)
 
+    def test_user_friends(self):
+        rv = self.app.get('/api/users/' + self.test_username + "/friends/")
+        user_friends_actual = json.loads(rv.data)
+
+        json_data = open(self.fixture_path + 'user_friends.json')
+        user_friends_expected = json.load(json_data)
+        json_data.close()
+
+        self.assertDictEqual(user_friends_expected, user_friends_actual)
+
     def test_user_profile_default_sets(self):
         user_profile_actual    = self.profile_data
         user_profile_expected  = {

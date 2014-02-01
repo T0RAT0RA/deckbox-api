@@ -14,10 +14,8 @@ class DeckboxCrawler:
         else:
             query_url = ""
 
-        url = self._HTTP + urllib.quote(self._DECKBOX_DOMAIN + query_url + query_value)
-
-        self.log("Get page: " + url)
-        self._page = PyQuery(url=url)
+        page_url = self._HTTP + urllib.quote(self._DECKBOX_DOMAIN + query_url + query_value)
+        self.getPage(page_url)
 
     def getUserProfile(self):
         fields = [h.text() for h in self._page("#section_profile dd").items()]
@@ -35,6 +33,21 @@ class DeckboxCrawler:
             "will_trade": fields[4],
             "bio": self._page(".user_bio").text(),
         }
+
+    def getUserFriends(self):
+        self.getPage(self._page_url + "/friends")
+
+        friends = []
+
+        #Get all sets
+        for i, profiles in enumerate(self._page("#all_friends .profile_wrapper").items()):
+            current_friend = {}
+            current_friend["username"] = profiles.find(".data a").attr("href").replace("/users/", "")
+            current_friend["picture"] = self._HTTP + self._DECKBOX_DOMAIN + profiles.find(".friend_img").attr("src")
+
+            friends.append(current_friend)
+
+        return friends
 
     def getUserSets(self, set_id = None):
         sets = []
@@ -71,7 +84,8 @@ class DeckboxCrawler:
             return {"status": "error", "description": "The user doesn't have the specified set."}
 
         set_url  = self._HTTP + urllib.quote(self._DECKBOX_DOMAIN + "/sets/" + set_object["id"] + "?p=" + str(page))
-        return self.getCardsFromPage(set_url)
+        self.getPage(set_url)
+        return self.getCardsFromPage()
 
 
     def getCard(self):
@@ -99,10 +113,12 @@ class DeckboxCrawler:
     def log(self, message):
         print "LOG - " + message
 
-    def getCardsFromPage(self, page_url):
+    def getPage(self, page_url):
         self.log("Get cards from url: " + page_url)
+        self._page_url = page_url
+        self._page = PyQuery(url=page_url)
 
-        self._page      = PyQuery(url=page_url)
+    def getCardsFromPage(self):
         is_deck_page    = True if self._page(".main.deck") else False
         cards           = self.getCardsFromTable(is_deck_page)
 
