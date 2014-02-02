@@ -22,7 +22,9 @@
       "name": "Absorb Vis",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -76,7 +78,9 @@
       "name": "Ancient Craving",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -385,7 +389,9 @@
       "name": "Condemn",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -466,7 +472,9 @@
       "name": "Death Grasp",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -490,7 +498,9 @@
       "name": "Decompose",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -571,7 +581,9 @@
       "name": "Evolving Wilds",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Land"
+      ]
     },
     {
       "condition": {
@@ -624,7 +636,9 @@
       "name": "Field of Souls",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Enchantment"
+      ]
     },
     {
       "condition": {

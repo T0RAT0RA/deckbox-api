@@ -22,7 +22,9 @@
       "name": "Absorb Vis",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -46,7 +48,9 @@
       "name": "Ancient Craving",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -127,7 +131,9 @@
       "name": "Condemn",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     }
   ],
   "number_of_page": "1",

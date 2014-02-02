@@ -22,7 +22,9 @@
       "name": "Ancient Craving",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -46,7 +48,9 @@
       "name": "Absorb Vis",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -70,7 +74,9 @@
       "name": "Pyrokinesis",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -94,31 +100,9 @@
       "name": "Miraculous Recovery",
       "rarity": "U",
       "subtypes": [],
-      "types": []
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "2WW",
-      "count": "1",
-      "edition": {
-        "code": "TE",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Field of Souls",
-      "rarity": "R",
-      "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -142,7 +126,35 @@
       "name": "Winds of Rath",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "2WW",
+      "count": "1",
+      "edition": {
+        "code": "TE",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Field of Souls",
+      "rarity": "R",
+      "subtypes": [],
+      "types": [
+        "Enchantment"
+      ]
     },
     {
       "condition": {
@@ -166,7 +178,9 @@
       "name": "Death Grasp",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -190,7 +204,9 @@
       "name": "Decompose",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -214,7 +230,9 @@
       "name": "Tainted Field",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Land"
+      ]
     },
     {
       "condition": {
@@ -296,7 +314,9 @@
       "name": "Stand Firm",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -331,30 +351,6 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "1WB",
-      "count": "1",
-      "edition": {
-        "code": "GPT",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Mortify",
-      "rarity": "U",
-      "subtypes": [],
-      "types": []
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
       "cost": "4B",
       "count": "1",
       "edition": {
@@ -376,6 +372,32 @@
       ],
       "types": [
         "Creature"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1WB",
+      "count": "1",
+      "edition": {
+        "code": "GPT",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Mortify",
+      "rarity": "U",
+      "subtypes": [],
+      "types": [
+        "Instant"
       ]
     },
     {
@@ -412,34 +434,6 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "2W",
-      "count": "1",
-      "edition": {
-        "code": "TSP",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Griffin Guide",
-      "rarity": "U",
-      "subtypes": [
-        "Aura"
-      ],
-      "types": [
-        "Enchantment"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
       "cost": "2R",
       "count": "1",
       "edition": {
@@ -455,6 +449,34 @@
         "name": "English"
       },
       "name": "Undying Rage",
+      "rarity": "U",
+      "subtypes": [
+        "Aura"
+      ],
+      "types": [
+        "Enchantment"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "2W",
+      "count": "1",
+      "edition": {
+        "code": "TSP",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Griffin Guide",
       "rarity": "U",
       "subtypes": [
         "Aura"
@@ -485,7 +507,9 @@
       "name": "New Benalia",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Land"
+      ]
     },
     {
       "condition": {
@@ -595,34 +619,8 @@
       "name": "Spectral Procession",
       "rarity": "U",
       "subtypes": [],
-      "types": []
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "RW",
-      "count": "1",
-      "edition": {
-        "code": "EVE",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Figure of Destiny",
-      "rarity": "R",
-      "subtypes": [
-        "Kithkin"
-      ],
       "types": [
-        "Creature"
+        "Sorcery"
       ]
     },
     {
@@ -659,6 +657,34 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
+      "cost": "RW",
+      "count": "1",
+      "edition": {
+        "code": "EVE",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Figure of Destiny",
+      "rarity": "R",
+      "subtypes": [
+        "Kithkin"
+      ],
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
       "cost": "WBWBWB",
       "count": "1",
       "edition": {
@@ -676,7 +702,35 @@
       "name": "Unmake",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "WB",
+      "count": "1",
+      "edition": {
+        "code": "ARB",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Zealous Persecution",
+      "rarity": "U",
+      "subtypes": [],
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -712,30 +766,6 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "WB",
-      "count": "1",
-      "edition": {
-        "code": "ARB",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Zealous Persecution",
-      "rarity": "U",
-      "subtypes": [],
-      "types": []
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
       "cost": "W",
       "count": "1",
       "edition": {
@@ -753,7 +783,9 @@
       "name": "Righteousness",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {

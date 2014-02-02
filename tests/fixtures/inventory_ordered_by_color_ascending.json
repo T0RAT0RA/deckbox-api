@@ -164,7 +164,9 @@
       "name": "Condemn",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -303,7 +305,9 @@
       "name": "Field of Souls",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Enchantment"
+      ]
     },
     {
       "condition": {
@@ -442,7 +446,9 @@
       "name": "Lingering Souls",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -495,7 +501,9 @@
       "name": "Miraculous Recovery",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -519,7 +527,9 @@
       "name": "Moment of Heroism",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -543,7 +553,9 @@
       "name": "Pay No Heed",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -596,7 +608,9 @@
       "name": "Righteousness",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -620,7 +634,9 @@
       "name": "Smite the Monstrous",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -644,7 +660,9 @@
       "name": "Spectral Procession",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -668,7 +686,9 @@
       "name": "Stand Firm",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -805,7 +825,9 @@
       "name": "Winds of Rath",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     }
   ],
   "number_of_page": "3",

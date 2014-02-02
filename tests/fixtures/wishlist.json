@@ -22,7 +22,9 @@
       "name": "Acolyte's Reward",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {

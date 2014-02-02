@@ -211,7 +211,7 @@ class DeckboxCrawler:
                 card["count"]   = tr.find("td.card_count").text()
                 card["name"]    = tr.find("a").text()
                 card_types = re.split(r'\s+-\s+', tr.find("td").eq(2).find("span").text())
-                card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else []
+                card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
                 card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
                 card_cost = []
                 for img in tr.find("td.card_cost img").items():
@@ -280,7 +280,7 @@ class DeckboxCrawler:
                 } if tr.find(".flag") else {"code": None, "name": None}
 
                 card_types = re.split(r'\s+-\s+', tr.find("td").eq(3).text())
-                card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else []
+                card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
                 card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
 
                 card_cost = []

@@ -22,7 +22,9 @@
       "name": "Zealous Persecution",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -46,7 +48,9 @@
       "name": "Winds of Rath",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -98,7 +102,9 @@
       "name": "Vampire's Bite",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -208,7 +214,9 @@
       "name": "Urge to Feed",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -232,7 +240,9 @@
       "name": "Unmake",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -370,7 +380,9 @@
       "name": "Tainted Field",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Land"
+      ]
     },
     {
       "condition": {
@@ -480,7 +492,9 @@
       "name": "Stand Firm",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -504,7 +518,9 @@
       "name": "Spectral Procession",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -556,7 +572,9 @@
       "name": "Sorin's Thirst",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -609,7 +627,9 @@
       "name": "Smite the Monstrous",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -661,7 +681,9 @@
       "name": "Righteousness",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -713,7 +735,9 @@
       "name": "Pyrokinesis",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -795,7 +819,9 @@
       "name": "Pay No Heed",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     }
   ],
   "number_of_page": "3",

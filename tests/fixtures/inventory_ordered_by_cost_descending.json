@@ -22,7 +22,9 @@
       "name": "Absorb Vis",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -105,7 +107,9 @@
       "name": "Pyrokinesis",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -186,7 +190,9 @@
       "name": "Miraculous Recovery",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -295,7 +301,9 @@
       "name": "Winds of Rath",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -319,7 +327,9 @@
       "name": "Ancient Craving",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "condition": {
@@ -372,7 +382,9 @@
       "name": "Field of Souls",
       "rarity": "R",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Enchantment"
+      ]
     },
     {
       "condition": {
@@ -511,7 +523,9 @@
       "name": "Smite the Monstrous",
       "rarity": "C",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Instant"
+      ]
     },
     {
       "condition": {
@@ -822,7 +836,9 @@
       "name": "Lingering Souls",
       "rarity": "U",
       "subtypes": [],
-      "types": []
+      "types": [
+        "Sorcery"
+      ]
     }
   ],
   "number_of_page": "3",
