@@ -65,20 +65,24 @@
               </div>
               {% if resource.parameters %}
                   <div class="panel-body">
-                      <table class="table table-condensed">
+                      <table class="table table-condensed table-striped">
                           <thead>
                             <tr>
                               <th style="width: 100px;">Parameter</th>
                               <th style="width: 70px;">Type</th>
                               <th>Description</th>
+                              <th>Default value</th>
+                              <th>Possible values</th>
                             </tr>
                           </thead>
                           <tbody>
                           {% for parameter in resource.parameters %}
                             <tr>
-                              <td>?{{ parameter.name }}</td>
+                              <td>{{ parameter.name }}</td>
                               <td>{{ parameter.type }}</td>
-                              <td>{{ parameter.description }}</td>
+                              <td>{{ parameter.description|safe }}</td>
+                              <td>{{ parameter.default_value if parameter.default_value }}</td>
+                              <td>{{ parameter.possible_values|join(', ')|safe if parameter.possible_values }}</td>
                             </tr>
                           {% endfor %}
                           </tbody>

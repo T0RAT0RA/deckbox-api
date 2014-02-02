@@ -5,6 +5,25 @@ class DeckboxCrawler:
     _HTTP           = "http://"
     _DECKBOX_DOMAIN = "deckbox.org"
 
+    _ORDER_BY_PARAMETER = 's'
+    _ORDER_BY_LIST  = {
+        'name': 'n',
+        'edition': 'b',
+        'price': {
+            'inventory': 'j',
+            'deck': 'i'
+        },
+        'type': 't',
+        'cost': 'c',
+        'color': 'a'
+    }
+
+    _ORDER_PARAMETER    = 'o'
+    _ORDER_LIST     = {
+        'asc': 'a',
+        'desc': 'd'
+    }
+
     def __init__(self, query_type = None, query_value = None):
 
         if query_type == "profile":
@@ -77,13 +96,18 @@ class DeckboxCrawler:
 
         return sets
 
-    def getUserSetCards(self, set_id, page = 1):
+    def getUserSetCards(self, set_id, page = 1, order_by = 'name', order = 'asc'):
         set_object = self.getUserSets(set_id)
 
         if set_object == None:
             return {"status": "error", "description": "The user doesn't have the specified set."}
 
-        set_url  = self._HTTP + urllib.quote(self._DECKBOX_DOMAIN + "/sets/" + set_object["id"] + "?p=" + str(page))
+        parameters = {}
+        parameters['p'] = str(page)
+        parameters[self._ORDER_BY_PARAMETER] = self._ORDER_BY_LIST[order_by] if order_by in self._ORDER_BY_LIST else 'name'
+        parameters[self._ORDER_PARAMETER] = self._ORDER_LIST[order] if order in self._ORDER_LIST else 'asc'
+
+        set_url  = self._HTTP + self._DECKBOX_DOMAIN + "/sets/" + set_object["id"] + "?" + urllib.urlencode(parameters)
         self.getPage(set_url)
         return self.getCardsFromPage()
 

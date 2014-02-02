@@ -76,6 +76,40 @@ class FlaskrTestCase(unittest.TestCase):
 
         self.assertDictEqual(user_inventory_expected, user_inventory_actual)
 
+    @unittest.skip("Deckbox result inconsistent")
+    def test_user_inventory_ordered_by_edition_default(self):
+        url = '/api/users/' + self.test_username + '/inventory/?order_by=edition'
+        user_inventory_actual   = self.getJsonFromApi(url)
+        user_inventory_expected = self.getJsonFromFixture('inventory_ordered_by_edition_default.json')
+
+        self.assertDictEqual(user_inventory_expected, user_inventory_actual)
+
+    def test_user_inventory_ordered_by_color_ascending(self):
+        url = '/api/users/' + self.test_username + '/inventory/?order_by=color&order=asc'
+        user_inventory_actual   = self.getJsonFromApi(url)
+        user_inventory_expected = self.getJsonFromFixture('inventory_ordered_by_color_ascending.json')
+
+        self.assertDictEqual(user_inventory_expected, user_inventory_actual)
+
+    def test_user_inventory_ordered_by_name_descending(self):
+        url = '/api/users/' + self.test_username + '/inventory/?order=desc'
+        user_inventory_actual   = self.getJsonFromApi(url)
+        user_inventory_expected = self.getJsonFromFixture('inventory_ordered_by_name_desc.json')
+
+        self.assertDictEqual(user_inventory_expected, user_inventory_actual)
+
+    def test_user_inventory_ordered_by_type_descending(self):
+        url = '/api/users/' + self.test_username + '/inventory/?order_by=type&order=desc'
+        user_inventory_actual   = self.getJsonFromApi(url)
+        user_inventory_expected = self.getJsonFromFixture('inventory_ordered_by_type_descending.json')
+
+    def test_user_inventory_ordered_by_cost_descending(self):
+        url = '/api/users/' + self.test_username + '/inventory/?order_by=cost&order=desc'
+        user_inventory_actual   = self.getJsonFromApi(url)
+        user_inventory_expected = self.getJsonFromFixture('inventory_ordered_by_cost_descending.json')
+
+        self.assertDictEqual(user_inventory_expected, user_inventory_actual)
+
     def test_user_wishlist(self):
         url = '/api/users/' + self.test_username + '/wishlist/'
         user_wishlist_actual   = self.getJsonFromApi(url)

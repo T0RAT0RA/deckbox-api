@@ -2,55 +2,125 @@
     {
         "method": "GET",
         "uri": "/api/users/:username/",
-        "description": "Returns user's profile and sets id",
-        "parameters": []
+        "description": "Returns user's profile and sets id."
     },
     {
         "method": "GET",
         "uri": "/api/users/:username/friends/",
-        "description": "Returns user's friends list",
-        "parameters": []
+        "description": "Returns user's friends list."
     },
     {
         "method": "GET",
         "uri": "/api/users/:username/sets/",
-        "description": "Returns user's card sets",
-        "parameters": []
+        "description": "Returns user's card sets."
     },
     {
         "method": "GET",
         "uri": "/api/users/:username/inventory/",
-        "description": "Returns user's inventory",
-        "parameters": []
-    },
-    {
-        "method": "GET",
-        "uri": "/api/users/:username/tradelist/",
-        "description": "Returns user's tradelist",
-        "parameters": []
-    },
-    {
-        "method": "GET",
-        "uri": "/api/users/:username/wishlist/",
-        "description": "Returns user's wishlist",
-        "parameters": []
-    },
-    {
-        "method": "GET",
-        "uri": "/api/users/:username/sets/:set_id",
-        "description": "Returns user's set cards",
+        "description": "Returns user's inventory.",
         "parameters": [
             {
                 "name": "page",
                 "type": "int",
-                "description": "page to return"
+                "description": "Page to return."
+            },
+            {
+                "name": "order_by",
+                "type": "string",
+                "description": "Ordering results.",
+                "possible_values": ["name", "edition", "price", "type", "cost", "color"],
+                "default_value": "name"
+            },
+            {
+                "name": "order",
+                "type": "string",
+                "description": "Results return order.",
+                "possible_values": ["asc", "desc"],
+                "default_value": "asc"
+            }
+        ]
+    },
+    {
+        "method": "GET",
+        "uri": "/api/users/:username/tradelist/",
+        "description": "Returns user's tradelist.",
+        "parameters": [
+            {
+                "name": "page",
+                "type": "int",
+                "description": "Page to return."
+            },
+            {
+                "name": "order_by",
+                "type": "string",
+                "description": "Ordering results.",
+                "possible_values": ["name", "edition", "price", "type", "cost", "color"],
+                "default_value": "name"
+            },
+            {
+                "name": "order",
+                "type": "string",
+                "description": "Results return order.",
+                "possible_values": ["asc", "desc"],
+                "default_value": "asc"
+            }
+        ]
+    },
+    {
+        "method": "GET",
+        "uri": "/api/users/:username/wishlist/",
+        "description": "Returns user's wishlist.",
+        "parameters": [
+            {
+                "name": "page",
+                "type": "int",
+                "description": "Page to return."
+            },
+            {
+                "name": "order_by",
+                "type": "string",
+                "description": "Ordering results.",
+                "possible_values": ["name", "edition", "price", "type", "cost", "color"],
+                "default_value": "name"
+            },
+            {
+                "name": "order",
+                "type": "string",
+                "description": "Results return order.",
+                "possible_values": ["asc", "desc"],
+                "default_value": "asc"
+            }
+        ]
+    },
+    {
+        "method": "GET",
+        "uri": "/api/users/:username/sets/:set_id",
+        "description": "Returns user's set cards.",
+        "parameters": [
+            {
+                "name": "page",
+                "type": "int",
+                "description": "Page to return."
+            },
+            {
+                "name": "order_by",
+                "type": "string",
+                "description": "Ordering results.",
+                "possible_values": ["name", "edition", "price", "type", "cost", "color"],
+                "default_value": "name"
+            },
+            {
+                "name": "order",
+                "type": "string",
+                "description": "Results return order.",
+                "possible_values": ["asc", "desc"],
+                "default_value": "asc"
             }
         ]
     },
     {
         "method": "GET",
         "uri": "/api/cards/:cardname/",
-        "description": "Returns card information",
-        "parameters": []
+        "description": "Returns card information."
     }
 ]

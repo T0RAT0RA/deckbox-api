@@ -48,15 +48,21 @@ class UserSetList(restful.Resource):
 class UserSet(restful.Resource):
     def get(self, username, set_id):
         deckbox_crawler = DeckboxCrawler("profile", username)
-        page = request.args.get('p', 1)
-        user_set = deckbox_crawler.getUserSetCards(set_id, page)
+        page        = request.args.get('p', 1)
+        order_by    = request.args.get('order_by', 'name')
+        order       = request.args.get('order', 'asc')
+
+        user_set    = deckbox_crawler.getUserSetCards(set_id, page, order_by, order)
 
         return jsonify(user_set)
 
 class UserInventory(restful.Resource):
     def get(self, username):
         deckbox_crawler = DeckboxCrawler("profile", username)
-        user_inventory = deckbox_crawler.getUserSetCards("inventory")
+        page        = request.args.get('p', 1)
+        order_by    = request.args.get('order_by', 'name')
+        order       = request.args.get('order', 'asc')
+        user_inventory = deckbox_crawler.getUserSetCards("inventory", page, order_by, order)
 
         return jsonify(user_inventory)
 
