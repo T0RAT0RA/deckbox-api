@@ -4,7 +4,7 @@ from flask.ext import restful
 from deckbox_crawler import DeckboxCrawler
 
 app = Flask(__name__)
-restapi = restful.Api(app, '/api')
+restapi = restful.Api(app, '/api', catch_all_404s=True)
 
 @app.route('/')
 def index():
