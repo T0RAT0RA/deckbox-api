@@ -48,6 +48,8 @@
       <h3>Documentation</h3>
 
       <div class="documentation">
+        <p class="label label-danger">Only Magic, The Gathering is supported for now.</p>
+        <div class="clearfix" style="margin-bottom: 20px;"></div>
         {% for resource in api_doc_list %}
           <div class="panel panel-default">
               <span class="http-method {{ 'open-panel' if resource.parameters }} label label-primary pull-left">{{ resource.method }}</span>
