@@ -805,14 +805,14 @@
     },
     {
       "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
+        "code": "s_star1",
+        "name": "Mint"
       },
-      "cost": "3WW",
+      "cost": "6B",
       "count": "1",
       "edition": {
-        "code": "TE",
-        "name": "[unknown edition]"
+        "code": "DDK",
+        "name": "Duel Decks: Sorin vs. Tibalt"
       },
       "is_foil": false,
       "is_promo": false,
@@ -822,8 +822,8 @@
         "code": "flag-us",
         "name": "English"
       },
-      "name": "Winds of Rath",
-      "rarity": "R",
+      "name": "Absorb Vis",
+      "rarity": "C",
       "subtypes": [],
       "types": [
         "Sorcery"

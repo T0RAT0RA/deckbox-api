@@ -199,35 +199,6 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "RWRWRWRWRW",
-      "count": "1",
-      "edition": {
-        "code": "EVE",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Nobilis of War",
-      "rarity": "R",
-      "subtypes": [
-        "Spirit",
-        "Avatar"
-      ],
-      "types": [
-        "Creature"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
       "cost": "4B",
       "count": "1",
       "edition": {
@@ -277,32 +248,6 @@
       ],
       "types": [
         "Creature"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "3WW",
-      "count": "1",
-      "edition": {
-        "code": "TE",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Winds of Rath",
-      "rarity": "R",
-      "subtypes": [],
-      "types": [
-        "Sorcery"
       ]
     },
     {
@@ -838,6 +783,60 @@
       "subtypes": [],
       "types": [
         "Sorcery"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "2W2W2W",
+      "count": "2",
+      "edition": {
+        "code": "SHM",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Spectral Procession",
+      "rarity": "U",
+      "subtypes": [],
+      "types": [
+        "Sorcery"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "2W",
+      "count": "1",
+      "edition": {
+        "code": "RAV",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Twilight Drover",
+      "rarity": "R",
+      "subtypes": [
+        "Spirit"
+      ],
+      "types": [
+        "Creature"
       ]
     }
   ],

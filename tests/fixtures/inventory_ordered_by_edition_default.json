@@ -109,32 +109,6 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "3WW",
-      "count": "1",
-      "edition": {
-        "code": "TE",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Winds of Rath",
-      "rarity": "R",
-      "subtypes": [],
-      "types": [
-        "Sorcery"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
       "cost": "2WW",
       "count": "1",
       "edition": {
@@ -379,32 +353,6 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "1WB",
-      "count": "1",
-      "edition": {
-        "code": "GPT",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Mortify",
-      "rarity": "U",
-      "subtypes": [],
-      "types": [
-        "Instant"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
       "cost": "2W",
       "count": "2",
       "edition": {
@@ -628,35 +576,6 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "RWRWRWRWRW",
-      "count": "1",
-      "edition": {
-        "code": "EVE",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Nobilis of War",
-      "rarity": "R",
-      "subtypes": [
-        "Spirit",
-        "Avatar"
-      ],
-      "types": [
-        "Creature"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
       "cost": "RW",
       "count": "1",
       "edition": {
@@ -737,35 +656,6 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "RW",
-      "count": "2",
-      "edition": {
-        "code": "ARB",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Stun Sniper",
-      "rarity": "U",
-      "subtypes": [
-        "Human",
-        "Archer"
-      ],
-      "types": [
-        "Creature"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
       "cost": "W",
       "count": "1",
       "edition": {
@@ -811,6 +701,115 @@
       "subtypes": [
         "Vampire",
         "Warrior"
+      ],
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "B",
+      "count": "1",
+      "edition": {
+        "code": "ZEN",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Vampire's Bite",
+      "rarity": "C",
+      "subtypes": [],
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star3",
+        "name": "Good (Lightly Played)"
+      },
+      "cost": "5BB",
+      "count": "1",
+      "edition": {
+        "code": "WWK",
+        "name": "Worldwake"
+      },
+      "is_foil": true,
+      "is_promo": true,
+      "is_signed": true,
+      "is_textless": true,
+      "lang": {
+        "code": "flag-pt",
+        "name": "Portuguese"
+      },
+      "name": "Butcher of Malakir",
+      "rarity": "R",
+      "subtypes": [
+        "Vampire",
+        "Warrior"
+      ],
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "BB",
+      "count": "1",
+      "edition": {
+        "code": "WWK",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Urge to Feed",
+      "rarity": "U",
+      "subtypes": [],
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1W",
+      "count": "1",
+      "edition": {
+        "code": "ROE",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Wall of Omens",
+      "rarity": "U",
+      "subtypes": [
+        "Wall"
       ],
       "types": [
         "Creature"

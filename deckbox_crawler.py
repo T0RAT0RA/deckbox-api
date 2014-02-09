@@ -1,4 +1,4 @@
-import re, datetime, urllib
+import re, datetime, urllib, base64, json
 from pyquery import PyQuery
 
 class DeckboxCrawler:
@@ -24,16 +24,33 @@ class DeckboxCrawler:
         'desc': 'd'
     }
 
-    def __init__(self, query_type = None, query_value = None):
+    _CARDS_QUERY_KEY = "f"
+    _CARDS_QUERY_SEPARATOR = "!"
+    _FILTERS_LIST  = {
+        'name': '1',
+        'rules': '2',
+        'type': '3',
+        'subtype': '4',
+        'edition': '5',
+        'format': 'b',
+        'rarity': '6',
+        'color': '7',
+        'cost': 'a'
+    }
 
-        if query_type == "profile":
-            query_url = "/users/"
-        elif query_type == "card":
-            query_url = "/mtg/"
-        else:
-            query_url = ""
+    _OPERATOR_LIST  = {
+        'one_of': '1',
+        'none_of': '2',
+        'all_of': '3',
+        'equals': '4',
+        'larger_than': '5',
+        'smaller_than': '6',
+        'contains': '7',
+        'not_contains': '8',
+    }
 
-        page_url = self._HTTP + urllib.quote(self._DECKBOX_DOMAIN + query_url + query_value)
+    def __init__(self, url):
+        page_url = self._HTTP + urllib.quote(self._DECKBOX_DOMAIN + url)
         self.getPage(page_url)
 
     def getUserProfile(self):
@@ -111,6 +128,30 @@ class DeckboxCrawler:
         self.getPage(set_url)
         return self.getCardsFromPage()
 
+    def getCards(self, page = 1, order_by = 'name', order = 'asc', filters = None):
+        parameters = {}
+        parameters['p'] = str(page)
+        parameters[self._ORDER_BY_PARAMETER] = self._ORDER_BY_LIST[order_by] if order_by in self._ORDER_BY_LIST else 'name'
+        parameters[self._ORDER_PARAMETER] = self._ORDER_LIST[order] if order in self._ORDER_LIST else 'asc'
+        parameters[self._CARDS_QUERY_KEY] = ""
+
+        if filters:
+            filters = json.loads(filters)
+            converted_filters = []
+
+            for filter_name, filter_data in filters.iteritems():
+                if not filter_data:
+                    pass
+
+                converted_filter = self._FILTERS_LIST[filter_name] + self._OPERATOR_LIST[filter_data["operator"]] + base64.b64encode(filter_data["value"], "**")
+                converted_filters.append(converted_filter)
+
+            parameters[self._CARDS_QUERY_KEY] = self._CARDS_QUERY_SEPARATOR.join(converted_filters)
+
+        cards_url  = self._HTTP + self._DECKBOX_DOMAIN + "/games/mtg/cards" + "?" + urllib.urlencode(parameters)
+        self.getPage(cards_url)
+
+        return self.getCardsFromPage()
 
     def getCard(self):
         card = {}
@@ -143,13 +184,21 @@ class DeckboxCrawler:
         self._page = PyQuery(url=page_url)
 
     def getCardsFromPage(self):
-        is_deck_page    = True if self._page(".main.deck") else False
-        cards           = self.getCardsFromTable(is_deck_page)
+        if self._page(".main.deck"):
+            page_type = "deck"
+        elif self._page(".set_cards.with_details"):
+            page_type = "inventory"
+        elif self._page(".set_cards.simple_table"):
+            page_type = "cards"
+        else:
+            page_type = "unknown"
+
+        cards = self.getCardsFromTable(page_type)
 
         #-------------------------
         # DECK PAGES
         #-------------------------
-        if is_deck_page:
+        if page_type == "deck":
             title           = self._page(".section_title span:first").text()
             cards_count     = {"cards": 0, "distinct": 0}
             for script in self._page("script").items():
@@ -176,11 +225,11 @@ class DeckboxCrawler:
     #-------------------------
     # Cards Parser
     #-------------------------
-    def getCardsFromTable(self, isDeckTable = False):
+    def getCardsFromTable(self, page_type):
         cards = []
 
         # Parse cards on deck page
-        if isDeckTable:
+        if page_type == "deck":
             for tr in self._page(".main.deck tr").items():
                 if tr.attr("id") == None:
                     continue
@@ -220,6 +269,37 @@ class DeckboxCrawler:
 
                 cards.append(card)
 
+        # Parse cards on default set (inventory, wishlist, tradelist) page
+        elif page_type == "cards":
+            for tr in self._page(".set_cards.simple_table tr").items():
+                if tr.attr("id") == None:
+                    continue
+
+                '''
+                Default card HTML example:
+                <tr id="7730" >
+                    <td class="card_name">
+                      <div class="relative">
+                        <a class="simple" target="_blank" href="http://deckbox.org/mtg/Annul">Annul</a>
+                      </div>
+                    </td>
+                    <td><span>Instant</span></td>
+                    <td class="card_cost"><img class="mtg_mana mtg_mana_U" src="/images/icon_spacer.gif" /></td>
+                    <td class="center price"><span data-title="$0.03 / $0.14 / $0.43 / $0.68">$0.14</span></td>
+                </tr>
+                '''
+
+                card = {}
+                card["name"]    = tr.find("a").text()
+                card_types  = re.split(r'\s+-\s+', tr.find("td").eq(1).find("span").text())
+                card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
+                card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
+                card_cost = []
+                for img in tr.find("td.card_cost img").items():
+                    card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
+                card["cost"]    = "".join(card_cost)
+
+                cards.append(card)
         # Parse cards on default set (inventory, wishlist, tradelist) page
         else:
             for tr in self._page("#set_cards_table_details tr").items():

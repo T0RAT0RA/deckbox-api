@@ -22,7 +22,7 @@ class ApiDoc(restful.Resource):
 
 class User(restful.Resource):
     def get(self, username):
-        deckbox_crawler = DeckboxCrawler("profile", username)
+        deckbox_crawler = DeckboxCrawler("/users/" + username)
         user_profile    = deckbox_crawler.getUserProfile()
         user_sets       = deckbox_crawler.getUserSets()
 
@@ -33,21 +33,21 @@ class User(restful.Resource):
 
 class UserFriend(restful.Resource):
     def get(self, username):
-        deckbox_crawler = DeckboxCrawler("profile", username)
+        deckbox_crawler = DeckboxCrawler("/users/" + username)
         user_friends = deckbox_crawler.getUserFriends()
 
         return jsonify(friends=user_friends)
 
 class UserSetList(restful.Resource):
     def get(self, username):
-        deckbox_crawler = DeckboxCrawler("profile", username)
+        deckbox_crawler = DeckboxCrawler("/users/" + username)
         user_sets       = deckbox_crawler.getUserSets()
 
         return jsonify(sets = user_sets)
 
 class UserSet(restful.Resource):
     def get(self, username, set_id):
-        deckbox_crawler = DeckboxCrawler("profile", username)
+        deckbox_crawler = DeckboxCrawler("/users/" + username)
         page        = request.args.get('p', 1)
         order_by    = request.args.get('order_by', 'name')
         order       = request.args.get('order', 'asc')
@@ -58,7 +58,7 @@ class UserSet(restful.Resource):
 
 class UserInventory(restful.Resource):
     def get(self, username):
-        deckbox_crawler = DeckboxCrawler("profile", username)
+        deckbox_crawler = DeckboxCrawler("/users/" + username)
         page        = request.args.get('p', 1)
         order_by    = request.args.get('order_by', 'name')
         order       = request.args.get('order', 'asc')
@@ -68,21 +68,33 @@ class UserInventory(restful.Resource):
 
 class UserWishlist(restful.Resource):
     def get(self, username):
-        deckbox_crawler = DeckboxCrawler("profile", username)
+        deckbox_crawler = DeckboxCrawler("/users/" + username)
         user_wishlist = deckbox_crawler.getUserSetCards("wishlist")
 
         return jsonify(user_wishlist)
 
 class UserTradelist(restful.Resource):
     def get(self, username):
-        deckbox_crawler = DeckboxCrawler("profile", username)
+        deckbox_crawler = DeckboxCrawler("/users/" + username)
         user_tradelist = deckbox_crawler.getUserSetCards("tradelist")
 
         return jsonify(user_tradelist)
 
+class CardList(restful.Resource):
+    def get(self):
+        deckbox_crawler = DeckboxCrawler("/games/mtg/cards")
+        page        = request.args.get('p', 1)
+        order_by    = request.args.get('order_by', 'name')
+        order       = request.args.get('order', 'asc')
+        filters     = request.args.get('filters', {})
+
+        cards = deckbox_crawler.getCards(page, order_by, order, filters)
+
+        return jsonify(cards)
+
 class Card(restful.Resource):
     def get(self, cardname):
-        deckbox_crawler = DeckboxCrawler("card", cardname)
+        deckbox_crawler = DeckboxCrawler("/mtg/" + cardname)
         card = deckbox_crawler.getCard()
 
         return jsonify(card = card)
@@ -95,6 +107,7 @@ restapi.add_resource(UserInventory, '/users/<string:username>/inventory/')
 restapi.add_resource(UserWishlist, '/users/<string:username>/wishlist/')
 restapi.add_resource(UserTradelist, '/users/<string:username>/tradelist/')
 restapi.add_resource(UserSet, '/users/<string:username>/sets/<set_id>/')
+restapi.add_resource(CardList, '/cards/')
 restapi.add_resource(Card, '/cards/<string:cardname>/')
 
 

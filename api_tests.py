@@ -76,7 +76,6 @@ class FlaskrTestCase(unittest.TestCase):
 
         self.assertDictEqual(user_inventory_expected, user_inventory_actual)
 
-    @unittest.skip("Deckbox result inconsistent")
     def test_user_inventory_ordered_by_edition_default(self):
         url = '/api/users/' + self.test_username + '/inventory/?order_by=edition'
         user_inventory_actual   = self.getJsonFromApi(url)
@@ -151,6 +150,24 @@ class FlaskrTestCase(unittest.TestCase):
 
         self.assertDictEqual(card_expected["card"], card_actual["card"])
 
+    def test_cards_no_filter(self):
+        url = '/api/cards/'
+        cards_actual     = self.getJsonFromApi(url)
+        cards_expected   = self.getJsonFromFixture('cards_no_filters.json')
+
+        #Remove number of page dependency
+        cards_actual.pop("number_of_page", None)
+        cards_expected.pop("number_of_page", None)
+        self.assertDictEqual(cards_expected, cards_actual)
+
+    def test_cards_text_filter_ordered_by_cost_ascending(self):
+        filters = '?filters={"name":{"operator":"contains","value":"cent"},"rules":{"operator":"contains","value":"trample"},"subtype":{"operator":"not_contains","value":"human"},"cost":{"operator":"larger_than","value":"4"}}'
+        url = '/api/cards/' + filters + "&order_by=cost&order=asc"
+        cards_actual     = self.getJsonFromApi(url)
+        cards_expected   = self.getJsonFromFixture('cards_text_filters_ordered_by_cost_ascending.json')
+
+        self.assertDictEqual(cards_expected, cards_actual)
+
 
     #-------------------------
     #  HELPERS
@@ -165,9 +182,12 @@ class FlaskrTestCase(unittest.TestCase):
         return json_data
 
     def getJsonFromFixture(self, fixture_file):
-        json_data = open(self.fixture_path + fixture_file)
-        fixture_data = json.load(json_data)
-        json_data.close()
+        try:
+            json_data = open(self.fixture_path + fixture_file)
+            fixture_data = json.load(json_data)
+            json_data.close()
+        except IOError:
+            self.fail('No fixture file found: ' + self.fixture_path + fixture_file)
 
         return fixture_data
 

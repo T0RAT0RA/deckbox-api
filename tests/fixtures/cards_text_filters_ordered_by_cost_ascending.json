@@ -1,0 +1,48 @@
+{
+  "cards": [
+    {
+      "cost": "3G",
+      "name": "Centaur Chieftain",
+      "subtypes": [
+        "Centaur"
+      ],
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "2GG",
+      "name": "Possessed Centaur",
+      "subtypes": [
+        "Centaur",
+        "Horror"
+      ],
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "5G",
+      "name": "Centaur Veteran",
+      "subtypes": [
+        "Centaur"
+      ],
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "4GG",
+      "name": "Crashing Centaur",
+      "subtypes": [
+        "Centaur"
+      ],
+      "types": [
+        "Creature"
+      ]
+    }
+  ],
+  "number_of_page": "1",
+  "page": "1",
+  "title": ""
+}

@@ -31,32 +31,6 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "3WW",
-      "count": "1",
-      "edition": {
-        "code": "TE",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Winds of Rath",
-      "rarity": "R",
-      "subtypes": [],
-      "types": [
-        "Sorcery"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
       "cost": "1W",
       "count": "1",
       "edition": {
@@ -158,35 +132,6 @@
       "subtypes": [
         "Vampire",
         "Shaman"
-      ],
-      "types": [
-        "Creature"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "B",
-      "count": "1",
-      "edition": {
-        "code": "ZEN",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Vampire Lacerator",
-      "rarity": "C",
-      "subtypes": [
-        "Vampire",
-        "Warrior"
       ],
       "types": [
         "Creature"
@@ -436,35 +381,6 @@
       "rarity": "M",
       "subtypes": [
         "Giant"
-      ],
-      "types": [
-        "Creature"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "RW",
-      "count": "2",
-      "edition": {
-        "code": "ARB",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Stun Sniper",
-      "rarity": "U",
-      "subtypes": [
-        "Human",
-        "Archer"
       ],
       "types": [
         "Creature"
@@ -821,6 +737,89 @@
       "subtypes": [],
       "types": [
         "Instant"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1R",
+      "count": "1",
+      "edition": {
+        "code": "THS",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Ordeal of Purphoros",
+      "rarity": "U",
+      "subtypes": [
+        "Aura"
+      ],
+      "types": [
+        "Enchantment"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "",
+      "count": "2",
+      "edition": {
+        "code": "FUT",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "New Benalia",
+      "rarity": "U",
+      "subtypes": [],
+      "types": [
+        "Land"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "",
+      "count": "11",
+      "edition": {
+        "code": "M14",
+        "name": "Magic 2014 Core Set"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Mountain",
+      "rarity": "L",
+      "subtypes": [
+        "Mountain"
+      ],
+      "types": [
+        "Basic",
+        "Land"
       ]
     }
   ],
