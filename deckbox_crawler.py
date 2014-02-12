@@ -113,10 +113,6 @@ class DeckboxCrawler:
         parameters[self._ORDER_PARAMETER] = self._ORDER_LIST[order] if order in self._ORDER_LIST else 'asc'
         parameters[self._CARDS_QUERY_KEY] = ""
 
-        print "---------------------"
-        print card_filters
-        print "---------------------"
-
         if filters:
             filters = json.loads(filters)
             converted_filters = []
