@@ -145,8 +145,8 @@
             {
                 "name": "filters",
                 "type": "json oject",
-                "description":  "To search cards.<br/><br/>Example:<br/>filters = {<br/>&nbsp;&nbsp;\"name\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"contains\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"cent\"<br/>&nbsp;&nbsp;},<br/>&nbsp;&nbsp;\"rules\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"contains\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"trample\"<br/>&nbsp;&nbsp;},<br/>&nbsp;&nbsp;\"subtype\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"not_contains\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"human\"<br/>&nbsp;&nbsp;},<br/>&nbsp;&nbsp;\"cost\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"larger_than\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"4\"<br/>&nbsp;&nbsp;}<br/>}",
-                "possible_values": ["name", "rules", "type", "subtype", "edition", "format", "rarity", "color", "cost"]
+                "description":  "To search cards.<br/><br/>Example:<br/>filters = {<br/>&nbsp;&nbsp;\"name\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"contains\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"cent\"<br/>&nbsp;&nbsp;},<br/>&nbsp;&nbsp;\"rules_text\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"contains\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"trample\"<br/>&nbsp;&nbsp;},<br/>&nbsp;&nbsp;\"subtype\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"not_contains\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"human\"<br/>&nbsp;&nbsp;},<br/>&nbsp;&nbsp;\"cost\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"larger_than\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"4\"<br/>&nbsp;&nbsp;}<br/>}",
+                "possible_values": ["name", "rules_text", "type", "subtype", "edition_printed_in", "format", "rarity", "color", "cost"]
             }
         ]
     },
