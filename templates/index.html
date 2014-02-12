@@ -48,7 +48,16 @@
       <h3>Documentation</h3>
 
       <div class="documentation">
-        <p class="label label-danger">Only Magic, The Gathering is supported for now.</p>
+        <p class="label label-danger">Only Magic, The Gathering is supported for now.</p><br/>
+        <div class="bs-callout bs-callout-warning">
+            <h4>Find the <strong>:username</strong> parameter</h4>
+            <p>
+                The username is on the deckbox's profile page of a user, next to the profile image.<br/>
+                <img src="/static/img/find_username.png" title="find a username" />
+            </p>
+        </div>
+
+
         <div class="clearfix" style="margin-bottom: 20px;"></div>
         {% for resource in api_doc_list %}
           <div class="panel panel-default">
