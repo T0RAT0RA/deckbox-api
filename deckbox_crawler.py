@@ -6,48 +6,25 @@ class DeckboxCrawler:
     _DECKBOX_DOMAIN = "deckbox.org"
 
     _ORDER_BY_PARAMETER = 's'
-    _ORDER_BY_LIST  = {
-        'name': 'n',
-        'edition': 'b',
+    _ORDER_BY_LIST = {
+        'name':     'n',
+        'edition':  'b',
         'price': {
             'inventory': 'j',
-            'deck': 'i'
+            'deck':      'i'
         },
-        'type': 't',
-        'cost': 'c',
-        'color': 'a'
+        'type':     't',
+        'cost':     'c',
+        'color':    'a'
     }
-
-    _ORDER_PARAMETER    = 'o'
-    _ORDER_LIST     = {
-        'asc': 'a',
+    _ORDER_PARAMETER = 'o'
+    _ORDER_LIST = {
+        'asc':  'a',
         'desc': 'd'
     }
 
     _CARDS_QUERY_KEY = "f"
     _CARDS_QUERY_SEPARATOR = "!"
-    _FILTERS_LIST  = {
-        'name': '1',
-        'rules': '2',
-        'type': '3',
-        'subtype': '4',
-        'edition': '5',
-        'format': 'b',
-        'rarity': '6',
-        'color': '7',
-        'cost': 'a'
-    }
-
-    _OPERATOR_LIST  = {
-        'one_of': '1',
-        'none_of': '2',
-        'all_of': '3',
-        'equals': '4',
-        'larger_than': '5',
-        'smaller_than': '6',
-        'contains': '7',
-        'not_contains': '8',
-    }
 
     def __init__(self, url):
         page_url = self._HTTP + urllib.quote(self._DECKBOX_DOMAIN + url)
@@ -129,11 +106,16 @@ class DeckboxCrawler:
         return self.getCardsFromPage()
 
     def getCards(self, page = 1, order_by = 'name', order = 'asc', filters = None):
+        card_filters = self.getFiltersFromPage()
         parameters = {}
         parameters['p'] = str(page)
         parameters[self._ORDER_BY_PARAMETER] = self._ORDER_BY_LIST[order_by] if order_by in self._ORDER_BY_LIST else 'name'
         parameters[self._ORDER_PARAMETER] = self._ORDER_LIST[order] if order in self._ORDER_LIST else 'asc'
         parameters[self._CARDS_QUERY_KEY] = ""
+
+        print "---------------------"
+        print card_filters
+        print "---------------------"
 
         if filters:
             filters = json.loads(filters)
@@ -143,7 +125,7 @@ class DeckboxCrawler:
                 if not filter_data:
                     pass
 
-                converted_filter = self._FILTERS_LIST[filter_name] + self._OPERATOR_LIST[filter_data["operator"]] + base64.b64encode(filter_data["value"], "**")
+                converted_filter = card_filters["filters"][filter_name] + card_filters["operators"][filter_data["operator"]] + base64.b64encode(filter_data["value"], "**")
                 converted_filters.append(converted_filter)
 
             parameters[self._CARDS_QUERY_KEY] = self._CARDS_QUERY_SEPARATOR.join(converted_filters)
@@ -182,6 +164,34 @@ class DeckboxCrawler:
         self.log("Get cards from url: " + page_url)
         self._page_url = page_url
         self._page = PyQuery(url=page_url)
+
+    def getFiltersFromPage(self):
+        filters = {}
+
+        xpaths = [
+            ("filters", "#add_filter_btn"),
+            ("types",   "#_container_3"),
+            ("sets",    "#_container_5"),
+            ("rarities","#_container_6"),
+            ("colors",  "#_container_7")
+        ]
+
+        for xpath in xpaths:
+            script = self._page(xpath[1]).next("script")
+            matches = re.findall('\["([^"]+)","([^"]+)"\]', script.text())
+            filters[xpath[0]] = dict((x.replace(" ", "_").lower(), y) for x, y in matches)
+
+        filters["operators"] = {
+            'one_of':       '1',
+            'none_of':      '2',
+            'all_of':       '3',
+            'equals':       '4',
+            'larger_than':  '5',
+            'smaller_than': '6',
+            'contains':     '7',
+            'not_contains': '8'
+        }
+        return filters
 
     def getCardsFromPage(self):
         if self._page(".main.deck"):

@@ -161,7 +161,7 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertDictEqual(cards_expected, cards_actual)
 
     def test_cards_text_filter_ordered_by_cost_ascending(self):
-        filters = '?filters={"name":{"operator":"contains","value":"cent"},"rules":{"operator":"contains","value":"trample"},"subtype":{"operator":"not_contains","value":"human"},"cost":{"operator":"larger_than","value":"4"}}'
+        filters = '?filters={"name":{"operator":"contains","value":"cent"},"rules_text":{"operator":"contains","value":"trample"},"subtype":{"operator":"not_contains","value":"human"},"cost":{"operator":"larger_than","value":"4"}}'
         url = '/api/cards/' + filters + "&order_by=cost&order=asc"
         cards_actual     = self.getJsonFromApi(url)
         cards_expected   = self.getJsonFromFixture('cards_text_filters_ordered_by_cost_ascending.json')
