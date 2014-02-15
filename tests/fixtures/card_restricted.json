@@ -1,0 +1,32 @@
+{
+  "card": {
+    "cost": "0",
+    "editions": [
+      {
+        "code": "2U",
+        "name": "Unlimited Edition (Rare)"
+      },
+      {
+        "code": "2E",
+        "name": "Limited Edition Beta (Rare)"
+      },
+      {
+        "code": "1E",
+        "name": "Limited Edition Alpha (Rare)"
+      }
+    ],
+    "formats": {
+      "legal": [],
+      "restricted": [
+        "vintage"
+      ]
+    },
+    "gatherer_link": "http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=600",
+    "name": "Black Lotus",
+    "rules": ", Sacrifice Black Lotus: Add three mana of any one color to your mana pool.",
+    "subtypes": [],
+    "types": [
+      "Artifact"
+    ]
+  }
+}

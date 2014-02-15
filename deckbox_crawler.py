@@ -135,18 +135,39 @@ class DeckboxCrawler:
         card = {}
         card["name"]    = self._page(".section_title:first").text()
         card_types = re.split(r'\s+-\s+', self._page(".card_properties tr:eq(3) td:last").text())
-        card["types"]    = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
-        card["subtypes"] = re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
+        card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
+        card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
         card_cost = []
         for img in self._page(".card_properties tr:eq(2) td:last img").items():
             card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
         card["cost"]    = "".join(card_cost)
+        card["rules"]   = self._page(".card_properties tr:eq(4) td:last").text()
         card["editions"] = []
         for edition in self._page(".card_properties tr:eq(1) td:last img").items():
             card["editions"].append({
                 "code": re.search(".*/(.*)_.\.jpg$", edition.attr("src")).group(1),
                 "name": edition.attr("data-title")
             })
+        #Card type depending fields
+        for tr in self._page(".card_properties tr:gt(4)").items():
+            field = tr.find(".label").text().lower()
+            field = {
+                "p / t": "PT",
+                "rulings": "gatherer_link"
+            }.get(field, field)
+            field_value = tr.find(".label").siblings()
+            value = {
+                "PT": {
+                    "P": re.sub(r" / [0-9]+$", "", field_value.text()),
+                    "T": re.sub(r"^[0-9]+ / ", "", field_value.text())
+                },
+                "gatherer_link": field_value.find("a").attr("href"),
+                "formats": {
+                    "legal": [x for x in field_value.text().lower().replace("legal in ", "").replace(".", "").split(", ") if x] if field_value.text().lower().find("legal in ") >= 0 else [],
+                    "restricted": [x for x in field_value.text().lower().replace("restricted in ", "").replace(".", "").split(", ") if x] if field_value.text().lower().find("restricted in ") >= 0 else []
+                }
+            }.get(field, field_value.text())
+            card[field] = value
 
         return card
 

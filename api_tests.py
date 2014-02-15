@@ -10,6 +10,7 @@ class FlaskrTestCase(unittest.TestCase):
     def setUp(self):
         self.test_username      = "deckbox_api"
         self.test_cardname      = "Ajani, Caller of the Pride"
+        self.test_cardname_restricted = "Black Lotus"
         self.empty_deck_id      = "590775"
         self.standard_deck_id   = "590776"
         self.fixture_path       = "tests/fixtures/"
@@ -147,6 +148,13 @@ class FlaskrTestCase(unittest.TestCase):
         url = '/api/cards/' + self.test_cardname + '/'
         card_actual     = self.getJsonFromApi(url)
         card_expected   = self.getJsonFromFixture('card.json')
+
+        self.assertDictEqual(card_expected["card"], card_actual["card"])
+
+    def test_card_restricted(self):
+        url = '/api/cards/' + self.test_cardname_restricted + '/'
+        card_actual     = self.getJsonFromApi(url)
+        card_expected   = self.getJsonFromFixture('card_restricted.json')
 
         self.assertDictEqual(card_expected["card"], card_actual["card"])
 
