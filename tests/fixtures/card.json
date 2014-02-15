@@ -12,9 +12,11 @@
       }
     ],
     "name": "Ajani, Caller of the Pride",
-    "subtype": [
+    "subtypes": [
       "Ajani"
     ],
-    "type": "Planeswalker"
+    "types": [
+      "Planeswalker"
+    ]
   }
 }

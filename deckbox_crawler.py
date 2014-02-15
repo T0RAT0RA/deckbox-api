@@ -135,8 +135,8 @@ class DeckboxCrawler:
         card = {}
         card["name"]    = self._page(".section_title:first").text()
         card_types = re.split(r'\s+-\s+', self._page(".card_properties tr:eq(3) td:last").text())
-        card["type"]    = card_types[0]
-        card["subtype"] = re.split(r'\s', card_types[1]) if len(card_types) > 1 else ""
+        card["types"]    = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
+        card["subtypes"] = re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
         card_cost = []
         for img in self._page(".card_properties tr:eq(2) td:last img").items():
             card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
