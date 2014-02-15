@@ -226,7 +226,7 @@ class DeckboxCrawler:
         # DECK PAGES
         #-------------------------
         if page_type == "deck":
-            title           = self._page(".section_title span:first").text()
+            name            = self._page(".section_title span:first").text()
             cards_count     = {"cards": 0, "distinct": 0}
             for script in self._page("script").items():
                 m = re.search("total_card_count[^_s][^0-9]*([0-9]+) cards, ([0-9]+) distinct", script.text())
@@ -234,7 +234,7 @@ class DeckboxCrawler:
                     cards_count["cards"]    = int(m.group(1))
                     cards_count["distinct"] = int(m.group(2))
 
-            return {"title": title, "cards": cards, "cards_count": cards_count}
+            return {"name": name, "cards": cards, "cards_count": cards_count}
 
         #-------------------------
         # DEFAULT SETS PAGES
@@ -245,9 +245,9 @@ class DeckboxCrawler:
             card_table_id   = "#set_cards_table_details"
             current_page    = m.group(1)
             number_of_pages = m.group(2)
-            title           = self._page(".section_title span:first").text()
+            name            = self._page(".section_title span:first").text()
 
-            return {"title": title, "cards": cards, "page": current_page, "number_of_page": number_of_pages}
+            return {"name": name, "cards": cards, "page": current_page, "number_of_page": number_of_pages}
 
     #-------------------------
     # Cards Parser

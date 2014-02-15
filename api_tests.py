@@ -132,7 +132,7 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertEqual(len(empty_deck_expected["cards"]), 0)
         self.assertEqual(empty_deck_expected["cards_count"]["cards"], empty_deck_actual["cards_count"]["cards"])
         self.assertEqual(empty_deck_expected["cards_count"]["distinct"], empty_deck_actual["cards_count"]["distinct"])
-        self.assertEqual(empty_deck_expected["title"], empty_deck_actual["title"])
+        self.assertEqual(empty_deck_expected["name"], empty_deck_actual["name"])
 
     def test_standard_deck(self):
         url = '/api/users/' + self.test_username + '/sets/' + self.standard_deck_id + '/'
@@ -142,7 +142,15 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertEqual(len(standard_deck_expected["cards"]), len(standard_deck_actual["cards"]))
         self.assertEqual(standard_deck_expected["cards_count"]["cards"], standard_deck_actual["cards_count"]["cards"])
         self.assertEqual(standard_deck_expected["cards_count"]["distinct"], standard_deck_actual["cards_count"]["distinct"])
-        self.assertEqual(standard_deck_expected["title"], standard_deck_actual["title"])
+        self.assertEqual(standard_deck_expected["name"], standard_deck_actual["name"])
+
+    @unittest.skip("not implemented yet")
+    def test_sideboard_deck(self):
+        url = '/api/users/' + self.test_username + '/sets/' + self.sideboard_deck_id + '/'
+        sideboard_deck_actual    = self.getJsonFromApi(url)
+        sideboard_deck_expected  = self.getJsonFromFixture('sideboard_deck.json')
+
+        self.assertDictEqual(sideboard_deck_expected, sideboard_deck_actual)
 
     def test_card(self):
         url = '/api/cards/' + self.test_cardname + '/'
