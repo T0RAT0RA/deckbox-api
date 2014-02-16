@@ -12,6 +12,7 @@ class FlaskrTestCase(unittest.TestCase):
         self.test_cardname      = "Ajani, Caller of the Pride"
         self.test_cardname_restricted = "Black Lotus"
         self.empty_deck_id      = "590775"
+        self.sideboard_deck_id  = "608751"
         self.standard_deck_id   = "590776"
         self.fixture_path       = "tests/fixtures/"
 
@@ -144,7 +145,6 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertEqual(standard_deck_expected["cards_count"]["distinct"], standard_deck_actual["cards_count"]["distinct"])
         self.assertEqual(standard_deck_expected["name"], standard_deck_actual["name"])
 
-    @unittest.skip("not implemented yet")
     def test_sideboard_deck(self):
         url = '/api/users/' + self.test_username + '/sets/' + self.sideboard_deck_id + '/'
         sideboard_deck_actual    = self.getJsonFromApi(url)

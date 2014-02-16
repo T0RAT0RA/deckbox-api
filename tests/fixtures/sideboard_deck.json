@@ -1,0 +1,61 @@
+{
+  "cards": [
+    {
+      "cost": "RW",
+      "count": "1",
+      "name": "Figure of Destiny",
+      "subtypes": [
+        "Kithkin"
+      ],
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "W",
+      "count": "1",
+      "name": "Pay No Heed",
+      "subtypes": [],
+      "types": [
+        "Instant"
+      ]
+    }
+  ],
+  "cards_count": {
+    "cards": 2,
+    "distinct": 2
+  },
+  "name": "Deck with sideboard",
+  "sideboard": [
+    {
+      "cost": "W",
+      "count": "2",
+      "name": "Doomed Traveler",
+      "subtypes": [
+        "Human",
+        "Soldier"
+      ],
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "W",
+      "count": "4",
+      "name": "Pay No Heed",
+      "subtypes": [],
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "cost": "XBR",
+      "count": "1",
+      "name": "Rakdos's Return",
+      "subtypes": [],
+      "types": [
+        "Sorcery"
+      ]
+    }
+  ]
+}

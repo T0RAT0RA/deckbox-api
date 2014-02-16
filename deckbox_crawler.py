@@ -220,7 +220,7 @@ class DeckboxCrawler:
         else:
             page_type = "unknown"
 
-        cards = self.getCardsFromTable(page_type)
+        cards, sideboard = self.getCardsFromTable(page_type)
 
         #-------------------------
         # DECK PAGES
@@ -234,7 +234,7 @@ class DeckboxCrawler:
                     cards_count["cards"]    = int(m.group(1))
                     cards_count["distinct"] = int(m.group(2))
 
-            return {"name": name, "cards": cards, "cards_count": cards_count}
+            return {"name": name, "cards": cards, "sideboard": sideboard, "cards_count": cards_count}
 
         #-------------------------
         # DEFAULT SETS PAGES
@@ -253,48 +253,57 @@ class DeckboxCrawler:
     # Cards Parser
     #-------------------------
     def getCardsFromTable(self, page_type):
-        cards = []
+        cards       = []
+        sideboard   = []
 
         # Parse cards on deck page
         if page_type == "deck":
-            for tr in self._page(".main.deck tr").items():
-                if tr.attr("id") == None:
-                    continue
+            tables = {
+                "mainboard": self._page(".main.deck tr").items(),
+                "sideboard": self._page(".sideboard.deck tr").items()
+            }
+            for table_type, table in tables.iteritems():
+                for tr in table:
+                    if tr.attr("id") == None:
+                        continue
 
-                '''
-                Deck card HTML example:
-                <tr id="13392">
-                    <td id="card_count_13392" class="card_count">4</td>
-                    <td class="card_name">
-                      <div class="relative">
-                        <a class="simple" target="_blank" href="http://deckbox.org/mtg/Armed // Dangerous">
-                            Armed // Dangerous
-                        </a>
-                      </div>
-                    </td>
-                    <td><span>Sorcery</span></td>
-                    <td class="card_cost">
-                        <img class="mtg_mana mtg_mana_1" src="/images/icon_spacer.gif">
-                        <img class="mtg_mana mtg_mana_R" src="/images/icon_spacer.gif">
-                    </td>
-                    <td class="center price">
-                        <span data-title="$0.04 / $0.19 / $0.95 / $0.95">$0.19</span>
-                    </td>
-                </tr>
-                '''
+                    '''
+                    Deck card HTML example:
+                    <tr id="13392">
+                        <td id="card_count_13392" class="card_count">4</td>
+                        <td class="card_name">
+                          <div class="relative">
+                            <a class="simple" target="_blank" href="http://deckbox.org/mtg/Armed // Dangerous">
+                                Armed // Dangerous
+                            </a>
+                          </div>
+                        </td>
+                        <td><span>Sorcery</span></td>
+                        <td class="card_cost">
+                            <img class="mtg_mana mtg_mana_1" src="/images/icon_spacer.gif">
+                            <img class="mtg_mana mtg_mana_R" src="/images/icon_spacer.gif">
+                        </td>
+                        <td class="center price">
+                            <span data-title="$0.04 / $0.19 / $0.95 / $0.95">$0.19</span>
+                        </td>
+                    </tr>
+                    '''
 
-                card = {}
-                card["count"]   = tr.find("td.card_count").text()
-                card["name"]    = tr.find("a").text()
-                card_types = re.split(r'\s+-\s+', tr.find("td").eq(2).find("span").text())
-                card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
-                card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
-                card_cost = []
-                for img in tr.find("td.card_cost img").items():
-                    card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
-                card["cost"]    = "".join(card_cost)
+                    card = {}
+                    card["count"]   = tr.find("td.card_count").text()
+                    card["name"]    = tr.find("a").text()
+                    card_types = re.split(r'\s+-\s+', tr.find("td").eq(2).find("span").text())
+                    card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
+                    card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
+                    card_cost = []
+                    for img in tr.find("td.card_cost img").items():
+                        card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
+                    card["cost"]    = "".join(card_cost)
 
-                cards.append(card)
+                    {
+                        "mainboard": cards,
+                        "sideboard": sideboard,
+                    }.get(table_type).append(card)
 
         # Parse cards on default set (inventory, wishlist, tradelist) page
         elif page_type == "cards":
@@ -397,5 +406,5 @@ class DeckboxCrawler:
 
                 cards.append(card)
 
-        return cards
+        return (cards, sideboard)
 
