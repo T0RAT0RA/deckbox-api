@@ -2,16 +2,16 @@
   "cards": [
     {
       "condition": {
-        "code": "s_star1",
-        "name": "Mint"
+        "code": "s_star3",
+        "name": "Good (Lightly Played)"
       },
-      "cost": "6B",
+      "cost": "3B",
       "count": "1",
       "edition": {
-        "code": "DDK",
-        "name": "Duel Decks: Sorin vs. Tibalt"
+        "code": "P2",
+        "name": "Portal Second Age"
       },
-      "is_foil": false,
+      "is_foil": true,
       "is_promo": false,
       "is_signed": false,
       "is_textless": false,
@@ -19,35 +19,10 @@
         "code": "flag-us",
         "name": "English"
       },
-      "name": "Absorb Vis",
-      "rarity": "C",
+      "name": "Ancient Craving",
+      "rarity": "R",
       "subtypes": [],
-      "types": [
-        "Sorcery"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "2W",
-      "count": "1",
-      "edition": {
-        "code": "DKA",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Lingering Souls",
-      "rarity": "U",
-      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Ancient%20Craving/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -74,32 +49,7 @@
       "name": "Spectral Procession",
       "rarity": "U",
       "subtypes": [],
-      "types": [
-        "Sorcery"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star3",
-        "name": "Good (Lightly Played)"
-      },
-      "cost": "3B",
-      "count": "1",
-      "edition": {
-        "code": "P2",
-        "name": "Portal Second Age"
-      },
-      "is_foil": true,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Ancient Craving",
-      "rarity": "R",
-      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Spectral%20Procession/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -126,6 +76,7 @@
       "name": "Decompose",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Decompose/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -152,6 +103,7 @@
       "name": "Death Grasp",
       "rarity": "R",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Death%20Grasp/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -161,10 +113,10 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "3WW",
+      "cost": "2W",
       "count": "1",
       "edition": {
-        "code": "TE",
+        "code": "DKA",
         "name": "[unknown edition]"
       },
       "is_foil": false,
@@ -175,9 +127,37 @@
         "code": "flag-us",
         "name": "English"
       },
-      "name": "Winds of Rath",
-      "rarity": "R",
+      "name": "Lingering Souls",
+      "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Lingering%20Souls/tooltip",
+      "types": [
+        "Sorcery"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star1",
+        "name": "Mint"
+      },
+      "cost": "6B",
+      "count": "1",
+      "edition": {
+        "code": "DDK",
+        "name": "Duel Decks: Sorin vs. Tibalt"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Absorb Vis",
+      "rarity": "C",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Absorb%20Vis/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -206,6 +186,7 @@
       "subtypes": [
         "Sorin"
       ],
+      "tooltip": "http://deckbox.org/mtg/Sorin%2C%20Lord%20of%20Innistrad/tooltip",
       "types": [
         "Planeswalker"
       ]
@@ -235,6 +216,7 @@
         "Human",
         "Soldier"
       ],
+      "tooltip": "http://deckbox.org/mtg/Anax%20and%20Cymede/tooltip",
       "types": [
         "Legendary",
         "Creature"
@@ -265,6 +247,7 @@
         "Human",
         "Barbarian"
       ],
+      "tooltip": "http://deckbox.org/mtg/Kamahl%2C%20Pit%20Fighter/tooltip",
       "types": [
         "Legendary",
         "Creature"
@@ -294,58 +277,7 @@
       "subtypes": [
         "Gate"
       ],
-      "types": [
-        "Land"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "",
-      "count": "1",
-      "edition": {
-        "code": "M13",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Evolving Wilds",
-      "rarity": "C",
-      "subtypes": [],
-      "types": [
-        "Land"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "",
-      "count": "1",
-      "edition": {
-        "code": "TOR",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Tainted Field",
-      "rarity": "U",
-      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Boros%20Guildgate/tooltip",
       "types": [
         "Land"
       ]
@@ -372,6 +304,7 @@
       "name": "New Benalia",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/New%20Benalia/tooltip",
       "types": [
         "Land"
       ]
@@ -381,10 +314,10 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "WBWBWB",
+      "cost": "",
       "count": "1",
       "edition": {
-        "code": "EVE",
+        "code": "M13",
         "name": "[unknown edition]"
       },
       "is_foil": false,
@@ -395,11 +328,12 @@
         "code": "flag-us",
         "name": "English"
       },
-      "name": "Unmake",
+      "name": "Evolving Wilds",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Evolving%20Wilds/tooltip",
       "types": [
-        "Instant"
+        "Land"
       ]
     },
     {
@@ -407,10 +341,10 @@
         "code": "s_star2",
         "name": "Near Mint"
       },
-      "cost": "4W",
+      "cost": "",
       "count": "1",
       "edition": {
-        "code": "VI",
+        "code": "TOR",
         "name": "[unknown edition]"
       },
       "is_foil": false,
@@ -421,9 +355,37 @@
         "code": "flag-us",
         "name": "English"
       },
-      "name": "Miraculous Recovery",
+      "name": "Tainted Field",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Tainted%20Field/tooltip",
+      "types": [
+        "Land"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "W",
+      "count": "1",
+      "edition": {
+        "code": "M14",
+        "name": "Magic 2014 Core Set"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Pay No Heed",
+      "rarity": "C",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Pay%20No%20Heed/tooltip",
       "types": [
         "Instant"
       ]
@@ -450,32 +412,7 @@
       "name": "Righteousness",
       "rarity": "U",
       "subtypes": [],
-      "types": [
-        "Instant"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "WB",
-      "count": "1",
-      "edition": {
-        "code": "ARB",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Zealous Persecution",
-      "rarity": "U",
-      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Righteousness/tooltip",
       "types": [
         "Instant"
       ]
@@ -502,6 +439,7 @@
       "name": "Vampire's Bite",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Vampire%27s%20Bite/tooltip",
       "types": [
         "Instant"
       ]
@@ -528,32 +466,7 @@
       "name": "Moment of Heroism",
       "rarity": "C",
       "subtypes": [],
-      "types": [
-        "Instant"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "1WB",
-      "count": "1",
-      "edition": {
-        "code": "GPT",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Mortify",
-      "rarity": "U",
-      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Moment%20of%20Heroism/tooltip",
       "types": [
         "Instant"
       ]
@@ -580,58 +493,7 @@
       "name": "Smite the Monstrous",
       "rarity": "C",
       "subtypes": [],
-      "types": [
-        "Instant"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "BB",
-      "count": "1",
-      "edition": {
-        "code": "WWK",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Urge to Feed",
-      "rarity": "U",
-      "subtypes": [],
-      "types": [
-        "Instant"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "BB",
-      "count": "1",
-      "edition": {
-        "code": "M12",
-        "name": "[unknown edition]"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Sorin's Thirst",
-      "rarity": "C",
-      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Smite%20the%20Monstrous/tooltip",
       "types": [
         "Instant"
       ]
@@ -658,6 +520,61 @@
       "name": "Stand Firm",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Stand%20Firm/tooltip",
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "BB",
+      "count": "1",
+      "edition": {
+        "code": "M12",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Sorin's Thirst",
+      "rarity": "C",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Sorin%27s%20Thirst/tooltip",
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "BB",
+      "count": "1",
+      "edition": {
+        "code": "WWK",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Urge to Feed",
+      "rarity": "U",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Urge%20to%20Feed/tooltip",
       "types": [
         "Instant"
       ]
@@ -684,32 +601,7 @@
       "name": "Magma Jet",
       "rarity": "U",
       "subtypes": [],
-      "types": [
-        "Instant"
-      ]
-    },
-    {
-      "condition": {
-        "code": "s_star2",
-        "name": "Near Mint"
-      },
-      "cost": "W",
-      "count": "1",
-      "edition": {
-        "code": "M14",
-        "name": "Magic 2014 Core Set"
-      },
-      "is_foil": false,
-      "is_promo": false,
-      "is_signed": false,
-      "is_textless": false,
-      "lang": {
-        "code": "flag-us",
-        "name": "English"
-      },
-      "name": "Pay No Heed",
-      "rarity": "C",
-      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Magma%20Jet/tooltip",
       "types": [
         "Instant"
       ]
@@ -736,6 +628,34 @@
       "name": "Condemn",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Condemn/tooltip",
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "WB",
+      "count": "1",
+      "edition": {
+        "code": "ARB",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Zealous Persecution",
+      "rarity": "U",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Zealous%20Persecution/tooltip",
       "types": [
         "Instant"
       ]
@@ -762,6 +682,61 @@
       "name": "Pyrokinesis",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Pyrokinesis/tooltip",
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "WBWBWB",
+      "count": "1",
+      "edition": {
+        "code": "EVE",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Unmake",
+      "rarity": "C",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Unmake/tooltip",
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "4W",
+      "count": "1",
+      "edition": {
+        "code": "VI",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Miraculous Recovery",
+      "rarity": "U",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Miraculous%20Recovery/tooltip",
       "types": [
         "Instant"
       ]
@@ -791,9 +766,68 @@
         "Human",
         "Warrior"
       ],
+      "tooltip": "http://deckbox.org/mtg/Archetype%20of%20Aggression/tooltip",
       "types": [
         "Enchantment",
         "Creature"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1R",
+      "count": "1",
+      "edition": {
+        "code": "THS",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Ordeal of Purphoros",
+      "rarity": "U",
+      "subtypes": [
+        "Aura"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Ordeal%20of%20Purphoros/tooltip",
+      "types": [
+        "Enchantment"
+      ]
+    },
+    {
+      "condition": {
+        "code": "s_star2",
+        "name": "Near Mint"
+      },
+      "cost": "1W",
+      "count": "1",
+      "edition": {
+        "code": "ISD",
+        "name": "[unknown edition]"
+      },
+      "is_foil": false,
+      "is_promo": false,
+      "is_signed": false,
+      "is_textless": false,
+      "lang": {
+        "code": "flag-us",
+        "name": "English"
+      },
+      "name": "Bonds of Faith",
+      "rarity": "C",
+      "subtypes": [
+        "Aura"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Bonds%20of%20Faith/tooltip",
+      "types": [
+        "Enchantment"
       ]
     }
   ],

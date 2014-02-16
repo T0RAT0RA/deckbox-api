@@ -4,6 +4,7 @@
       "cost": "",
       "name": "A Display of My Dark Power",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/A%20Display%20of%20My%20Dark%20Power/tooltip",
       "types": [
         "Scheme"
       ]
@@ -12,6 +13,7 @@
       "cost": "X1B",
       "name": "Abandon Hope",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Abandon%20Hope/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -20,6 +22,7 @@
       "cost": "",
       "name": "Abandoned Outpost",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Abandoned%20Outpost/tooltip",
       "types": [
         "Land"
       ]
@@ -30,6 +33,7 @@
       "subtypes": [
         "Zombie"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abattoir%20Ghoul/tooltip",
       "types": [
         "Creature"
       ]
@@ -40,6 +44,7 @@
       "subtypes": [
         "Gargoyle"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abbey%20Gargoyles/tooltip",
       "types": [
         "Creature"
       ]
@@ -50,6 +55,7 @@
       "subtypes": [
         "Griffin"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abbey%20Griffin/tooltip",
       "types": [
         "Creature"
       ]
@@ -61,6 +67,7 @@
         "Human",
         "Cleric"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abbey%20Matron/tooltip",
       "types": [
         "Creature"
       ]
@@ -71,6 +78,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abduction/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -79,6 +87,7 @@
       "cost": "1W",
       "name": "Abeyance",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Abeyance/tooltip",
       "types": [
         "Instant"
       ]
@@ -89,6 +98,7 @@
       "subtypes": [
         "Demon"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abhorrent%20Overlord/tooltip",
       "types": [
         "Creature"
       ]
@@ -97,6 +107,7 @@
       "cost": "U",
       "name": "Abjure",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Abjure/tooltip",
       "types": [
         "Instant"
       ]
@@ -105,6 +116,7 @@
       "cost": "1WW",
       "name": "Abolish",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Abolish/tooltip",
       "types": [
         "Instant"
       ]
@@ -115,6 +127,7 @@
       "subtypes": [
         "Horror"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abomination/tooltip",
       "types": [
         "Creature"
       ]
@@ -125,6 +138,7 @@
       "subtypes": [
         "Elemental"
       ],
+      "tooltip": "http://deckbox.org/mtg/Aboroth/tooltip",
       "types": [
         "Creature"
       ]
@@ -135,6 +149,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Aboshan%27s%20Desire/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -145,6 +160,7 @@
       "subtypes": [
         "Cephalid"
       ],
+      "tooltip": "http://deckbox.org/mtg/Aboshan%2C%20Cephalid%20Emperor/tooltip",
       "types": [
         "Legendary",
         "Creature"
@@ -154,6 +170,7 @@
       "cost": "R",
       "name": "About Face",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/About%20Face/tooltip",
       "types": [
         "Instant"
       ]
@@ -162,6 +179,7 @@
       "cost": "BG",
       "name": "Abrupt Decay",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Abrupt%20Decay/tooltip",
       "types": [
         "Instant"
       ]
@@ -170,6 +188,7 @@
       "cost": "1W",
       "name": "Absolute Grace",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Absolute%20Grace/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -178,6 +197,7 @@
       "cost": "1W",
       "name": "Absolute Law",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Absolute%20Law/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -189,6 +209,7 @@
         "Thrull",
         "Cleric"
       ],
+      "tooltip": "http://deckbox.org/mtg/Absolver%20Thrull/tooltip",
       "types": [
         "Creature"
       ]
@@ -197,6 +218,7 @@
       "cost": "WUU",
       "name": "Absorb",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Absorb/tooltip",
       "types": [
         "Instant"
       ]
@@ -205,6 +227,7 @@
       "cost": "6B",
       "name": "Absorb Vis",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Absorb%20Vis/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -215,6 +238,7 @@
       "subtypes": [
         "Human"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abu%20Ja%27far/tooltip",
       "types": [
         "Creature"
       ]
@@ -226,6 +250,7 @@
         "Cat",
         "Cleric"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abuna%20Acolyte/tooltip",
       "types": [
         "Creature"
       ]
@@ -234,6 +259,7 @@
       "cost": "3W",
       "name": "Abuna's Chant",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Abuna%27s%20Chant/tooltip",
       "types": [
         "Instant"
       ]
@@ -242,6 +268,7 @@
       "cost": "2GG",
       "name": "Abundance",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Abundance/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -252,6 +279,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abundant%20Growth/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -262,6 +290,7 @@
       "subtypes": [
         "Horror"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abyssal%20Gatekeeper/tooltip",
       "types": [
         "Creature"
       ]
@@ -272,6 +301,7 @@
       "subtypes": [
         "Horror"
       ],
+      "tooltip": "http://deckbox.org/mtg/Abyssal%20Horror/tooltip",
       "types": [
         "Creature"
       ]

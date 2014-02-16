@@ -22,9 +22,11 @@
       ]
     },
     "gatherer_link": "http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=600",
+    "image": "http://deckbox.org/system/images/mtg/cards/600.jpg",
     "name": "Black Lotus",
     "rules": ", Sacrifice Black Lotus: Add three mana of any one color to your mana pool.",
     "subtypes": [],
+    "tooltip": "http://deckbox.org/mtg/Black%20Lotus/tooltip",
     "types": [
       "Artifact"
     ]

@@ -22,6 +22,7 @@
       "name": "Acolyte's Reward",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Acolyte%27s%20Reward/tooltip",
       "types": [
         "Instant"
       ]
@@ -51,6 +52,7 @@
         "Human",
         "Soldier"
       ],
+      "tooltip": "http://deckbox.org/mtg/Akroan%20Skyguard/tooltip",
       "types": [
         "Creature"
       ]
@@ -80,6 +82,7 @@
         "Human",
         "Warrior"
       ],
+      "tooltip": "http://deckbox.org/mtg/Archetype%20of%20Aggression/tooltip",
       "types": [
         "Enchantment",
         "Creature"

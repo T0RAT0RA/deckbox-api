@@ -22,6 +22,7 @@
       "name": "Absorb Vis",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Absorb%20Vis/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -51,6 +52,7 @@
         "Vampire",
         "Warrior"
       ],
+      "tooltip": "http://deckbox.org/mtg/Butcher%20of%20Malakir/tooltip",
       "types": [
         "Creature"
       ]
@@ -80,6 +82,7 @@
         "Human",
         "Barbarian"
       ],
+      "tooltip": "http://deckbox.org/mtg/Kamahl%2C%20Pit%20Fighter/tooltip",
       "types": [
         "Legendary",
         "Creature"
@@ -107,6 +110,7 @@
       "name": "Pyrokinesis",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Pyrokinesis/tooltip",
       "types": [
         "Instant"
       ]
@@ -135,6 +139,7 @@
       "subtypes": [
         "Giant"
       ],
+      "tooltip": "http://deckbox.org/mtg/Sun%20Titan/tooltip",
       "types": [
         "Creature"
       ]
@@ -164,6 +169,7 @@
         "Human",
         "Knight"
       ],
+      "tooltip": "http://deckbox.org/mtg/Dawnstrike%20Paladin/tooltip",
       "types": [
         "Creature"
       ]
@@ -190,6 +196,7 @@
       "name": "Miraculous Recovery",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Miraculous%20Recovery/tooltip",
       "types": [
         "Instant"
       ]
@@ -218,6 +225,7 @@
       "subtypes": [
         "Spirit"
       ],
+      "tooltip": "http://deckbox.org/mtg/Revenant%20Patriarch/tooltip",
       "types": [
         "Creature"
       ]
@@ -246,6 +254,7 @@
       "subtypes": [
         "Vampire"
       ],
+      "tooltip": "http://deckbox.org/mtg/Sengir%20Vampire/tooltip",
       "types": [
         "Creature"
       ]
@@ -272,6 +281,7 @@
       "name": "Ancient Craving",
       "rarity": "R",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Ancient%20Craving/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -301,6 +311,7 @@
         "Giant",
         "Soldier"
       ],
+      "tooltip": "http://deckbox.org/mtg/Armory%20Guard/tooltip",
       "types": [
         "Creature"
       ]
@@ -327,6 +338,7 @@
       "name": "Field of Souls",
       "rarity": "R",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Field%20of%20Souls/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -356,6 +368,7 @@
         "Human",
         "Soldier"
       ],
+      "tooltip": "http://deckbox.org/mtg/Gustcloak%20Sentinel/tooltip",
       "types": [
         "Creature"
       ]
@@ -384,6 +397,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Mark%20of%20the%20Vampire/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -413,6 +427,7 @@
         "Human",
         "Scout"
       ],
+      "tooltip": "http://deckbox.org/mtg/Mausoleum%20Guard/tooltip",
       "types": [
         "Creature"
       ]
@@ -442,6 +457,7 @@
         "Spirit",
         "Soldier"
       ],
+      "tooltip": "http://deckbox.org/mtg/Phantom%20General/tooltip",
       "types": [
         "Creature"
       ]
@@ -468,6 +484,7 @@
       "name": "Smite the Monstrous",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Smite%20the%20Monstrous/tooltip",
       "types": [
         "Instant"
       ]
@@ -496,6 +513,7 @@
       "subtypes": [
         "Sorin"
       ],
+      "tooltip": "http://deckbox.org/mtg/Sorin%2C%20Lord%20of%20Innistrad/tooltip",
       "types": [
         "Planeswalker"
       ]
@@ -524,6 +542,7 @@
       "subtypes": [
         "Vampire"
       ],
+      "tooltip": "http://deckbox.org/mtg/Vampire%20Outcasts/tooltip",
       "types": [
         "Creature"
       ]
@@ -553,6 +572,7 @@
         "Human",
         "Soldier"
       ],
+      "tooltip": "http://deckbox.org/mtg/Anax%20and%20Cymede/tooltip",
       "types": [
         "Legendary",
         "Creature"
@@ -583,6 +603,7 @@
         "Human",
         "Warrior"
       ],
+      "tooltip": "http://deckbox.org/mtg/Archetype%20of%20Aggression/tooltip",
       "types": [
         "Enchantment",
         "Creature"
@@ -613,6 +634,7 @@
         "Human",
         "Wizard"
       ],
+      "tooltip": "http://deckbox.org/mtg/Auramancer/tooltip",
       "types": [
         "Creature"
       ]
@@ -641,6 +663,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Battle%20Mastery/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -669,6 +692,7 @@
       "subtypes": [
         "Vampire"
       ],
+      "tooltip": "http://deckbox.org/mtg/Bloodrage%20Vampire/tooltip",
       "types": [
         "Creature"
       ]
@@ -698,6 +722,7 @@
         "Human",
         "Cleric"
       ],
+      "tooltip": "http://deckbox.org/mtg/Fiend%20Hunter/tooltip",
       "types": [
         "Creature"
       ]
@@ -727,6 +752,7 @@
         "Human",
         "Archer"
       ],
+      "tooltip": "http://deckbox.org/mtg/Freewind%20Equenaut/tooltip",
       "types": [
         "Creature"
       ]
@@ -755,6 +781,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Griffin%20Guide/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -781,6 +808,7 @@
       "name": "Lingering Souls",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Lingering%20Souls/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -807,6 +835,7 @@
       "name": "Spectral Procession",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Spectral%20Procession/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -835,6 +864,7 @@
       "subtypes": [
         "Spirit"
       ],
+      "tooltip": "http://deckbox.org/mtg/Twilight%20Drover/tooltip",
       "types": [
         "Creature"
       ]

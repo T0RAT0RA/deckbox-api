@@ -25,6 +25,7 @@ class DeckboxCrawler:
 
     _CARDS_QUERY_KEY = "f"
     _CARDS_QUERY_SEPARATOR = "!"
+    _TOOLTIP = "/mtg/<cardname>/tooltip"
 
     def __init__(self, url):
         page_url = self._HTTP + urllib.quote(self._DECKBOX_DOMAIN + url)
@@ -142,6 +143,8 @@ class DeckboxCrawler:
             card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
         card["cost"]    = "".join(card_cost)
         card["rules"]   = self._page(".card_properties tr:eq(4) td:last").text()
+        card["image"]   = self._HTTP + self._DECKBOX_DOMAIN + self._page("#card_image").attr("src")
+        card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.quote(card["name"]))
         card["editions"] = []
         for edition in self._page(".card_properties tr:eq(1) td:last img").items():
             card["editions"].append({
@@ -292,6 +295,7 @@ class DeckboxCrawler:
                     card = {}
                     card["count"]   = tr.find("td.card_count").text()
                     card["name"]    = tr.find("a").text()
+                    card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.quote(card["name"]))
                     card_types = re.split(r'\s+-\s+', tr.find("td").eq(2).find("span").text())
                     card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
                     card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
@@ -327,6 +331,7 @@ class DeckboxCrawler:
 
                 card = {}
                 card["name"]    = tr.find("a").text()
+                card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.quote(card["name"]))
                 card_types  = re.split(r'\s+-\s+', tr.find("td").eq(1).find("span").text())
                 card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
                 card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
@@ -374,6 +379,7 @@ class DeckboxCrawler:
                 card = {}
                 card["count"]   = tr.find("td.card_count").text()
                 card["name"]    = tr.find("a").text()
+                card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.quote(card["name"]))
 
                 edition_container = tr.find(".mtg_edition_container img")
                 card["edition"] = {

@@ -22,6 +22,7 @@
       "name": "Zealous Persecution",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Zealous%20Persecution/tooltip",
       "types": [
         "Instant"
       ]
@@ -50,6 +51,7 @@
       "subtypes": [
         "Wall"
       ],
+      "tooltip": "http://deckbox.org/mtg/Wall%20of%20Omens/tooltip",
       "types": [
         "Creature"
       ]
@@ -76,6 +78,7 @@
       "name": "Vampire's Bite",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Vampire%27s%20Bite/tooltip",
       "types": [
         "Instant"
       ]
@@ -104,6 +107,7 @@
       "subtypes": [
         "Vampire"
       ],
+      "tooltip": "http://deckbox.org/mtg/Vampire%20Outcasts/tooltip",
       "types": [
         "Creature"
       ]
@@ -133,6 +137,7 @@
         "Vampire",
         "Shaman"
       ],
+      "tooltip": "http://deckbox.org/mtg/Vampire%20Nighthawk/tooltip",
       "types": [
         "Creature"
       ]
@@ -159,6 +164,7 @@
       "name": "Urge to Feed",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Urge%20to%20Feed/tooltip",
       "types": [
         "Instant"
       ]
@@ -185,6 +191,7 @@
       "name": "Unmake",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Unmake/tooltip",
       "types": [
         "Instant"
       ]
@@ -213,6 +220,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Undying%20Rage/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -241,6 +249,7 @@
       "subtypes": [
         "Spirit"
       ],
+      "tooltip": "http://deckbox.org/mtg/Twilight%20Drover/tooltip",
       "types": [
         "Creature"
       ]
@@ -270,6 +279,7 @@
         "Human",
         "Knight"
       ],
+      "tooltip": "http://deckbox.org/mtg/Truefire%20Paladin/tooltip",
       "types": [
         "Creature"
       ]
@@ -299,6 +309,7 @@
         "Human",
         "Soldier"
       ],
+      "tooltip": "http://deckbox.org/mtg/Thraben%20Valiant/tooltip",
       "types": [
         "Creature"
       ]
@@ -325,6 +336,7 @@
       "name": "Tainted Field",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Tainted%20Field/tooltip",
       "types": [
         "Land"
       ]
@@ -353,6 +365,7 @@
       "subtypes": [
         "Swamp"
       ],
+      "tooltip": "http://deckbox.org/mtg/Swamp/tooltip",
       "types": [
         "Basic",
         "Land"
@@ -382,6 +395,7 @@
       "subtypes": [
         "Giant"
       ],
+      "tooltip": "http://deckbox.org/mtg/Sun%20Titan/tooltip",
       "types": [
         "Creature"
       ]
@@ -408,6 +422,7 @@
       "name": "Stand Firm",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Stand%20Firm/tooltip",
       "types": [
         "Instant"
       ]
@@ -434,6 +449,7 @@
       "name": "Spectral Procession",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Spectral%20Procession/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -462,6 +478,7 @@
       "subtypes": [
         "Sorin"
       ],
+      "tooltip": "http://deckbox.org/mtg/Sorin%2C%20Lord%20of%20Innistrad/tooltip",
       "types": [
         "Planeswalker"
       ]
@@ -488,6 +505,7 @@
       "name": "Sorin's Thirst",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Sorin%27s%20Thirst/tooltip",
       "types": [
         "Instant"
       ]
@@ -517,6 +535,7 @@
         "Human",
         "Warrior"
       ],
+      "tooltip": "http://deckbox.org/mtg/Somberwald%20Vigilante/tooltip",
       "types": [
         "Creature"
       ]
@@ -543,6 +562,7 @@
       "name": "Smite the Monstrous",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Smite%20the%20Monstrous/tooltip",
       "types": [
         "Instant"
       ]
@@ -571,6 +591,7 @@
       "subtypes": [
         "Vampire"
       ],
+      "tooltip": "http://deckbox.org/mtg/Sengir%20Vampire/tooltip",
       "types": [
         "Creature"
       ]
@@ -597,6 +618,7 @@
       "name": "Righteousness",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Righteousness/tooltip",
       "types": [
         "Instant"
       ]
@@ -625,6 +647,7 @@
       "subtypes": [
         "Spirit"
       ],
+      "tooltip": "http://deckbox.org/mtg/Revenant%20Patriarch/tooltip",
       "types": [
         "Creature"
       ]
@@ -651,6 +674,7 @@
       "name": "Pyrokinesis",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Pyrokinesis/tooltip",
       "types": [
         "Instant"
       ]
@@ -679,6 +703,7 @@
       "subtypes": [
         "Plains"
       ],
+      "tooltip": "http://deckbox.org/mtg/Plains/tooltip",
       "types": [
         "Basic",
         "Land"
@@ -709,6 +734,7 @@
         "Spirit",
         "Soldier"
       ],
+      "tooltip": "http://deckbox.org/mtg/Phantom%20General/tooltip",
       "types": [
         "Creature"
       ]
@@ -735,6 +761,7 @@
       "name": "Pay No Heed",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Pay%20No%20Heed/tooltip",
       "types": [
         "Instant"
       ]
@@ -763,6 +790,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Ordeal%20of%20Purphoros/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -789,6 +817,7 @@
       "name": "New Benalia",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/New%20Benalia/tooltip",
       "types": [
         "Land"
       ]
@@ -817,6 +846,7 @@
       "subtypes": [
         "Mountain"
       ],
+      "tooltip": "http://deckbox.org/mtg/Mountain/tooltip",
       "types": [
         "Basic",
         "Land"

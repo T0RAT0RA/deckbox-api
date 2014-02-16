@@ -22,6 +22,7 @@
       "name": "Absorb Vis",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Absorb%20Vis/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -48,6 +49,7 @@
       "name": "Ancient Craving",
       "rarity": "R",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Ancient%20Craving/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -76,6 +78,7 @@
       "subtypes": [
         "Vampire"
       ],
+      "tooltip": "http://deckbox.org/mtg/Bloodrage%20Vampire/tooltip",
       "types": [
         "Creature"
       ]
@@ -105,6 +108,7 @@
         "Vampire",
         "Warrior"
       ],
+      "tooltip": "http://deckbox.org/mtg/Butcher%20of%20Malakir/tooltip",
       "types": [
         "Creature"
       ]
@@ -131,6 +135,7 @@
       "name": "Condemn",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Condemn/tooltip",
       "types": [
         "Instant"
       ]

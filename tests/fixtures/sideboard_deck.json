@@ -7,6 +7,7 @@
       "subtypes": [
         "Kithkin"
       ],
+      "tooltip": "http://deckbox.org/mtg/Figure%20of%20Destiny/tooltip",
       "types": [
         "Creature"
       ]
@@ -16,6 +17,7 @@
       "count": "1",
       "name": "Pay No Heed",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Pay%20No%20Heed/tooltip",
       "types": [
         "Instant"
       ]
@@ -35,6 +37,7 @@
         "Human",
         "Soldier"
       ],
+      "tooltip": "http://deckbox.org/mtg/Doomed%20Traveler/tooltip",
       "types": [
         "Creature"
       ]
@@ -44,6 +47,7 @@
       "count": "4",
       "name": "Pay No Heed",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Pay%20No%20Heed/tooltip",
       "types": [
         "Instant"
       ]
@@ -53,6 +57,7 @@
       "count": "1",
       "name": "Rakdos's Return",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Rakdos%27s%20Return/tooltip",
       "types": [
         "Sorcery"
       ]

@@ -6,6 +6,7 @@
       "subtypes": [
         "Centaur"
       ],
+      "tooltip": "http://deckbox.org/mtg/Centaur%20Chieftain/tooltip",
       "types": [
         "Creature"
       ]
@@ -17,6 +18,7 @@
         "Centaur",
         "Horror"
       ],
+      "tooltip": "http://deckbox.org/mtg/Possessed%20Centaur/tooltip",
       "types": [
         "Creature"
       ]
@@ -27,6 +29,7 @@
       "subtypes": [
         "Centaur"
       ],
+      "tooltip": "http://deckbox.org/mtg/Centaur%20Veteran/tooltip",
       "types": [
         "Creature"
       ]
@@ -37,6 +40,7 @@
       "subtypes": [
         "Centaur"
       ],
+      "tooltip": "http://deckbox.org/mtg/Crashing%20Centaur/tooltip",
       "types": [
         "Creature"
       ]

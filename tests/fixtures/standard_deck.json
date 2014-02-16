@@ -1,324 +1,437 @@
 {
   "cards": [
     {
-      "cost": "RW",
-      "count": "1",
-      "name": "Figure of Destiny",
-      "subtype": [
-        "Kithkin"
-      ],
-      "type": "Creature"
-    },
-    {
-      "cost": "R",
-      "count": "1",
-      "name": "Somberwald Vigilante",
-      "subtype": [
-        "Human",
-        "Warrior"
-      ],
-      "type": "Creature"
-    },
-    {
-      "cost": "1W",
-      "count": "1",
-      "name": "Cavalry Pegasus",
-      "subtype": [
-        "Pegasus"
-      ],
-      "type": "Creature"
-    },
-    {
-      "cost": "1W",
-      "count": "1",
-      "name": "Fencing Ace",
-      "subtype": [
-        "Human",
-        "Soldier"
-      ],
-      "type": "Creature"
-    },
-    {
-      "cost": "RW",
-      "count": "2",
-      "name": "Stun Sniper",
-      "subtype": [
-        "Human",
-        "Archer"
-      ],
-      "type": "Creature"
-    },
-    {
-      "cost": "1W",
-      "count": "1",
-      "name": "Thraben Valiant",
-      "subtype": [
-        "Human",
-        "Soldier"
-      ],
-      "type": "Creature"
-    },
-    {
-      "cost": "RW",
-      "count": "1",
-      "name": "Truefire Paladin",
-      "subtype": [
-        "Human",
-        "Knight"
-      ],
-      "type": "Creature"
-    },
-    {
       "cost": "1RW",
       "count": "1",
       "name": "Anax and Cymede",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Soldier"
       ],
-      "type": "Legendary Creature"
-    },
-    {
-      "cost": "2W",
-      "count": "1",
-      "name": "Auramancer",
-      "subtype": [
-        "Human",
-        "Wizard"
-      ],
-      "type": "Creature"
-    },
-    {
-      "cost": "2W",
-      "count": "2",
-      "name": "Freewind Equenaut",
-      "subtype": [
-        "Human",
-        "Archer"
-      ],
-      "type": "Creature"
+      "tooltip": "http://deckbox.org/mtg/Anax%20and%20Cymede/tooltip",
+      "types": [
+        "Legendary",
+        "Creature"
+      ]
     },
     {
       "cost": "3W",
       "count": "2",
       "name": "Armory Guard",
-      "subtype": [
+      "subtypes": [
         "Giant",
         "Soldier"
       ],
-      "type": "Creature"
+      "tooltip": "http://deckbox.org/mtg/Armory%20Guard/tooltip",
+      "types": [
+        "Creature"
+      ]
     },
     {
-      "cost": "2WW",
+      "cost": "2W",
       "count": "1",
-      "name": "Gustcloak Sentinel",
-      "subtype": [
+      "name": "Auramancer",
+      "subtypes": [
         "Human",
-        "Soldier"
+        "Wizard"
       ],
-      "type": "Creature"
+      "tooltip": "http://deckbox.org/mtg/Auramancer/tooltip",
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "1W",
+      "count": "1",
+      "name": "Cavalry Pegasus",
+      "subtypes": [
+        "Pegasus"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Cavalry%20Pegasus/tooltip",
+      "types": [
+        "Creature"
+      ]
     },
     {
       "cost": "3WW",
       "count": "1",
       "name": "Dawnstrike Paladin",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Knight"
       ],
-      "type": "Creature"
+      "tooltip": "http://deckbox.org/mtg/Dawnstrike%20Paladin/tooltip",
+      "types": [
+        "Creature"
+      ]
     },
     {
-      "cost": "RWRWRWRWRW",
+      "cost": "1W",
       "count": "1",
-      "name": "Nobilis of War",
-      "subtype": [
-        "Spirit",
-        "Avatar"
+      "name": "Fencing Ace",
+      "subtypes": [
+        "Human",
+        "Soldier"
       ],
-      "type": "Creature"
+      "tooltip": "http://deckbox.org/mtg/Fencing%20Ace/tooltip",
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "RW",
+      "count": "1",
+      "name": "Figure of Destiny",
+      "subtypes": [
+        "Kithkin"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Figure%20of%20Destiny/tooltip",
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "2W",
+      "count": "2",
+      "name": "Freewind Equenaut",
+      "subtypes": [
+        "Human",
+        "Archer"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Freewind%20Equenaut/tooltip",
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "2WW",
+      "count": "1",
+      "name": "Gustcloak Sentinel",
+      "subtypes": [
+        "Human",
+        "Soldier"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Gustcloak%20Sentinel/tooltip",
+      "types": [
+        "Creature"
+      ]
     },
     {
       "cost": "4RR",
       "count": "1",
       "name": "Kamahl, Pit Fighter",
-      "subtype": [
+      "subtypes": [
         "Human",
         "Barbarian"
       ],
-      "type": "Legendary Creature"
+      "tooltip": "http://deckbox.org/mtg/Kamahl%2C%20Pit%20Fighter/tooltip",
+      "types": [
+        "Legendary",
+        "Creature"
+      ]
+    },
+    {
+      "cost": "RWRWRWRWRW",
+      "count": "1",
+      "name": "Nobilis of War",
+      "subtypes": [
+        "Spirit",
+        "Avatar"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Nobilis%20of%20War/tooltip",
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "R",
+      "count": "1",
+      "name": "Somberwald Vigilante",
+      "subtypes": [
+        "Human",
+        "Warrior"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Somberwald%20Vigilante/tooltip",
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "RW",
+      "count": "2",
+      "name": "Stun Sniper",
+      "subtypes": [
+        "Human",
+        "Archer"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Stun%20Sniper/tooltip",
+      "types": [
+        "Creature"
+      ]
     },
     {
       "cost": "4WW",
       "count": "1",
       "name": "Sun Titan",
-      "subtype": [
+      "subtypes": [
         "Giant"
       ],
-      "type": "Creature"
+      "tooltip": "http://deckbox.org/mtg/Sun%20Titan/tooltip",
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "1W",
+      "count": "1",
+      "name": "Thraben Valiant",
+      "subtypes": [
+        "Human",
+        "Soldier"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Thraben%20Valiant/tooltip",
+      "types": [
+        "Creature"
+      ]
+    },
+    {
+      "cost": "RW",
+      "count": "1",
+      "name": "Truefire Paladin",
+      "subtypes": [
+        "Human",
+        "Knight"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Truefire%20Paladin/tooltip",
+      "types": [
+        "Creature"
+      ]
     },
     {
       "cost": "W",
       "count": "2",
       "name": "Condemn",
-      "subtype": "",
-      "type": "Instant"
-    },
-    {
-      "cost": "W",
-      "count": "1",
-      "name": "Pay No Heed",
-      "subtype": "",
-      "type": "Instant"
-    },
-    {
-      "cost": "W",
-      "count": "1",
-      "name": "Righteousness",
-      "subtype": "",
-      "type": "Instant"
-    },
-    {
-      "cost": "W",
-      "count": "1",
-      "name": "Stand Firm",
-      "subtype": "",
-      "type": "Instant"
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Condemn/tooltip",
+      "types": [
+        "Instant"
+      ]
     },
     {
       "cost": "1R",
       "count": "1",
       "name": "Magma Jet",
-      "subtype": "",
-      "type": "Instant"
-    },
-    {
-      "cost": "1W",
-      "count": "1",
-      "name": "Moment of Heroism",
-      "subtype": "",
-      "type": "Instant"
-    },
-    {
-      "cost": "3W",
-      "count": "1",
-      "name": "Smite the Monstrous",
-      "subtype": "",
-      "type": "Instant"
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Magma%20Jet/tooltip",
+      "types": [
+        "Instant"
+      ]
     },
     {
       "cost": "4W",
       "count": "1",
       "name": "Miraculous Recovery",
-      "subtype": "",
-      "type": "Instant"
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Miraculous%20Recovery/tooltip",
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "cost": "1W",
+      "count": "1",
+      "name": "Moment of Heroism",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Moment%20of%20Heroism/tooltip",
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "cost": "W",
+      "count": "1",
+      "name": "Pay No Heed",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Pay%20No%20Heed/tooltip",
+      "types": [
+        "Instant"
+      ]
     },
     {
       "cost": "4RR",
       "count": "1",
       "name": "Pyrokinesis",
-      "subtype": "",
-      "type": "Instant"
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Pyrokinesis/tooltip",
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "cost": "W",
+      "count": "1",
+      "name": "Righteousness",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Righteousness/tooltip",
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "cost": "3W",
+      "count": "1",
+      "name": "Smite the Monstrous",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Smite%20the%20Monstrous/tooltip",
+      "types": [
+        "Instant"
+      ]
+    },
+    {
+      "cost": "W",
+      "count": "1",
+      "name": "Stand Firm",
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Stand%20Firm/tooltip",
+      "types": [
+        "Instant"
+      ]
     },
     {
       "cost": "3WW",
       "count": "1",
       "name": "Winds of Rath",
-      "subtype": "",
-      "type": "Sorcery"
-    },
-    {
-      "cost": "W",
-      "count": "1",
-      "name": "Daily Regimen",
-      "subtype": [
-        "Aura"
-      ],
-      "type": "Enchantment"
-    },
-    {
-      "cost": "1W",
-      "count": "1",
-      "name": "Bonds of Faith",
-      "subtype": [
-        "Aura"
-      ],
-      "type": "Enchantment"
-    },
-    {
-      "cost": "1R",
-      "count": "1",
-      "name": "Ordeal of Purphoros",
-      "subtype": [
-        "Aura"
-      ],
-      "type": "Enchantment"
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Winds%20of%20Rath/tooltip",
+      "types": [
+        "Sorcery"
+      ]
     },
     {
       "cost": "2W",
       "count": "1",
       "name": "Battle Mastery",
-      "subtype": [
+      "subtypes": [
         "Aura"
       ],
-      "type": "Enchantment"
+      "tooltip": "http://deckbox.org/mtg/Battle%20Mastery/tooltip",
+      "types": [
+        "Enchantment"
+      ]
+    },
+    {
+      "cost": "1W",
+      "count": "1",
+      "name": "Bonds of Faith",
+      "subtypes": [
+        "Aura"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Bonds%20of%20Faith/tooltip",
+      "types": [
+        "Enchantment"
+      ]
+    },
+    {
+      "cost": "W",
+      "count": "1",
+      "name": "Daily Regimen",
+      "subtypes": [
+        "Aura"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Daily%20Regimen/tooltip",
+      "types": [
+        "Enchantment"
+      ]
     },
     {
       "cost": "2W",
       "count": "1",
       "name": "Griffin Guide",
-      "subtype": [
+      "subtypes": [
         "Aura"
       ],
-      "type": "Enchantment"
+      "tooltip": "http://deckbox.org/mtg/Griffin%20Guide/tooltip",
+      "types": [
+        "Enchantment"
+      ]
+    },
+    {
+      "cost": "1R",
+      "count": "1",
+      "name": "Ordeal of Purphoros",
+      "subtypes": [
+        "Aura"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Ordeal%20of%20Purphoros/tooltip",
+      "types": [
+        "Enchantment"
+      ]
     },
     {
       "cost": "2R",
       "count": "1",
       "name": "Undying Rage",
-      "subtype": [
+      "subtypes": [
         "Aura"
       ],
-      "type": "Enchantment"
+      "tooltip": "http://deckbox.org/mtg/Undying%20Rage/tooltip",
+      "types": [
+        "Enchantment"
+      ]
     },
     {
       "cost": "",
       "count": "2",
       "name": "Boros Guildgate",
-      "subtype": [
+      "subtypes": [
         "Gate"
       ],
-      "type": "Land"
+      "tooltip": "http://deckbox.org/mtg/Boros%20Guildgate/tooltip",
+      "types": [
+        "Land"
+      ]
     },
     {
       "cost": "",
       "count": "11",
       "name": "Mountain",
-      "subtype": [
+      "subtypes": [
         "Mountain"
       ],
-      "type": "Basic Land"
+      "tooltip": "http://deckbox.org/mtg/Mountain/tooltip",
+      "types": [
+        "Basic",
+        "Land"
+      ]
     },
     {
       "cost": "",
       "count": "2",
       "name": "New Benalia",
-      "subtype": "",
-      "type": "Land"
+      "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/New%20Benalia/tooltip",
+      "types": [
+        "Land"
+      ]
     },
     {
       "cost": "",
       "count": "9",
       "name": "Plains",
-      "subtype": [
+      "subtypes": [
         "Plains"
       ],
-      "type": "Basic Land"
+      "tooltip": "http://deckbox.org/mtg/Plains/tooltip",
+      "types": [
+        "Basic",
+        "Land"
+      ]
     }
   ],
   "cards_count": {
     "cards": 60,
     "distinct": 36
   },
-  "name": "Heroes"
+  "name": "Heroes",
+  "sideboard": []
 }

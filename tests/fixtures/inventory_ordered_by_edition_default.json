@@ -22,6 +22,7 @@
       "name": "Ancient Craving",
       "rarity": "R",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Ancient%20Craving/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -48,6 +49,7 @@
       "name": "Absorb Vis",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Absorb%20Vis/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -74,6 +76,7 @@
       "name": "Pyrokinesis",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Pyrokinesis/tooltip",
       "types": [
         "Instant"
       ]
@@ -100,6 +103,7 @@
       "name": "Miraculous Recovery",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Miraculous%20Recovery/tooltip",
       "types": [
         "Instant"
       ]
@@ -126,6 +130,7 @@
       "name": "Field of Souls",
       "rarity": "R",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Field%20of%20Souls/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -152,6 +157,7 @@
       "name": "Death Grasp",
       "rarity": "R",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Death%20Grasp/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -178,6 +184,7 @@
       "name": "Decompose",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Decompose/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -204,6 +211,7 @@
       "name": "Tainted Field",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Tainted%20Field/tooltip",
       "types": [
         "Land"
       ]
@@ -233,6 +241,7 @@
         "Nightmare",
         "Horror"
       ],
+      "tooltip": "http://deckbox.org/mtg/Mesmeric%20Fiend/tooltip",
       "types": [
         "Creature"
       ]
@@ -262,6 +271,7 @@
         "Human",
         "Soldier"
       ],
+      "tooltip": "http://deckbox.org/mtg/Gustcloak%20Sentinel/tooltip",
       "types": [
         "Creature"
       ]
@@ -288,6 +298,7 @@
       "name": "Stand Firm",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Stand%20Firm/tooltip",
       "types": [
         "Instant"
       ]
@@ -316,6 +327,7 @@
       "subtypes": [
         "Spirit"
       ],
+      "tooltip": "http://deckbox.org/mtg/Twilight%20Drover/tooltip",
       "types": [
         "Creature"
       ]
@@ -344,6 +356,7 @@
       "subtypes": [
         "Spirit"
       ],
+      "tooltip": "http://deckbox.org/mtg/Revenant%20Patriarch/tooltip",
       "types": [
         "Creature"
       ]
@@ -373,6 +386,7 @@
         "Human",
         "Archer"
       ],
+      "tooltip": "http://deckbox.org/mtg/Freewind%20Equenaut/tooltip",
       "types": [
         "Creature"
       ]
@@ -401,6 +415,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Undying%20Rage/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -429,6 +444,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Griffin%20Guide/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -455,6 +471,7 @@
       "name": "New Benalia",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/New%20Benalia/tooltip",
       "types": [
         "Land"
       ]
@@ -484,6 +501,7 @@
         "Human",
         "Barbarian"
       ],
+      "tooltip": "http://deckbox.org/mtg/Kamahl%2C%20Pit%20Fighter/tooltip",
       "types": [
         "Legendary",
         "Creature"
@@ -513,6 +531,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Battle%20Mastery/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -541,6 +560,7 @@
       "subtypes": [
         "Aura"
       ],
+      "tooltip": "http://deckbox.org/mtg/Daily%20Regimen/tooltip",
       "types": [
         "Enchantment"
       ]
@@ -567,6 +587,7 @@
       "name": "Spectral Procession",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Spectral%20Procession/tooltip",
       "types": [
         "Sorcery"
       ]
@@ -595,6 +616,7 @@
       "subtypes": [
         "Kithkin"
       ],
+      "tooltip": "http://deckbox.org/mtg/Figure%20of%20Destiny/tooltip",
       "types": [
         "Creature"
       ]
@@ -621,6 +643,7 @@
       "name": "Unmake",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Unmake/tooltip",
       "types": [
         "Instant"
       ]
@@ -647,6 +670,7 @@
       "name": "Zealous Persecution",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Zealous%20Persecution/tooltip",
       "types": [
         "Instant"
       ]
@@ -673,6 +697,7 @@
       "name": "Righteousness",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Righteousness/tooltip",
       "types": [
         "Instant"
       ]
@@ -702,6 +727,7 @@
         "Vampire",
         "Warrior"
       ],
+      "tooltip": "http://deckbox.org/mtg/Gatekeeper%20of%20Malakir/tooltip",
       "types": [
         "Creature"
       ]
@@ -728,6 +754,7 @@
       "name": "Vampire's Bite",
       "rarity": "C",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Vampire%27s%20Bite/tooltip",
       "types": [
         "Instant"
       ]
@@ -757,6 +784,7 @@
         "Vampire",
         "Warrior"
       ],
+      "tooltip": "http://deckbox.org/mtg/Butcher%20of%20Malakir/tooltip",
       "types": [
         "Creature"
       ]
@@ -783,6 +811,7 @@
       "name": "Urge to Feed",
       "rarity": "U",
       "subtypes": [],
+      "tooltip": "http://deckbox.org/mtg/Urge%20to%20Feed/tooltip",
       "types": [
         "Instant"
       ]
@@ -811,6 +840,7 @@
       "subtypes": [
         "Wall"
       ],
+      "tooltip": "http://deckbox.org/mtg/Wall%20of%20Omens/tooltip",
       "types": [
         "Creature"
       ]
