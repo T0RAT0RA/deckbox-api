@@ -22,7 +22,7 @@ class FlaskrTestCase(unittest.TestCase):
         pass
 
     def test_user_profile(self):
-        url = '/api/users/' + self.test_username + '/'
+        url = '/api/users/' + self.test_username
         user_profile_actual     = self.getJsonFromApi(url)
         user_profile_expected   = self.getJsonFromFixture('user_profile.json')
 
@@ -42,7 +42,7 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertDictEqual(user_friends_expected, user_friends_actual)
 
     def test_user_profile_default_sets(self):
-        url = '/api/users/' + self.test_username + '/'
+        url = '/api/users/' + self.test_username
         user_profile_actual = self.getJsonFromApi(url)
 
         user_profile_expected  = {
@@ -72,61 +72,61 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertListEqual(user_sets_expected["sets"], user_sets_actual["sets"])
 
     def test_user_inventory(self):
-        url = '/api/users/' + self.test_username + '/inventory/'
+        url = '/api/users/' + self.test_username + '/inventory'
         user_inventory_actual   = self.getJsonFromApi(url)
         user_inventory_expected = self.getJsonFromFixture('inventory.json')
 
         self.assertDictEqual(user_inventory_expected, user_inventory_actual)
 
     def test_user_inventory_ordered_by_edition_default(self):
-        url = '/api/users/' + self.test_username + '/inventory/?order_by=edition'
+        url = '/api/users/' + self.test_username + '/inventory?order_by=edition'
         user_inventory_actual   = self.getJsonFromApi(url)
         user_inventory_expected = self.getJsonFromFixture('inventory_ordered_by_edition_default.json')
 
         self.assertDictEqual(user_inventory_expected, user_inventory_actual)
 
     def test_user_inventory_ordered_by_color_ascending(self):
-        url = '/api/users/' + self.test_username + '/inventory/?order_by=color&order=asc'
+        url = '/api/users/' + self.test_username + '/inventory?order_by=color&order=asc'
         user_inventory_actual   = self.getJsonFromApi(url)
         user_inventory_expected = self.getJsonFromFixture('inventory_ordered_by_color_ascending.json')
 
         self.assertDictEqual(user_inventory_expected, user_inventory_actual)
 
     def test_user_inventory_ordered_by_name_descending(self):
-        url = '/api/users/' + self.test_username + '/inventory/?order=desc'
+        url = '/api/users/' + self.test_username + '/inventory?order=desc'
         user_inventory_actual   = self.getJsonFromApi(url)
         user_inventory_expected = self.getJsonFromFixture('inventory_ordered_by_name_desc.json')
 
         self.assertDictEqual(user_inventory_expected, user_inventory_actual)
 
     def test_user_inventory_ordered_by_type_descending(self):
-        url = '/api/users/' + self.test_username + '/inventory/?order_by=type&order=desc'
+        url = '/api/users/' + self.test_username + '/inventory?order_by=type&order=desc'
         user_inventory_actual   = self.getJsonFromApi(url)
         user_inventory_expected = self.getJsonFromFixture('inventory_ordered_by_type_descending.json')
 
     def test_user_inventory_ordered_by_cost_descending(self):
-        url = '/api/users/' + self.test_username + '/inventory/?order_by=cost&order=desc'
+        url = '/api/users/' + self.test_username + '/inventory?order_by=cost&order=desc'
         user_inventory_actual   = self.getJsonFromApi(url)
         user_inventory_expected = self.getJsonFromFixture('inventory_ordered_by_cost_descending.json')
 
         self.assertDictEqual(user_inventory_expected, user_inventory_actual)
 
     def test_user_wishlist(self):
-        url = '/api/users/' + self.test_username + '/wishlist/'
+        url = '/api/users/' + self.test_username + '/wishlist'
         user_wishlist_actual   = self.getJsonFromApi(url)
         user_wishlist_expected = self.getJsonFromFixture('wishlist.json')
 
         self.assertDictEqual(user_wishlist_expected, user_wishlist_actual)
 
     def test_user_tradelist(self):
-        url = '/api/users/' + self.test_username + '/tradelist/'
+        url = '/api/users/' + self.test_username + '/tradelist'
         user_tradelist_actual   = self.getJsonFromApi(url)
         user_tradelist_expected = self.getJsonFromFixture('tradelist.json')
 
         self.assertDictEqual(user_tradelist_expected, user_tradelist_actual)
 
     def test_empty_deck(self):
-        rv = self.app.get('/api/users/' + self.test_username + "/sets/" + self.empty_deck_id + "/")
+        rv = self.app.get('/api/users/' + self.test_username + "/sets/" + self.empty_deck_id)
         empty_deck_actual   = json.loads(rv.data)
         empty_deck_expected = self.getJsonFromFixture('empty_deck.json')
 
@@ -136,7 +136,7 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertEqual(empty_deck_expected["name"], empty_deck_actual["name"])
 
     def test_standard_deck(self):
-        url = '/api/users/' + self.test_username + '/sets/' + self.standard_deck_id + '/'
+        url = '/api/users/' + self.test_username + '/sets/' + self.standard_deck_id
         standard_deck_actual    = self.getJsonFromApi(url)
         standard_deck_expected  = self.getJsonFromFixture('standard_deck.json')
 
@@ -146,21 +146,21 @@ class FlaskrTestCase(unittest.TestCase):
         self.assertEqual(standard_deck_expected["name"], standard_deck_actual["name"])
 
     def test_sideboard_deck(self):
-        url = '/api/users/' + self.test_username + '/sets/' + self.sideboard_deck_id + '/'
+        url = '/api/users/' + self.test_username + '/sets/' + self.sideboard_deck_id
         sideboard_deck_actual    = self.getJsonFromApi(url)
         sideboard_deck_expected  = self.getJsonFromFixture('sideboard_deck.json')
 
         self.assertDictEqual(sideboard_deck_expected, sideboard_deck_actual)
 
     def test_card(self):
-        url = '/api/cards/' + self.test_cardname + '/'
+        url = '/api/cards/' + self.test_cardname
         card_actual     = self.getJsonFromApi(url)
         card_expected   = self.getJsonFromFixture('card.json')
 
         self.assertDictEqual(card_expected["card"], card_actual["card"])
 
     def test_card_restricted(self):
-        url = '/api/cards/' + self.test_cardname_restricted + '/'
+        url = '/api/cards/' + self.test_cardname_restricted
         card_actual     = self.getJsonFromApi(url)
         card_expected   = self.getJsonFromFixture('card_restricted.json')
 

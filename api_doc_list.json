@@ -1,7 +1,7 @@
 [
     {
         "method": "GET",
-        "uri": "/api/users/:username/",
+        "uri": "/api/users/:username",
         "description": "Returns user's profile and sets id."
     },
     {
@@ -16,7 +16,7 @@
     },
     {
         "method": "GET",
-        "uri": "/api/users/:username/inventory/",
+        "uri": "/api/users/:username/inventory",
         "description": "Returns user's inventory.",
         "parameters": [
             {
@@ -42,7 +42,7 @@
     },
     {
         "method": "GET",
-        "uri": "/api/users/:username/tradelist/",
+        "uri": "/api/users/:username/tradelist",
         "description": "Returns user's tradelist.",
         "parameters": [
             {
@@ -68,7 +68,7 @@
     },
     {
         "method": "GET",
-        "uri": "/api/users/:username/wishlist/",
+        "uri": "/api/users/:username/wishlist",
         "description": "Returns user's wishlist.",
         "parameters": [
             {
@@ -152,7 +152,7 @@
     },
     {
         "method": "GET",
-        "uri": "/api/cards/:cardname/",
+        "uri": "/api/cards/:cardname",
         "description": "Returns card information."
     }
 ]

@@ -100,15 +100,15 @@ class Card(restful.Resource):
         return jsonify(card = card)
 
 restapi.add_resource(ApiDoc, '/')
-restapi.add_resource(User, '/users/<username>/')
-restapi.add_resource(UserFriend, '/users/<username>/friends/')
+restapi.add_resource(User, '/users/<string:username>')
+restapi.add_resource(UserFriend, '/users/<string:username>/friends/')
 restapi.add_resource(UserSetList, '/users/<string:username>/sets/')
-restapi.add_resource(UserInventory, '/users/<string:username>/inventory/')
-restapi.add_resource(UserWishlist, '/users/<string:username>/wishlist/')
-restapi.add_resource(UserTradelist, '/users/<string:username>/tradelist/')
-restapi.add_resource(UserSet, '/users/<string:username>/sets/<set_id>/')
+restapi.add_resource(UserInventory, '/users/<string:username>/inventory')
+restapi.add_resource(UserWishlist, '/users/<string:username>/wishlist')
+restapi.add_resource(UserTradelist, '/users/<string:username>/tradelist')
+restapi.add_resource(UserSet, '/users/<string:username>/sets/<set_id>')
 restapi.add_resource(CardList, '/cards/')
-restapi.add_resource(Card, '/cards/<string:cardname>/')
+restapi.add_resource(Card, '/cards/<string:cardname>')
 
 
 def getApiDocList():
