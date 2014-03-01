@@ -13,6 +13,18 @@
       ]
     },
     {
+      "cost": "1BB",
+      "count": "1",
+      "name": "Lim-D\u00fbl's High Guard",
+      "subtypes": [
+        "Skeleton"
+      ],
+      "tooltip": "http://deckbox.org/mtg/Lim-D%C3%BBl%27s%20High%20Guard/tooltip",
+      "types": [
+        "Creature"
+      ]
+    },
+    {
       "cost": "W",
       "count": "1",
       "name": "Pay No Heed",
@@ -24,8 +36,8 @@
     }
   ],
   "cards_count": {
-    "cards": 2,
-    "distinct": 2
+    "cards": 3,
+    "distinct": 3
   },
   "name": "Deck with sideboard",
   "sideboard": [
