@@ -42,7 +42,7 @@ class DeckboxCrawler:
             },
             "username": fields[1],
             "location": fields[2],
-            "picture": self._HTTP + self._DECKBOX_DOMAIN + self._page("#profile_page_wrapper .friend_img").attr("src"),
+            "image": self._HTTP + self._DECKBOX_DOMAIN + self._page("#profile_page_wrapper .friend_img").attr("src"),
             "feedback": fields[3],
             "will_trade": fields[4],
             "bio": self._page(".user_bio").text(),
@@ -57,7 +57,7 @@ class DeckboxCrawler:
         for i, profiles in enumerate(self._page("#all_friends .profile_wrapper").items()):
             current_friend = {}
             current_friend["username"] = profiles.find(".data a").attr("href").replace("/users/", "")
-            current_friend["picture"] = self._HTTP + self._DECKBOX_DOMAIN + profiles.find(".friend_img").attr("src")
+            current_friend["image"] = self._HTTP + self._DECKBOX_DOMAIN + profiles.find(".friend_img").attr("src")
 
             friends.append(current_friend)
 
