@@ -122,7 +122,16 @@ class DeckboxCrawler:
                 if not filter_data:
                     pass
 
-                converted_filter = card_filters["filters"][filter_name] + card_filters["operators"][filter_data["operator"]] + base64.b64encode(filter_data["value"], "**")
+                # Need to encode string filters in base64
+                if filter_data["operator"] in ["contains", "not_contains"]:
+                    filter_value = base64.b64encode(filter_data["value"], "**")
+                else:
+                    filter_value = []
+                    for value in filter_data["value"]:
+                        filter_value.append(card_filters[filter_name][value.replace(" ", "_").lower()])
+                    filter_value = ".".join(filter_value)
+
+                converted_filter = card_filters["filter"][filter_name] + card_filters["operator"][filter_data["operator"]] + filter_value
                 converted_filters.append(converted_filter)
 
             parameters[self._CARDS_QUERY_KEY] = self._CARDS_QUERY_SEPARATOR.join(converted_filters)
@@ -189,11 +198,11 @@ class DeckboxCrawler:
         filters = {}
 
         xpaths = [
-            ("filters", "#add_filter_btn"),
-            ("types",   "#_container_3"),
-            ("sets",    "#_container_5"),
-            ("rarities","#_container_6"),
-            ("colors",  "#_container_7")
+            ("filter",  "#add_filter_btn"),
+            ("type",    "#_container_3"),
+            ("edition_printed_in", "#_container_5"),
+            ("rarity",  "#_container_6"),
+            ("color",   "#_container_7")
         ]
 
         for xpath in xpaths:
@@ -201,10 +210,10 @@ class DeckboxCrawler:
             matches = re.findall('\["([^"]+)","([^"]+)"\]', script.text())
             filters[xpath[0]] = dict((x.replace(" ", "_").lower(), y) for x, y in matches)
 
-        filters["operators"] = {
-            'one_of':       '1',
+        filters["operator"] = {
+            'all_of':       '1',
             'none_of':      '2',
-            'all_of':       '3',
+            'one_of':       '3',
             'equals':       '4',
             'larger_than':  '5',
             'smaller_than': '6',
