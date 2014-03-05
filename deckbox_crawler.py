@@ -123,7 +123,7 @@ class DeckboxCrawler:
                     pass
 
                 # Need to encode string filters in base64
-                if filter_data["operator"] in ["contains", "not_contains"]:
+                if filter_data["operator"] not in ["all_of", "one_of", "none_of"]:
                     filter_value = base64.b64encode(filter_data["value"], "**")
                 else:
                     filter_value = []
