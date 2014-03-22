@@ -10,6 +10,7 @@ class FlaskrTestCase(unittest.TestCase):
     def setUp(self):
         self.test_username      = "deckbox_api"
         self.test_cardname      = "Ajani, Caller of the Pride"
+        self.test_cardname_slashes = "Give // Take"
         self.test_cardname_restricted = "Black Lotus"
         self.empty_deck_id      = "590775"
         self.sideboard_deck_id  = "608751"
@@ -158,6 +159,12 @@ class FlaskrTestCase(unittest.TestCase):
         card_expected   = self.getJsonFromFixture('card.json')
 
         self.assertDictEqual(card_expected["card"], card_actual["card"])
+
+    def test_card_with_slashes(self):
+        url = '/api/cards/' + self.test_cardname_slashes
+        card_actual     = self.getJsonFromApi(url)
+
+        self.assertEqual(self.test_cardname_slashes, card_actual["card"]["name"])
 
     def test_card_restricted(self):
         url = '/api/cards/' + self.test_cardname_restricted

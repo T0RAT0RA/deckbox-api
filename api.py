@@ -108,7 +108,7 @@ restapi.add_resource(UserWishlist, '/users/<string:username>/wishlist')
 restapi.add_resource(UserTradelist, '/users/<string:username>/tradelist')
 restapi.add_resource(UserSet, '/users/<string:username>/sets/<set_id>')
 restapi.add_resource(CardList, '/cards/')
-restapi.add_resource(Card, '/cards/<string:cardname>')
+restapi.add_resource(Card, '/cards/<path:cardname>')
 
 
 def getApiDocList():
