@@ -32,19 +32,20 @@ class DeckboxCrawler:
         self.getPage(page_url)
 
     def getUserProfile(self):
-        fields = [h.text() for h in self._page("#section_profile dd").items()]
-        fields[0] = re.search(', ([0-9]+), ', fields[0]).group(1)
+        details = [h.text() for h in self._page(".dl_with_img .details dd").items()]
+        #Parse last seen online date
+        details[1] = int(re.search(', ([0-9]+), ', details[1]).group(1))
 
         return {
             "last_seen_online": {
-                "timestamp": fields[0],
-                "date": datetime.datetime.fromtimestamp(int(fields[0])).strftime('%Y-%m-%d %H:%M:%S')
+                "timestamp": details[1],
+                "date": datetime.datetime.fromtimestamp(details[1]).strftime('%Y-%m-%d %H:%M:%S')
             },
-            "username": fields[1],
-            "location": fields[2],
-            "image": self._HTTP + self._DECKBOX_DOMAIN + self._page("#profile_page_wrapper .friend_img").attr("src"),
-            "feedback": fields[3],
-            "will_trade": fields[4],
+            "username": self._page(".dl_with_img .section_title").text(),
+            "location": details[0],
+            "image": self._HTTP + self._DECKBOX_DOMAIN + self._page(".profile_page .friend_img").attr("src"),
+            "will_trade": details[2],
+
             "bio": self._page(".user_bio").text(),
         }
 
@@ -53,12 +54,21 @@ class DeckboxCrawler:
 
         friends = []
 
-        #Get all sets
-        for i, profiles in enumerate(self._page("#all_friends .profile_wrapper").items()):
+        #Get all friends
+        for i, profile in enumerate(self._page("#all_friends .friends_list td").items()):
             current_friend = {}
-            current_friend["username"] = profiles.find(".data a").attr("href").replace("/users/", "")
-            current_friend["image"] = self._HTTP + self._DECKBOX_DOMAIN + profiles.find(".friend_img").attr("src")
+            current_friend["username"] = profile.find(".data a").attr("href").replace("/users/", "")
+            current_friend["image"] = self._HTTP + self._DECKBOX_DOMAIN + profile.find(".friend_img").attr("src")
 
+            details = [h.text() for h in profile.find(".details dd").items()]
+
+            #Parse last seen online date
+            details[0] = int(re.search(', ([0-9]+), ', details[0]).group(1))
+            current_friend["last_seen_online"] = {
+                "timestamp": details[0],
+                "date": datetime.datetime.fromtimestamp(details[0]).strftime('%Y-%m-%d %H:%M:%S')
+            }
+            current_friend["location"] = details[1]
             friends.append(current_friend)
 
         return friends
