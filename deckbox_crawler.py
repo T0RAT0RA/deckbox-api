@@ -46,7 +46,7 @@ class DeckboxCrawler:
             "image": self._HTTP + self._DECKBOX_DOMAIN + self._page(".profile_page .friend_img").attr("src"),
             "will_trade": details[2],
 
-            "bio": self._page(".user_bio").text(),
+            "bio": self._page(".indented_content").text(),
         }
 
     def getUserFriends(self):
