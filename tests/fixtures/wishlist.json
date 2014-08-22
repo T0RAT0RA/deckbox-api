@@ -9,7 +9,7 @@
       "count": "100",
       "edition": {
         "code": "BNG",
-        "name": "Born of the Gods"
+        "name": "Born of the Gods (Card #1)"
       },
       "is_foil": true,
       "is_promo": true,
@@ -36,7 +36,7 @@
       "count": "1",
       "edition": {
         "code": "BNG",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -66,7 +66,7 @@
       "count": "2",
       "edition": {
         "code": "BNG",
-        "name": "Born of the Gods"
+        "name": "Born of the Gods (Card #88)"
       },
       "is_foil": false,
       "is_promo": false,
