@@ -9,7 +9,7 @@
       "count": "1",
       "edition": {
         "code": "ARB",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -36,7 +36,7 @@
       "count": "1",
       "edition": {
         "code": "ROE",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -65,7 +65,7 @@
       "count": "1",
       "edition": {
         "code": "ZEN",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -92,7 +92,7 @@
       "count": "1",
       "edition": {
         "code": "M12",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -121,7 +121,7 @@
       "count": "3",
       "edition": {
         "code": "M13",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -151,7 +151,7 @@
       "count": "1",
       "edition": {
         "code": "WWK",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -178,7 +178,7 @@
       "count": "1",
       "edition": {
         "code": "EVE",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -205,7 +205,7 @@
       "count": "1",
       "edition": {
         "code": "TSP",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -234,7 +234,7 @@
       "count": "1",
       "edition": {
         "code": "RAV",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -263,7 +263,7 @@
       "count": "1",
       "edition": {
         "code": "GTC",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -293,7 +293,7 @@
       "count": "1",
       "edition": {
         "code": "AVR",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -323,7 +323,7 @@
       "count": "1",
       "edition": {
         "code": "TOR",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -380,7 +380,7 @@
       "count": "1",
       "edition": {
         "code": "M12",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -409,7 +409,7 @@
       "count": "1",
       "edition": {
         "code": "5DN",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -436,7 +436,7 @@
       "count": "2",
       "edition": {
         "code": "SHM",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -463,7 +463,7 @@
       "count": "1",
       "edition": {
         "code": "DKA",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -492,7 +492,7 @@
       "count": "1",
       "edition": {
         "code": "M12",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -519,7 +519,7 @@
       "count": "1",
       "edition": {
         "code": "AVR",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -549,7 +549,7 @@
       "count": "1",
       "edition": {
         "code": "ISD",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -605,7 +605,7 @@
       "count": "1",
       "edition": {
         "code": "M10",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -632,7 +632,7 @@
       "count": "1",
       "edition": {
         "code": "GPT",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -661,7 +661,7 @@
       "count": "1",
       "edition": {
         "code": "AL",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -718,7 +718,7 @@
       "count": "1",
       "edition": {
         "code": "RTR",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -775,7 +775,7 @@
       "count": "1",
       "edition": {
         "code": "THS",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
@@ -804,7 +804,7 @@
       "count": "2",
       "edition": {
         "code": "FUT",
-        "name": "[unknown edition]"
+        "name": "[Unknown Edition]"
       },
       "is_foil": false,
       "is_promo": false,
