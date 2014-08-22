@@ -2,6 +2,11 @@
   "friends": [
     {
       "image": "http://deckbox.org/images/generic_avatar.png",
+      "last_seen_online": {
+        "date": "2014-02-02 03:31:48",
+        "timestamp": 1391329908
+      },
+      "location": "Unknown location",
       "username": "deckbox_api_friend"
     }
   ]

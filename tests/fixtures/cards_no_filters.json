@@ -1,6 +1,17 @@
 {
   "cards": [
     {
+      "cost": "WUBRG",
+      "name": "1996 World Champion",
+      "subtypes": [
+        "Legend"
+      ],
+      "tooltip": "http://deckbox.org/mtg/1996%20World%20Champion/tooltip",
+      "types": [
+        "Summon"
+      ]
+    },
+    {
       "cost": "",
       "name": "A Display of My Dark Power",
       "subtypes": [],
@@ -294,20 +305,9 @@
       "types": [
         "Creature"
       ]
-    },
-    {
-      "cost": "4BB",
-      "name": "Abyssal Horror",
-      "subtypes": [
-        "Horror"
-      ],
-      "tooltip": "http://deckbox.org/mtg/Abyssal%20Horror/tooltip",
-      "types": [
-        "Creature"
-      ]
     }
   ],
   "name": "",
-  "number_of_page": "467",
+  "number_of_page": "480",
   "page": "1"
 }

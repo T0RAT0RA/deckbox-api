@@ -68,7 +68,7 @@
       "cost": "2W",
       "count": "1",
       "edition": {
-        "code": "LRW",
+        "code": "M15",
         "name": "[Unknown Edition]"
       },
       "is_foil": false,
@@ -212,7 +212,7 @@
       "count": "1",
       "edition": {
         "code": "M14",
-        "name": "Magic 2014 Core Set"
+        "name": "Magic 2014 Core Set (Card #15)"
       },
       "is_foil": false,
       "is_promo": false,
@@ -559,7 +559,7 @@
       "count": "1",
       "edition": {
         "code": "M14",
-        "name": "Magic 2014 Core Set"
+        "name": "Magic 2014 Core Set (Card #27)"
       },
       "is_foil": false,
       "is_promo": false,
@@ -841,7 +841,7 @@
       "count": "1",
       "edition": {
         "code": "DDK",
-        "name": "Duel Decks: Sorin vs. Tibalt"
+        "name": "Duel Decks: Sorin vs. Tibalt (Card #31)"
       },
       "is_foil": false,
       "is_promo": false,
