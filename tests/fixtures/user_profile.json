@@ -1,7 +1,6 @@
 {
   "bio": "This profile is used to test the Deckbox non-official API: http://deckbox-api.herokuapp.com/",
-  "feedback": "0 (100% positive)",
-  "location": "Canada - Montreal",
+  "location": "Canada - Quebec - Montreal",
   "image": "http://deckbox.org/system/avatars/55107.png?1391218194",
   "sets": [
     {
