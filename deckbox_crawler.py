@@ -34,17 +34,17 @@ class DeckboxCrawler:
     def getUserProfile(self):
         details = [h.text() for h in self._page(".dl_with_img .details dd").items()]
         #Parse last seen online date
-        details[1] = int(re.search(', ([0-9]+), ', details[1]).group(1))
+        details[2] = int(re.search(', ([0-9]+), ', details[2]).group(1))
 
         return {
             "last_seen_online": {
-                "timestamp": details[1],
-                "date": datetime.datetime.fromtimestamp(details[1]).strftime('%Y-%m-%d %H:%M:%S')
+                "timestamp": details[2],
+                "date": datetime.datetime.fromtimestamp(details[2]).strftime('%Y-%m-%d %H:%M:%S')
             },
             "username": self._page(".dl_with_img .section_title").text(),
             "location": details[0],
             "image": self._HTTP + self._DECKBOX_DOMAIN + self._page(".profile_page .friend_img").attr("src"),
-            "will_trade": details[2],
+            "will_trade": details[3],
 
             "bio": self._page(".indented_content").text(),
         }
