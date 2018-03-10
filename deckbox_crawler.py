@@ -1,4 +1,4 @@
-import re, datetime, urllib, base64, json
+import re, datetime, urllib.parse, base64, json
 from pyquery import PyQuery
 
 class DeckboxCrawler:
@@ -28,7 +28,7 @@ class DeckboxCrawler:
     _TOOLTIP = "/mtg/<cardname>/tooltip"
 
     def __init__(self, url):
-        page_url = self._HTTP + urllib.quote(self._DECKBOX_DOMAIN + url.encode('utf-8'))
+        page_url = self._HTTP + urllib.parse.quote(self._DECKBOX_DOMAIN + url)
         self.getPage(page_url)
 
     def getUserProfile(self):
@@ -112,7 +112,7 @@ class DeckboxCrawler:
         parameters[self._ORDER_BY_PARAMETER] = self._ORDER_BY_LIST[order_by] if order_by in self._ORDER_BY_LIST else 'name'
         parameters[self._ORDER_PARAMETER] = self._ORDER_LIST[order] if order in self._ORDER_LIST else 'asc'
 
-        set_url  = self._HTTP + self._DECKBOX_DOMAIN + "/sets/" + set_object["id"] + "?" + urllib.urlencode(parameters)
+        set_url  = self._HTTP + self._DECKBOX_DOMAIN + "/sets/" + set_object["id"] + "?" + urllib.parse.urlencode(parameters)
         self.getPage(set_url)
         return self.getCardsFromPage()
 
@@ -128,7 +128,7 @@ class DeckboxCrawler:
             filters = json.loads(filters)
             converted_filters = []
 
-            for filter_name, filter_data in filters.iteritems():
+            for filter_name, filter_data in filters.items()():
                 if not filter_data:
                     pass
 
@@ -146,7 +146,7 @@ class DeckboxCrawler:
 
             parameters[self._CARDS_QUERY_KEY] = self._CARDS_QUERY_SEPARATOR.join(converted_filters)
 
-        cards_url  = self._HTTP + self._DECKBOX_DOMAIN + "/games/mtg/cards" + "?" + urllib.urlencode(parameters)
+        cards_url  = self._HTTP + self._DECKBOX_DOMAIN + "/games/mtg/cards" + "?" + urllib.parse.urlencode(parameters)
         self.getPage(cards_url)
 
         return self.getCardsFromPage()
@@ -163,7 +163,7 @@ class DeckboxCrawler:
         card["cost"]    = "".join(card_cost)
         card["rules"]   = self._page(".card_properties tr:eq(4) td:last").text()
         card["image"]   = self._HTTP + self._DECKBOX_DOMAIN + self._page("#card_image").attr("src")
-        card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.quote(card["name"].encode('utf-8')))
+        card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.parse.quote(card["name"]))
         card["editions"] = []
         for edition in self._page(".card_properties tr:eq(1) td:last img").items():
             card["editions"].append({
@@ -197,7 +197,7 @@ class DeckboxCrawler:
     #  HELPERS
     #-------------------------
     def log(self, message):
-        print "LOG - " + message
+        print("LOG - " + message)
 
     def getPage(self, page_url):
         self.log("Get cards from url: " + page_url)
@@ -233,7 +233,7 @@ class DeckboxCrawler:
         return filters
 
     def getCardsFromPage(self):
-        if self._page(".main.deck"):
+        if self._page(".main.simple_table.with_details"):
             page_type = "deck"
         elif self._page(".set_cards.with_details"):
             page_type = "inventory"
@@ -265,8 +265,8 @@ class DeckboxCrawler:
             pagination      = self._page("#set_cards_table .pagination_controls:first span").text()
             m = re.search('([0-9]+)[^0-9]*([0-9]+)', pagination)
             card_table_id   = "#set_cards_table_details"
-            current_page    = m.group(1)
-            number_of_pages = m.group(2)
+            current_page    = m.group(1) if m else 1
+            number_of_pages = m.group(2) if m else 1
             name            = self._page(".section_title span:first").text()
 
             return {"name": name, "cards": cards, "page": current_page, "number_of_page": number_of_pages}
@@ -281,10 +281,10 @@ class DeckboxCrawler:
         # Parse cards on deck page
         if page_type == "deck":
             tables = {
-                "mainboard": self._page(".main.deck tr").items(),
-                "sideboard": self._page(".sideboard.deck tr").items()
+                "mainboard": self._page(".main.simple_table.with_details tr").items(),
+                "sideboard": self._page(".sideboard.simple_table.with_details tr").items()
             }
-            for table_type, table in tables.iteritems():
+            for table_type, table in tables.items()():
                 for tr in table:
                     if tr.attr("id") == None:
                         continue
@@ -314,7 +314,7 @@ class DeckboxCrawler:
                     card = {}
                     card["count"]   = tr.find("td.card_count").text()
                     card["name"]    = tr.find("a").text()
-                    card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.quote(card["name"].encode('utf-8')))
+                    card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.parse.quote(card["name"]))
                     card_types = re.split(r'\s+-\s+', tr.find("td").eq(2).find("span").text())
                     card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
                     card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
@@ -350,7 +350,7 @@ class DeckboxCrawler:
 
                 card = {}
                 card["name"]    = tr.find("a").text()
-                card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.quote(card["name"].encode('utf-8')))
+                card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.parse.quote(card["name"]))
                 card_types  = re.split(r'\s+-\s+', tr.find("td").eq(1).find("span").text())
                 card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
                 card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
@@ -398,7 +398,7 @@ class DeckboxCrawler:
                 card = {}
                 card["count"]   = tr.find("td.card_count").text()
                 card["name"]    = tr.find("a").text()
-                card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.quote(card["name"].encode('utf-8')))
+                card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.parse.quote(card["name"]))
 
                 edition_container = tr.find(".mtg_edition_container img")
                 card["edition"] = {
