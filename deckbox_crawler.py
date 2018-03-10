@@ -284,30 +284,24 @@ class DeckboxCrawler:
                 "mainboard": self._page(".main.simple_table.with_details tr").items(),
                 "sideboard": self._page(".sideboard.simple_table.with_details tr").items()
             }
-            for table_type, table in tables.items()():
+            for table_type, table in tables.items():
                 for tr in table:
                     if tr.attr("id") == None:
                         continue
 
                     '''
                     Deck card HTML example:
-                    <tr id="13392">
-                        <td id="card_count_13392" class="card_count">4</td>
+                    <tr id="13008_main">
+                        <td class="card_count">1</td>
                         <td class="card_name">
-                          <div class="relative">
-                            <a class="simple" target="_blank" href="http://deckbox.org/mtg/Armed // Dangerous">
-                                Armed // Dangerous
-                            </a>
-                          </div>
+                            <a class="simple" href="https://deckbox.org/mtg/Phantom%20General" target="_blank">Phantom General</a>
                         </td>
-                        <td><span>Sorcery</span></td>
-                        <td class="card_cost">
-                            <img class="mtg_mana mtg_mana_1" src="/images/icon_spacer.gif">
-                            <img class="mtg_mana mtg_mana_R" src="/images/icon_spacer.gif">
-                        </td>
-                        <td class="center price">
-                            <span data-title="$0.04 / $0.19 / $0.95 / $0.95">$0.19</span>
-                        </td>
+                        <td>Creature  - Spirit Soldier</td>
+                        <td class="center"><img class="mtg_mana mtg_mana_3" src="/images/icon_spacer.gif"><img class="mtg_mana mtg_mana_W" src="/images/icon_spacer.gif"></td>
+                        <td class="center"><div class="mtg_edition_container " onclick="">
+                               <img src="/images/mtg/editions/RTR_U.jpg" data-title="Last Important Printing - Return to Ravnica" class="">
+                             </div></td>
+                        <td class="center minimum_width">$0.22</td>
                     </tr>
                     '''
 
@@ -315,11 +309,11 @@ class DeckboxCrawler:
                     card["count"]   = tr.find("td.card_count").text()
                     card["name"]    = tr.find("a").text()
                     card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.parse.quote(card["name"]))
-                    card_types = re.split(r'\s+-\s+', tr.find("td").eq(2).find("span").text())
+                    card_types = re.split(r'\s+-\s+', tr.find("td").eq(2).text())
                     card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
                     card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
                     card_cost = []
-                    for img in tr.find("td.card_cost img").items():
+                    for img in tr.find("td").eq(3).find('img').items():
                         card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
                     card["cost"]    = "".join(card_cost)
 
