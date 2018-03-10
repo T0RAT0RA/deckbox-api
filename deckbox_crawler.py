@@ -2,7 +2,7 @@ import re, datetime, urllib, base64, json
 from pyquery import PyQuery
 
 class DeckboxCrawler:
-    _HTTP           = "http://"
+    _HTTP           = "https://"
     _DECKBOX_DOMAIN = "deckbox.org"
 
     _ORDER_BY_PARAMETER = 's'
@@ -432,4 +432,3 @@ class DeckboxCrawler:
                 cards.append(card)
 
         return (cards, sideboard)
-
