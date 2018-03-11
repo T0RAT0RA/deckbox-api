@@ -248,13 +248,13 @@ class DeckboxCrawler:
         # DECK PAGES
         #-------------------------
         if page_type == "deck":
-            name            = self._page(".section_title span:first").text()
+            name            = self._page(".page_header .section_title").children().remove().end().text().replace('\'s ', '')
             cards_count     = {"cards": 0, "distinct": 0}
-            for script in self._page("script").items():
-                m = re.search("total_card_count[^_s][^0-9]*([0-9]+) cards, ([0-9]+) distinct", script.text())
-                if m != None and m.group(1) and m.group(2):
-                    cards_count["cards"]    = int(m.group(1))
-                    cards_count["distinct"] = int(m.group(2))
+            deck_cards = self._page(".section_title.section_title").eq(1)
+            m = re.search("([0-9]+) cards, ([0-9]+) distinct", deck_cards.text())
+            if m != None and m.group(1) and m.group(2):
+                cards_count["cards"]    = int(m.group(1))
+                cards_count["distinct"] = int(m.group(2))
 
             return {"name": name, "cards": cards, "sideboard": sideboard, "cards_count": cards_count}
 
