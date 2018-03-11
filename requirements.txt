@@ -4,6 +4,7 @@ chardet==3.0.4
 cssselect==0.9.1
 Flask==0.10.1
 Flask-RESTful==0.2.11
+Flask-SSLify==0.1.5
 gunicorn==18.0
 idna==2.6
 itsdangerous==0.23

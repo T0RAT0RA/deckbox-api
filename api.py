@@ -1,9 +1,11 @@
 import os
 from flask import Flask, render_template, jsonify, redirect, url_for, request, json
 from flask.ext import restful
+from flask_sslify import SSLify
 from deckbox_crawler import DeckboxCrawler
 
 app = Flask(__name__)
+sslify = SSLify(app, permanent=True)
 restapi = restful.Api(app, '/api', catch_all_404s=True)
 
 @app.route('/')
