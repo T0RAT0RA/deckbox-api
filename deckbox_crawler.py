@@ -27,8 +27,8 @@ class DeckboxCrawler:
     _CARDS_QUERY_SEPARATOR = "!"
     _TOOLTIP = "/mtg/<cardname>/tooltip"
 
-    def __init__(self, url):
-        page_url = self._HTTP + urllib.parse.quote(self._DECKBOX_DOMAIN + url)
+    def __init__(self, username):
+        page_url = self._HTTP + urllib.parse.quote("{}/users/{}".format(self._DECKBOX_DOMAIN, username))
         self.getPage(page_url)
 
     def getUserProfile(self):
@@ -114,7 +114,7 @@ class DeckboxCrawler:
 
         set_url  = self._HTTP + self._DECKBOX_DOMAIN + "/sets/" + set_object["id"] + "?" + urllib.parse.urlencode(parameters)
         self.getPage(set_url)
-        return self.getCardsFromPage()
+        return {"id": set_id, **self.getCardsFromPage()}
 
     def getCards(self, page = 1, order_by = 'name', order = 'asc', filters = None):
         card_filters = self.getFiltersFromPage()
@@ -197,7 +197,8 @@ class DeckboxCrawler:
     #  HELPERS
     #-------------------------
     def log(self, message):
-        print("LOG - " + message)
+        pass
+        # print("LOG - " + message)
 
     def getPage(self, page_url):
         self.log("Get cards from url: " + page_url)
@@ -249,27 +250,53 @@ class DeckboxCrawler:
         #-------------------------
         if page_type == "deck":
             name            = self._page(".page_header .section_title").children().remove().end().text().replace('\'s ', '')
-            cards_count     = {"cards": 0, "distinct": 0}
+            cards_count     = {"total": 0, "distinct": 0}
             deck_cards = self._page(".section_title.section_title").eq(1)
             m = re.search("([0-9]+) cards, ([0-9]+) distinct", deck_cards.text())
             if m != None and m.group(1) and m.group(2):
-                cards_count["cards"]    = int(m.group(1))
+                cards_count["total"]    = int(m.group(1))
                 cards_count["distinct"] = int(m.group(2))
 
-            return {"name": name, "cards": cards, "sideboard": sideboard, "cards_count": cards_count}
+            sideboard_count = {"total": 0, "distinct": 0}
+            sideboard_cards = self._page(".section_title.section_title").eq(2)
+            m = re.search("([0-9]+) cards, ([0-9]+) distinct", sideboard_cards.text())
+            if m != None and m.group(1) and m.group(2):
+                sideboard_count["total"]    = int(m.group(1))
+                sideboard_count["distinct"] = int(m.group(2))
+
+            return {
+                "name": name,
+                "mainboard": {
+                    "cards": cards,
+                    "total": cards_count["total"],
+                    "distinct": cards_count["distinct"]
+                },
+                "sideboard": {
+                    "cards": sideboard,
+                    "total": sideboard_count["total"],
+                    "distinct": sideboard_count["distinct"]
+                },
+            }
 
         #-------------------------
         # DEFAULT SETS PAGES
         #-------------------------
         else:
-            pagination      = self._page("#set_cards_table .pagination_controls:first span").text()
-            m = re.search('([0-9]+)[^0-9]*([0-9]+)', pagination)
-            card_table_id   = "#set_cards_table_details"
-            current_page    = m.group(1) if m else 1
-            number_of_pages = m.group(2) if m else 1
+            pagination      = self._page("#set_cards_table .pagination_controls").text()
+            m = re.search('([0-9]+) total results .* Page ([0-9]+) of ([0-9]+)', pagination)
+            total           = int(m.group(1)) if m else 1
+            current_page    = int(m.group(2)) if m else 1
+            total_pages     = int(m.group(3)) if m else 1
             name            = self._page(".section_title span:first").text()
 
-            return {"name": name, "cards": cards, "page": current_page, "number_of_page": number_of_pages}
+            return {
+                "name": name,
+                "cards": cards,
+                "total": total,
+                "count": len(cards),
+                "page": current_page,
+                "total_pages": total_pages
+            }
 
     #-------------------------
     # Cards Parser
@@ -308,14 +335,14 @@ class DeckboxCrawler:
                     card = {}
                     card["count"]   = tr.find("td.card_count").text()
                     card["name"]    = tr.find("a").text()
-                    card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.parse.quote(card["name"]))
-                    card_types = re.split(r'\s+-\s+', tr.find("td").eq(2).text())
-                    card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
-                    card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
-                    card_cost = []
-                    for img in tr.find("td").eq(3).find('img').items():
-                        card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
-                    card["cost"]    = "".join(card_cost)
+                    # card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.parse.quote(card["name"]))
+                    # card_types = re.split(r'\s+-\s+', tr.find("td").eq(2).text())
+                    # card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
+                    # card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
+                    # card_cost = []
+                    # for img in tr.find("td").eq(3).find('img').items():
+                    #     card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
+                    # card["cost"]    = "".join(card_cost)
 
                     {
                         "mainboard": cards,
@@ -362,6 +389,23 @@ class DeckboxCrawler:
 
                 '''
                 Default set card HTML example:
+                <tr class="" id="734306" onclick="">
+                    <td class="inventory_count card_count">1</td>
+                    <td>
+                        <a class="simple" href="https://deckbox.org/mtg/Abhorrent%20Overlord?printing=21860&amp;lang=us" target="_blank">
+                            Abhorrent Overlord
+                        </a>
+                    </td>
+                    <td class="center minimum_width">$0.29</td>
+                    <td class="minimum_width">
+                        <div class="mtg_edition_container " onclick="">
+                            <img src="/images/mtg/editions/THS_R.jpg" data-title="Theros (Card #75)" class="">
+                        </div>
+                    <img src="/images/icon_spacer.gif" class="sprite s_star2" data-title="Near Mint">
+                    <img src="/images/icon_spacer_16_11.png" class="flag flag-us" data-title="English"></td>
+                    <td class="minimum_width">Creature  - Demon</td>
+                </tr>
+
                 <tr id="734306" class="even">
                     <td id="card_count_734306" class="card_count">1</td>
                     <td>
@@ -392,14 +436,14 @@ class DeckboxCrawler:
                 card = {}
                 card["count"]   = tr.find("td.card_count").text()
                 card["name"]    = tr.find("a").text()
-                card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.parse.quote(card["name"]))
+                # card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.parse.quote(card["name"]))
 
                 edition_container = tr.find(".mtg_edition_container img")
                 card["edition"] = {
                     "code": re.search(".*/(.*)_.\.jpg$", edition_container.attr("src")).group(1),
                     "name": edition_container.attr("data-title")
                 }
-                card["rarity"]  = re.search(".*_(.)\.jpg$", edition_container.attr("src")).group(1)
+                # card["rarity"]  = re.search(".*_(.)\.jpg$", edition_container.attr("src")).group(1)
                 condition = {}
                 card["condition"] = {
                     "code": re.sub("(sprite |\s)", "", tr.find(".sprite:first").attr("class")),
@@ -414,14 +458,14 @@ class DeckboxCrawler:
                     "name": tr.find(".flag").attr("data-title")
                 } if tr.find(".flag") else {"code": None, "name": None}
 
-                card_types = re.split(r'\s+-\s+', tr.find("td").eq(3).text())
-                card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
-                card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
+                # card_types = re.split(r'\s+-\s+', tr.find("td").eq(3).text())
+                # card["types"]   = re.split(r'\s', card_types[0]) if len(card_types) > 1 else card_types
+                # card["subtypes"]= re.split(r'\s', card_types[1]) if len(card_types) > 1 else []
 
-                card_cost = []
-                for img in tr.find("td.mana_cost img").items():
-                    card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
-                card["cost"]    = "".join(card_cost)
+                # card_cost = []
+                # for img in tr.find("td.mana_cost img").items():
+                #     card_cost.append(re.sub("(mtg_mana |mtg_mana_)", "", img.attr("class")))
+                # card["cost"]    = "".join(card_cost)
 
                 cards.append(card)
 

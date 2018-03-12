@@ -25,7 +25,7 @@
                 "description": "Page to return."
             },
             {
-                "name": "order_by",
+                "name": "sort_by",
                 "type": "string",
                 "description": "Ordering results.",
                 "possible_values": ["name", "edition", "price", "type", "cost", "color"],
@@ -51,7 +51,7 @@
                 "description": "Page to return."
             },
             {
-                "name": "order_by",
+                "name": "sort_by",
                 "type": "string",
                 "description": "Ordering results.",
                 "possible_values": ["name", "edition", "price", "type", "cost", "color"],
@@ -77,7 +77,7 @@
                 "description": "Page to return."
             },
             {
-                "name": "order_by",
+                "name": "sort_by",
                 "type": "string",
                 "description": "Ordering results.",
                 "possible_values": ["name", "edition", "price", "type", "cost", "color"],
@@ -103,7 +103,7 @@
                 "description": "Page to return."
             },
             {
-                "name": "order_by",
+                "name": "sort_by",
                 "type": "string",
                 "description": "Ordering results.",
                 "possible_values": ["name", "edition", "price", "type", "cost", "color"],
@@ -115,38 +115,6 @@
                 "description": "Results return order.",
                 "possible_values": ["asc", "desc"],
                 "default_value": "asc"
-            }
-        ]
-    },
-    {
-        "method": "GET",
-        "uri": "/api/cards/",
-        "description": "Returns card list.",
-        "parameters": [
-            {
-                "name": "page",
-                "type": "int",
-                "description": "Page to return."
-            },
-            {
-                "name": "order_by",
-                "type": "string",
-                "description": "Ordering results.",
-                "possible_values": ["name", "edition", "price", "type", "cost", "color"],
-                "default_value": "name"
-            },
-            {
-                "name": "order",
-                "type": "string",
-                "description": "Results return order.",
-                "possible_values": ["asc", "desc"],
-                "default_value": "asc"
-            },
-            {
-                "name": "filters",
-                "type": "json oject",
-                "description":  "To search cards.<br/><br/>Example:<br/>filters = {<br/>&nbsp;&nbsp;\"name\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"contains\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"cent\"<br/>&nbsp;&nbsp;},<br/>&nbsp;&nbsp;\"rules_text\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"contains\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"trample\"<br/>&nbsp;&nbsp;},<br/>&nbsp;&nbsp;\"subtype\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"not_contains\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"human\"<br/>&nbsp;&nbsp;},<br/>&nbsp;&nbsp;\"cost\":  {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"operator\": \"larger_than\",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\": \"4\"<br/>&nbsp;&nbsp;}<br/>}",
-                "possible_values": ["name", "rules_text", "type", "subtype", "edition_printed_in", "format", "rarity", "color", "cost"]
             }
         ]
     },

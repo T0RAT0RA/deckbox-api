@@ -1,8 +1,13 @@
-import os
+import os, time, urllib
 from flask import Flask, render_template, jsonify, redirect, url_for, request, json
+from flask_restful.reqparse import Argument
 from flask.ext import restful
 from flask_sslify import SSLify
 from deckbox_crawler import DeckboxCrawler
+from decorators import marshal_with, parse_request, paginate_deckbox_results
+from schemas import CardSchema, UserSchema, SetSchema, DeckboxCardSchema
+from marshmallow import pprint
+import scrython
 
 app = Flask(__name__)
 sslify = SSLify(app, permanent=True)
@@ -23,83 +28,82 @@ class ApiDoc(restful.Resource):
         return getApiDocList()
 
 class User(restful.Resource):
+    @marshal_with(UserSchema())
     def get(self, username):
-        deckbox_crawler = DeckboxCrawler("/users/" + username)
+        deckbox_crawler = DeckboxCrawler(username)
         user_profile    = deckbox_crawler.getUserProfile()
         user_sets       = deckbox_crawler.getUserSets()
 
-        return jsonify(
-            user_profile,
-            sets = user_sets,
-        )
+        return {
+            **user_profile,
+            "sets": user_sets
+        }
+
 
 class UserFriend(restful.Resource):
+    @marshal_with(UserSchema(many=True), pagination=True)
     def get(self, username):
-        deckbox_crawler = DeckboxCrawler("/users/" + username)
+        deckbox_crawler = DeckboxCrawler(username)
         user_friends = deckbox_crawler.getUserFriends()
 
-        return jsonify(friends=user_friends)
+        return user_friends
 
 class UserSetList(restful.Resource):
+    @marshal_with(SetSchema(many=True), pagination=True)
     def get(self, username):
-        deckbox_crawler = DeckboxCrawler("/users/" + username)
+        deckbox_crawler = DeckboxCrawler(username)
         user_sets       = deckbox_crawler.getUserSets()
 
-        return jsonify(sets = user_sets)
+        return user_sets
 
 class UserSet(restful.Resource):
-    def get(self, username, set_id):
-        deckbox_crawler = DeckboxCrawler("/users/" + username)
-        page        = request.args.get('p', 1)
-        order_by    = request.args.get('order_by', 'name')
-        order       = request.args.get('order', 'asc')
+    @marshal_with(SetSchema())
+    def get(self, username, set_id, page=1, sort_by='name', order='asc'):
+        deckbox_crawler = DeckboxCrawler(username)
+        user_set    = deckbox_crawler.getUserSetCards(set_id)
 
-        user_set    = deckbox_crawler.getUserSetCards(set_id, page, order_by, order)
-
-        return jsonify(user_set)
+        return user_set
 
 class UserInventory(restful.Resource):
-    def get(self, username):
-        deckbox_crawler = DeckboxCrawler("/users/" + username)
-        page        = request.args.get('p', 1)
-        order_by    = request.args.get('order_by', 'name')
-        order       = request.args.get('order', 'asc')
-        user_inventory = deckbox_crawler.getUserSetCards("inventory", page, order_by, order)
+    @parse_request(
+        Argument('page', type=int, default=1, required=False, store_missing=False),
+        allow_ordering=True
+    )
+    @marshal_with(DeckboxCardSchema(many=True), pagination=True, paginator=paginate_deckbox_results)
+    def get(self, username, page=1, sort_by='name', order='desc'):
+        deckbox_crawler = DeckboxCrawler(username)
+        user_inventory = deckbox_crawler.getUserSetCards("inventory", page, sort_by, order)
 
-        return jsonify(user_inventory)
+        return user_inventory
 
 class UserWishlist(restful.Resource):
-    def get(self, username):
-        deckbox_crawler = DeckboxCrawler("/users/" + username)
-        user_wishlist = deckbox_crawler.getUserSetCards("wishlist")
+    @parse_request(
+        Argument('page', type=int, default=1, required=False, store_missing=False),
+        allow_ordering=True
+    )
+    @marshal_with(DeckboxCardSchema(many=True), pagination=True, paginator=paginate_deckbox_results)
+    def get(self, username, page=1, sort_by='name', order='desc'):
+        deckbox_crawler = DeckboxCrawler(username)
+        user_wishlist = deckbox_crawler.getUserSetCards("wishlist", page, sort_by, order)
 
-        return jsonify(user_wishlist)
+        return user_wishlist
 
 class UserTradelist(restful.Resource):
-    def get(self, username):
-        deckbox_crawler = DeckboxCrawler("/users/" + username)
-        user_tradelist = deckbox_crawler.getUserSetCards("tradelist")
+    @parse_request(
+        Argument('page', type=int, default=1, required=False, store_missing=False),
+        allow_ordering=True
+    )
+    @marshal_with(DeckboxCardSchema(many=True), pagination=True, paginator=paginate_deckbox_results)
+    def get(self, username, page=1, sort_by='name', order='desc'):
+        deckbox_crawler = DeckboxCrawler(username)
+        user_tradelist = deckbox_crawler.getUserSetCards("tradelist", page, sort_by, order)
 
-        return jsonify(user_tradelist)
-
-class CardList(restful.Resource):
-    def get(self):
-        deckbox_crawler = DeckboxCrawler("/games/mtg/cards")
-        page        = request.args.get('p', 1)
-        order_by    = request.args.get('order_by', 'name')
-        order       = request.args.get('order', 'asc')
-        filters     = request.args.get('filters', {})
-
-        cards = deckbox_crawler.getCards(page, order_by, order, filters)
-
-        return jsonify(cards)
+        return user_tradelist
 
 class Card(restful.Resource):
+    @marshal_with(CardSchema(many=True), pagination=True)
     def get(self, cardname):
-        deckbox_crawler = DeckboxCrawler("/mtg/" + cardname)
-        card = deckbox_crawler.getCard()
-
-        return jsonify(card = card)
+        return scrython.cards.Search(q="name:/{}/".format(cardname)).data()
 
 restapi.add_resource(ApiDoc, '/')
 restapi.add_resource(User, '/users/<string:username>')
@@ -109,7 +113,6 @@ restapi.add_resource(UserInventory, '/users/<string:username>/inventory')
 restapi.add_resource(UserWishlist, '/users/<string:username>/wishlist')
 restapi.add_resource(UserTradelist, '/users/<string:username>/tradelist')
 restapi.add_resource(UserSet, '/users/<string:username>/sets/<set_id>')
-restapi.add_resource(CardList, '/cards/')
 restapi.add_resource(Card, '/cards/<path:cardname>')
 
 
