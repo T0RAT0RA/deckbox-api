@@ -15,7 +15,7 @@ restapi = restful.Api(app, '/api', catch_all_404s=True)
 
 @app.route('/')
 def index():
-    test_data  = {
+    test_data = {
         "username": "deckbox_api",
         "set_id": "590740",
         "cardname": "Nicol Bolas, Planeswalker"
@@ -24,15 +24,17 @@ def index():
     return render_template('index.html', api_doc_list = getApiDocList(), test_data = test_data)
 
 class ApiDoc(restful.Resource):
+
     def get(self):
         return getApiDocList()
 
 class User(restful.Resource):
+
     @marshal_with(UserSchema())
     def get(self, username):
         deckbox_crawler = DeckboxCrawler(username)
-        user_profile    = deckbox_crawler.getUserProfile()
-        user_sets       = deckbox_crawler.getUserSets()
+        user_profile = deckbox_crawler.getUserProfile()
+        user_sets = deckbox_crawler.getUserSets()
 
         return {
             **user_profile,
@@ -49,22 +51,25 @@ class UserFriend(restful.Resource):
         return user_friends
 
 class UserSetList(restful.Resource):
+
     @marshal_with(SetSchema(many=True), pagination=True)
     def get(self, username):
         deckbox_crawler = DeckboxCrawler(username)
-        user_sets       = deckbox_crawler.getUserSets()
+        user_sets = deckbox_crawler.getUserSets()
 
         return user_sets
 
 class UserSet(restful.Resource):
+
     @marshal_with(SetSchema())
     def get(self, username, set_id, page=1, sort_by='name', order='asc'):
         deckbox_crawler = DeckboxCrawler(username)
-        user_set    = deckbox_crawler.getUserSetCards(set_id)
+        user_set = deckbox_crawler.getUserSetCards(set_id, page, sort_by, order)
 
         return user_set
 
 class UserInventory(restful.Resource):
+
     @parse_request(
         Argument('page', type=int, default=1, required=False, store_missing=False),
         allow_ordering=True
@@ -77,6 +82,7 @@ class UserInventory(restful.Resource):
         return user_inventory
 
 class UserWishlist(restful.Resource):
+
     @parse_request(
         Argument('page', type=int, default=1, required=False, store_missing=False),
         allow_ordering=True
@@ -89,6 +95,7 @@ class UserWishlist(restful.Resource):
         return user_wishlist
 
 class UserTradelist(restful.Resource):
+
     @parse_request(
         Argument('page', type=int, default=1, required=False, store_missing=False),
         allow_ordering=True
@@ -101,9 +108,11 @@ class UserTradelist(restful.Resource):
         return user_tradelist
 
 class Card(restful.Resource):
+
     @marshal_with(CardSchema(many=True), pagination=True)
     def get(self, cardname):
         return scrython.cards.Search(q="name:/{}/".format(cardname)).data()
+
 
 restapi.add_resource(ApiDoc, '/')
 restapi.add_resource(User, '/users/<string:username>')
@@ -120,7 +129,7 @@ def getApiDocList():
     json_data = open('api_doc_list.json')
     api_doc_list = json.load(json_data)
     json_data.close()
-    return api_doc_list;
+    return api_doc_list
 
 
 if __name__ == '__main__':

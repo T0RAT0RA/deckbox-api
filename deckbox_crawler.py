@@ -101,7 +101,7 @@ class DeckboxCrawler:
 
         return sets
 
-    def getUserSetCards(self, set_id, page = 1, order_by = 'name', order = 'asc'):
+    def getUserSetCards(self, set_id, page=1, order_by='name', order='asc'):
         set_object = self.getUserSets(set_id)
 
         if set_object == None:
@@ -443,8 +443,9 @@ class DeckboxCrawler:
                     "code": re.search(".*/(.*)_.\.jpg$", edition_container.attr("src")).group(1),
                     "name": edition_container.attr("data-title")
                 }
+
                 # card["rarity"]  = re.search(".*_(.)\.jpg$", edition_container.attr("src")).group(1)
-                condition = {}
+
                 card["condition"] = {
                     "code": re.sub("(sprite |\s)", "", tr.find(".sprite:first").attr("class")),
                     "name": tr.find(".sprite:first").attr("data-title")

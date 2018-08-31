@@ -1,4 +1,5 @@
-from marshmallow import Schema, fields, pre_dump, post_dump, pprint
+from marshmallow import Schema, fields, pre_dump
+
 
 class CardSchema(Schema):
     multiverse_id = fields.List(fields.Str())
@@ -26,6 +27,7 @@ class CardSchema(Schema):
             pass
         return in_data
 
+
 class DeckboxCardSchema(Schema):
     name = fields.Str()
     count = fields.Integer()
@@ -37,20 +39,24 @@ class DeckboxCardSchema(Schema):
     is_signed = fields.Boolean()
     is_textless = fields.Boolean()
 
+
 class LastSeenOnlineSchema(Schema):
     date = fields.Str()
     timestamp = fields.Integer()
+
 
 class DeckSchema(Schema):
     cards = fields.Nested(DeckboxCardSchema(), many=True)
     total = fields.Integer()
     distinct = fields.Integer()
 
+
 class SetSchema(Schema):
     id = fields.Integer()
     name = fields.Str()
     mainboard = fields.Nested(DeckSchema())
     sideboard = fields.Nested(DeckSchema())
+
 
 class UserSchema(Schema):
     id = fields.Str()
