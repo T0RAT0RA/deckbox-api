@@ -439,10 +439,13 @@ class DeckboxCrawler:
                 # card["tooltip"] = self._HTTP + self._DECKBOX_DOMAIN + self._TOOLTIP.replace("<cardname>", urllib.parse.quote(card["name"]))
 
                 edition_container = tr.find(".mtg_edition_container img")
-                card["edition"] = {
-                    "code": re.search(".*/(.*)_.\.jpg$", edition_container.attr("src")).group(1),
-                    "name": edition_container.attr("data-title")
-                }
+                card["edition"] = {}
+                try:
+                    card["edition"]["code"] = re.search(".*/(.*)_.\.jpg$", edition_container.attr("src")).group(1),
+                except:
+                    card["edition"]["code"] = None
+
+                card["edition"]["name"] = edition_container.attr("data-title")
 
                 # card["rarity"]  = re.search(".*_(.)\.jpg$", edition_container.attr("src")).group(1)
 
