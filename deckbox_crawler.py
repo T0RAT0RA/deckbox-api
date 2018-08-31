@@ -197,8 +197,7 @@ class DeckboxCrawler:
     #  HELPERS
     #-------------------------
     def log(self, message):
-        pass
-        # print("LOG - " + message)
+        print("LOG - " + message)
 
     def getPage(self, page_url):
         self.log("Get cards from url: " + page_url)

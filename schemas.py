@@ -3,7 +3,6 @@ from marshmallow import Schema, fields, pre_dump
 
 class CardSchema(Schema):
     multiverse_id = fields.List(fields.Str())
-    id = fields.Str()
     set = fields.Str()
     set_name = fields.Str()
     images = fields.Dict(fields.Str(), attribute="image_uris")
@@ -28,7 +27,7 @@ class CardSchema(Schema):
         return in_data
 
 
-class DeckboxCardSchema(Schema):
+class DeckboxCardSchema(CardSchema):
     name = fields.Str()
     count = fields.Integer()
     condition = fields.Dict()
