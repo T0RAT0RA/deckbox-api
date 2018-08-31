@@ -65,7 +65,7 @@ def extend_cards(*args, **kwargs):
 def index():
     test_data = {
         "username": "deckbox_api",
-        "set_id": "590740",
+        "set_id": "608751",
         "cardname": "Nicol Bolas, Planeswalker"
     }
 
