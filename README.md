@@ -3,9 +3,13 @@ Deckbox API (non-official)
 
 Introduction
 ==========
-This application emulates a deckbox API.
-It's based on a HTML parser that will get user public information from Deckbox and returns it as json objects.
-This is not the official Deckbox API.
+This application emulates a deckbox API.  
+It's based on a HTML parser that will get user public information from Deckbox and returns it as json objects.  
+**This is not the official Deckbox API.**
+
+Location
+==========
+You can access the API here: https://deckbox-api.herokuapp.com
 
 How to use
 ==========
