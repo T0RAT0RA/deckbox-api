@@ -40,7 +40,7 @@ def extend_cards(*args, **kwargs):
                     time.sleep(0.1) #required by scryfall policies
                     response = scrython.cards.Search(q=query).data()
                     print('LOG - get card meta q=' + query)
-                    cards_meta.update({x['name']: x for x in response})
+                    cards_meta.update({x['name'].split(" //")[0]: x for x in response})
 
                     r.mset({
                         x['name']: json.dumps(x) for x in cards_meta.values()

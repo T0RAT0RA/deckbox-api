@@ -95,7 +95,7 @@ def marshal_with(schema, pagination=False, paginator=paginate_list, args_parser=
                 else:
                     rv = paginator(rv, serializer, args_parser)
             else:
-                rv = serializer(rv).data
+                rv = serializer(rv)
             response = jsonify(rv)
             response.status_code = success_code
             return response

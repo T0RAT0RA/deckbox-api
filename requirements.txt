@@ -17,7 +17,7 @@ itsdangerous==0.24
 Jinja2==2.10
 lxml==4.2.4
 MarkupSafe==1.0
-marshmallow==2.15.4
+marshmallow==3.0.0b13
 multidict==4.3.1
 newrelic==4.2.0.100
 pyquery==1.4.0
