@@ -72,6 +72,25 @@ def index():
     return render_template('index.html', api_doc_list = getApiDocList(), test_data = test_data)
 
 
+@app.route('/status')
+def status():
+    STATUS_OK = 'ok'
+    status = {
+        'redis': {
+            'connection': None
+        },
+        'version': os.environ.get("HEROKU_SLUG_COMMIT", "")[:8]
+    }
+
+    # Test redis connection
+    try:
+        response = r.client_list()
+        status['redis']['connection'] = STATUS_OK
+    except redis.ConnectionError as e:
+        status['redis']['connection'] = repr(e)
+
+    return jsonify(status)
+
 class ApiDoc(Resource):
     def get(self):
         return getApiDocList()
