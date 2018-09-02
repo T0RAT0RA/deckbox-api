@@ -130,5 +130,5 @@ def get_paginated_response(items, serializer, page, count, total_items, total_pa
         'page': page,
         'items_per_page': count,
         'total_pages': total_pages,
-        'items': serializer(items).data
+        'items': serializer(items)
     }
