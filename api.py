@@ -21,6 +21,7 @@ def extend_cards(*args, **kwargs):
     """
     Decorator to add card metadata
     """
+
     def decorator(f):
         @functools.wraps(f)
         def inner(*fargs, **fkwargs):
@@ -37,7 +38,7 @@ def extend_cards(*args, **kwargs):
 
                 if cards_not_cached:
                     query = "name:/{}/".format("/ or name:/".join([c for c in cards if c in cards_not_cached]))
-                    time.sleep(0.1) #required by scryfall policies
+                    time.sleep(0.1)  # required by scryfall policies
                     response = scrython.cards.Search(q=query).data()
                     print('LOG - get card meta q=' + query)
                     cards_meta.update({x['name'].split(" //")[0]: x for x in response})
@@ -57,7 +58,9 @@ def extend_cards(*args, **kwargs):
                 dpath.util.set(rv, path, cards, separator='.')
 
             return rv
+
         return inner
+
     return decorator
 
 
@@ -69,7 +72,7 @@ def index():
         "cardname": "Nicol Bolas, Planeswalker"
     }
 
-    return render_template('index.html', api_doc_list = getApiDocList(), test_data = test_data)
+    return render_template('index.html', api_doc_list=getApiDocList(), test_data=test_data)
 
 
 @app.route('/status')
@@ -90,6 +93,7 @@ def status():
         status['redis']['connection'] = repr(e)
 
     return jsonify(status)
+
 
 class ApiDoc(Resource):
     def get(self):
