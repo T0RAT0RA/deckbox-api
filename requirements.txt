@@ -28,6 +28,6 @@ requests==2.19.1
 scrython==1.5.0
 six==1.11.0
 Unidecode==1.0.22
-urllib3==1.23
+urllib3==1.26.5
 Werkzeug==0.14.1
 yarl==1.2.0
